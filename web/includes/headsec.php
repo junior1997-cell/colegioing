@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="web/styles/courses_responsive.css">
     <link rel="stylesheet" type="text/css" href="web/styles/contact_styles.css">
     <link rel="stylesheet" type="text/css" href="web/styles/contact_responsive.css">
+    <link rel="stylesheet" type="text/css" href="web/flot/css/app.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/combined.css">
+    <link rel="stylesheet" type="text/css" href="web/css/menu.css">
     <style>
       .map-responsive {
         overflow: hidden;
