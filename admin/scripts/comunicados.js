@@ -1,17 +1,17 @@
 var tabla;
 
 function innit() {
-  $("#btn_add_turisticos").click(function() {
-    $("#add_turisticos").modal("show");
+  $("#btn_add_comunicados").click(function() {
+    $("#add_comunicados").modal("show");
 
   });
 
   $("#btn_close_turisticos").click(function() {
-    $("#add_turisticos").modal("hide");
+    $("#add_comunicados").modal("hide");
     limpiar();
   });
 
-  $("#formulario_turisticos").on("submit", function(e) {
+  $("#formulario_comunicados").on("submit", function(e) {
     guardaryeditar(e);
   });
 
@@ -37,13 +37,15 @@ var getTodayDate = todayDate.getDate();
 var getTodayMonth = todayDate.getMonth() + 1;
 var getTodayFullYear = todayDate.getFullYear();
 var getCurrentDateTime = getTodayDate + '/' + getTodayMonth + '/' + getTodayFullYear;
+
+//document.getElementsByTagName(getCurrentDateTime);
 $("#fechaActual").val(getCurrentDateTime);
 
   listar()
 }
 
 function limpiar() {
-  $("#idturisticos").val("");
+  $("#idcomunicado").val("");
   $("#titulo").val("");
   $("#descripcion").val("");
 
@@ -58,7 +60,7 @@ function limpiar() {
 
 function guardaryeditar(e) {
   e.preventDefault();
-  var formData = new FormData($("#formulario_turisticos")[0]);
+  var formData = new FormData($("#formulario_comunicados")[0]);
   $.ajax({
     url: "../ajax/Ccomunicados.php?op=guardaryeditar",
     type: "POST",
@@ -103,7 +105,7 @@ function guardaryeditar(e) {
 }
 
 function l_m() {
-  $("#add_turisticos").modal("hide")
+  $("#add_comunicados").modal("hide")
   limpiar();
   $("#barra_progress").css({
     "width": '0%'
@@ -148,7 +150,7 @@ function listar() {
       url: 'recursos/js/idioma.json'
     },
     "ajax": {
-      url: '../ajax/CTuristicos.php?op=listar',
+      url: '../ajax/Ccomunicados.php?op=listar',
       type: "get",
       dataType: "json",
       error: function(e) {
@@ -164,35 +166,23 @@ function listar() {
 }
 
 /*MOSTAR UNA NOTICIA/COMENTARIO*/
-function mostrar(idturisticos) {
-  $.post("../ajax/CTuristicos.php?op=mostrar", {
-    idturisticos: idturisticos
+function mostrar(idcomunicado) {
+  $.post("../ajax/Ccomunicados.php?op=mostrar", {
+    idcomunicado: idcomunicado
   }, function(data, status) {
     data = JSON.parse(data);
-    $("#add_turisticos").modal("show");
-    $("#idturisticos").val(data.idturisticos);
+    $("#add_comunicados").modal("show");
+    $("#idcomunicado").val(data.idcomunicado);
     $("#titulo").val(data.titulo);
 
     $("#descripcion").val(decodeHtml(data.descripcion));
 
-    $("#foto1_actual").val(data.foto1);
-    $("#foto2_actual").val(data.foto2);
-
-    if (data.foto1 == "") {
-      $("#foto1_i").attr("src", "recursos/img/img_defecto.png");
-    } else {
-      $("#foto1_i").attr("src", "../multimedia/turisticos/" + data.foto1);
-    }
-    if (data.foto2 == "") {
-      $("#foto2_i").attr("src", "recursos/img/img_defecto.png");
-    } else {
-      $("#foto2_i").attr("src", "../multimedia/turisticos/" + data.foto2);
-    }
+    //$("#fechaActual").val(data.fecha);
 
   })
 }
 
-function desactivar(idturisticos) {
+function desactivar(idcomunicado) {
   swal({
       title: "¿Deseas desactivar este registro? ",
       type: "warning",
@@ -205,8 +195,8 @@ function desactivar(idturisticos) {
     },
     function(isConfirm) {
       if (isConfirm) {
-        $.post("../ajax/CTuristicos.php?op=desactivar", {
-          idturisticos: idturisticos
+        $.post("../ajax/Ccomunicados.php?op=desactivar", {
+          idcomunicado: idcomunicado
         }, function(datos) {
           if (datos == 1) {
             swal({
@@ -234,7 +224,7 @@ function desactivar(idturisticos) {
     });
 }
 
-function activar(idturisticos) {
+function activar(idcomunicado) {
   swal({
       title: "¿Deseas activar este registro? ",
       type: "warning",
@@ -247,8 +237,8 @@ function activar(idturisticos) {
     },
     function(isConfirm) {
       if (isConfirm) {
-        $.post("../ajax/CTuristicos.php?op=activar", {
-          idturisticos: idturisticos
+        $.post("../ajax/Ccomunicados.php?op=activar", {
+          idcomunicado: idcomunicado
         }, function(datos) {
           if (datos == 1) {
             swal({
@@ -289,12 +279,5 @@ function decodeHtml(str) {
   });
 }
 
-//funcion fecha
-
-var todayDate = new Date();
-var getTodayDate = todayDate.getDate();
-var getTodayMonth = todayDate.getMonth() + 1;
-var getTodayFullYear = todayDate.getFullYear();
-var getCurrentDateTime = getTodayDate + '/' + getTodayMonth + '/' + getTodayFullYear;
 
 innit();

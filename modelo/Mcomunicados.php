@@ -1,38 +1,38 @@
 <?php
 require '../config/conexion.php';
 
-Class MTuristicos{
+Class Mcomunicados{
 
 	public function __construct(){
 
 	}
 
-	public function insertar($titulo,$descripcion,fecha){
+	public function insertar($titulo,$descripcion,$fechaActual){
 		$sql="INSERT INTO ".
-		"comunicadoss(titulo,descripcion,fecha) ".
-		"VALUES ('$titulo','$descripcion','$fecha')";
+		"comunicados(titulo,descripcion,fecha) ".
+		"VALUES ('$titulo','$descripcion','$fechaActual')";
 		return ejecutarConsulta($sql);
 	}
 
-	public function editar($idturisticos,$titulo,$descripcion,$foto1,$foto2){
-		$sql="UPDATE turisticos SET ".
-				 "titulo='$titulo',descripcion='$descripcion',foto1='$foto1',foto2='$foto2' ".
-				 "WHERE idturisticos='$idturisticos'";
+	public function editar($idcomunicado,$titulo,$descripcion,$fechaActual){
+		$sql="UPDATE comunicados SET ".
+				 "titulo='$titulo',descripcion='$descripcion',fecha='$fechaActual' ".
+				 "WHERE idcomunicado='$idcomunicado'";
 		return ejecutarConsulta($sql);
 	}
 
-	public function mostrar($idturisticos){
-		$sql="SELECT * FROM turisticos WHERE idturisticos='$idturisticos'";
+	public function mostrar($idcomunicado){
+		$sql="SELECT * FROM comunicados WHERE idcomunicado='$idcomunicado'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
 	public function listar(){
-		$sql="SELECT * FROM turisticos ORDER BY idturisticos";
+		$sql="SELECT * FROM comunicados ORDER BY idcomunicado";
 		return ejecutarConsulta($sql);
 	}
 
 	public function listar_web(){
-		$sql="SELECT * FROM turisticos WHERE estado = '0' ORDER BY idturisticos";
+		$sql="SELECT * FROM comunicados WHERE estado = '1' ORDER BY idturisticos";
 		return ejecutarConsulta($sql);
 	}
 
@@ -41,18 +41,18 @@ Class MTuristicos{
     return ejecutarConsulta($sql);
   }
 
-	public function eliminar($idturisticos){
-		$sql = "DELETE FROM turisticos WHERE idturisticos = '$idturisticos'";
+	public function eliminar($idcomunicado){
+		$sql = "DELETE FROM comunicados WHERE idcomunicado = '$idcomunicado'";
 		return ejecutarConsulta($sql);
 	}
 
-	public function desactivar($idturisticos){
-		$sql = "UPDATE turisticos SET estado='1' WHERE idturisticos = '$idturisticos'";
+	public function desactivar($idcomunicado){
+		$sql = "UPDATE comunicados SET estado='0' WHERE idcomunicado = '$idcomunicado'";
 		return ejecutarConsulta($sql);
 	}
 
-	public function activar($idturisticos){
-		$sql = "UPDATE turisticos SET estado='0' WHERE idturisticos = '$idturisticos'";
+	public function activar($idcomunicado){
+		$sql = "UPDATE comunicados SET estado='1' WHERE idcomunicado = '$idcomunicado'";
 		return ejecutarConsulta($sql);
 	}
 

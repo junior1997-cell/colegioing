@@ -5,14 +5,13 @@ if (strlen(session_id()) < 1)
 /*Aqui se crea, se edita, se eimina y se lista las categorias*/
 require_once '../modelo/Mcomunicados.php';
 
-$turisticos= new MTuristicos();
+$Mcomunicados= new Mcomunicados();
 /** DATOS GENERALES **/
 $idcomunicado = isset($_POST["idcomunicado"])?limpiarCadena($_POST["idcomunicado"]):"";
 $titulo = isset($_POST["titulo"])?limpiarCadena($_POST["titulo"]):"";
 $descripcion = isset($_POST["descripcion"])?limpiarCadena($_POST["descripcion"]):"";
-/** IMAGENES **/
-$fecha = isset($_POST["fecha"])?limpiarCadena($_POST["fecha"]):"";
-$foto2 = isset($_POST["foto2"])?limpiarCadena($_POST["foto2"]):"";
+/** Fecha **/
+$fechaActual = isset($_POST["fechaActual"])?limpiarCadena($_POST["fechaActual"]):"";
 
 $op = $_GET["op"];
 
@@ -21,46 +20,34 @@ switch($op){
 
   case 'guardaryeditar':
     if (empty($idcomunicado)){
-      $rspta=$turisticos->insertar($titulo,nl2br($descripcion),$fecha);
+      $rspta=$Mcomunicados->insertar($titulo,nl2br($descripcion),$fechaActual);
+      //var_dump($rspta);die;
       echo $rspta;
     }else {
-        if($flat_fecha==true){
-            $datos_f1 =$turisticos->nombreFoto($idcomunicado,1);
-            $titulo_img_1_ant=$datos_f1->fetch_object()->fecha;
-            if($titulo_img_1_ant!=""){
-              unlink("../multimedia/turisticos/".$titulo_img_1_ant);
-            }
-        }
-        if($flat_foto2==true){
-            $datos_f2 =$turisticos->nombreFoto($idcomunicado,2);
-            $titulo_img_2_ant=$datos_f2->fetch_object()->foto2;
-            if($titulo_img_2_ant!=""){
-              unlink("../multimedia/turisticos/".$titulo_img_2_ant);
-            }
-        }
-
-        $rspta=$turisticos->editar($idcomunicado,$titulo,nl2br($descripcion),$fecha,$foto2);
+        $rspta=$Mcomunicados->editar($idcomunicado,$titulo,nl2br($descripcion),$fechaActual);
         echo $rspta;
     }
 
   break;
 
 	case 'mostrar':
-		$rspta = $turisticos->mostrar($idcomunicado);
+		$rspta = $Mcomunicados->mostrar($idcomunicado);
     echo json_encode($rspta);
 	break;
 
   case 'listar':
-		$rspta=$turisticos->listar();
+		$rspta=$Mcomunicados->listar();
  		$data = Array();
     $cont = $rspta->num_rows;
+    //var_dump($cont);die;
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
  				"0" => $cont--,
  				"1" => $reg->titulo,
 				"2" => $reg->descripcion,
-				"3" => ($reg->estado)?'<center><button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomunicado.')"><i class="fa fa-edit"></i></button>'.' <button class="btn btn-success btn-xs" onclick="activar('.$reg->idcomunicado.')"><i class="fa fa-check-circle"></i></button></center>':'<center><button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomunicado.')"><i class="fa fa-edit"></i></button>'.' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idcomunicado.')"><i class="fa fa-trash"></i></button></center>'
+				"3" => $reg->fecha,
+				"4" => ($reg->estado)?'<center><button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomunicado.')"><i class="fa fa-edit"></i></button>'.' <button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idcomunicado.')"><i class="fa fa-trash"></i></button></center>':'<center><button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idcomunicado.')"><i class="fa fa-edit"></i></button>'.' <button class="btn btn-success btn-xs" onclick="activar('.$reg->idcomunicado.')"><i class="fa fa-check-circle"></i></button></center>'
  				);
  		}
  		$results = array(
@@ -73,7 +60,7 @@ switch($op){
 	break;
 
     case 'listar_web':
-        $rspta=$turisticos->listar_web();
+        $rspta=$Mcomunicados->listar_web();
         while ($reg=$rspta->fetch_object()){
           $data[]=array(
             "idcomunicado" => $reg->idcomunicado,
@@ -86,20 +73,20 @@ switch($op){
     break;
 
     case 'desactivar':
-  		$rspta=$turisticos->desactivar($idcomunicado);
+  		$rspta=$Mcomunicados->desactivar($idcomunicado);
    		echo $rspta;
   	break;
 
   	case 'activar':
-  		$rspta=$turisticos->activar($idcomunicado);
+  		$rspta=$Mcomunicados->activar($idcomunicado);
    		echo $rspta;
   	break;
     case 'eliminar':
-  		$rspta=$turisticos->activar($idcomunicado);
+  		$rspta=$Mcomunicados->activar($idcomunicado);
    		echo $rspta;
   	break;
     default :
-   		echo 'ERROR AJAX TURISTICOS SIN OP';
+   		echo 'ERROR AJAX Mcomunicados SIN OP';
     break;
 }
 

@@ -1586,11 +1586,22 @@ input:last-of-type
 }
 
 .service-block-inner:hover h3{
-   color: #ffffff;
+   color: #000000;
    transition: all 0.5s ease 0s;
 }
 
 .service-block-inner:hover p{
-   color: #ffffff;
+   color: #080000;
    transition: all 0.5s ease 0s;
+}
+
+.commdiv{
+	background-image:url("../images/ff.png");
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
 }

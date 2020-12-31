@@ -38,7 +38,7 @@ if (!isset($_SESSION["usuario"])){
 					<div class="col-md-12">
 						<div class="box box-success" style="border:2px solid white;">
 							<div class="box-header with-border">
-								<button type="button" class="btn btn-success" id="btn_add_turisticos">
+								<button type="button" class="btn btn-success" id="btn_add_comunicados">
 								<i class="fa fa-plus"></i> Agregar comunicado
 							  </button>
 							</div>
@@ -62,6 +62,7 @@ if (!isset($_SESSION["usuario"])){
 												<th width="15px">N°</th>
 												<th>Titulo</th>
 												<th>Descripcion</th>
+												<th>Fecha</th>
 												<th><center>Acción</center></th>
 											</tr>
 										</thead>
@@ -87,11 +88,11 @@ if (!isset($_SESSION["usuario"])){
 
 
 
-	<div class="modal fade" id="add_turisticos" data-backdrop="static" data-keyboard="false">
+	<div class="modal fade" id="add_comunicados" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog"  style="width: 50% !important">
 
 
-<form id="formulario_turisticos" class="form">
+    <form id="formulario_comunicados" class="form">
 
 
 			<div class="modal-content">
@@ -101,7 +102,7 @@ if (!isset($_SESSION["usuario"])){
 					</div>
 					<div class="modal-body">
 
-							<input type="hidden" name="idturisticos" id="idturisticos">
+							<input type="hidden" name="idcomunicado" id="idcomunicado">
               <div class="row">
                 <div class="col-md-8">
                   <div class="form-group">
@@ -113,7 +114,7 @@ if (!isset($_SESSION["usuario"])){
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="fecha" class="control-label">Fecha</label>
-                    <input name="fecha"  id="fechaActual" type="text" class="form-control" readonly>
+                    <input name="fechaActual"  id="fechaActual" type="text" class="form-control" readonly >
                   </div>
                 </div>
               </div>
