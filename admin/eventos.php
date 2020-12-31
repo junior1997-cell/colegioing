@@ -60,6 +60,7 @@ if (!isset($_SESSION["usuario"])) {
 											<thead>
 												<tr>
 													<th width="15px">N°</th>
+													<th>Título</th>
 													<th>Descripción</th>
 													<th>Imagen</th>
 													<th>Estado</th>
@@ -67,7 +68,6 @@ if (!isset($_SESSION["usuario"])) {
 												</tr>
 											</thead>
 											<tbody>
-
 											</tbody>
 										</table>
 
@@ -101,19 +101,19 @@ if (!isset($_SESSION["usuario"])) {
 							</div>
 							<div class="modal-body">
 
-								<input type="hidden" name="idcarousel" id="idcarousel">
+								<input type="hidden" name="ideventos" id="ideventos">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="titulo" class="control-label">Descripción</label>
+											<label for="titulo" class="control-label">Titulo</label>
 											<input name="titulo"  id="titulo" type="text" class="form-control" required>
 										</div>
 
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="titulo" class="control-label">Descripción</label>
-											<input name="titulo"  id="titulo" type="text" class="form-control" required>
+											<label for="descripcion" class="control-label">Descripcion</label>
+											<textarea name="descripcion"  id="descripcion" type="text" class="form-control" maxlength="100" required></textarea>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -144,7 +144,7 @@ if (!isset($_SESSION["usuario"])) {
 
 		<?php require 'includes/scripts.php'?>
 
-		<script src="scripts/carousel.js"></script>
+		<script src="scripts/eventos.js"></script>
 
 	</body>
 	</html>

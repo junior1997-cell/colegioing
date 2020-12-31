@@ -16,10 +16,10 @@
                         <a style="padding: 0px 0px !important" href="index.php">INICIO</a>
                     </li>
                     <li class="main_nav_item">
-                        <a href="paquetes.php" style="padding: 0px 0px !important">TOURS Y PAQUETES</a>
+                        <a href="paquetes.php" style="padding: 0px 0px !important">INSTITUCIÓN</a>
                     </li>
                     <li class="main_nav_item">
-                        <a href="pasajes.php" style="padding: 0px 0px !important" >PASAJES
+                        <a href="pasajes.php" style="padding: 0px 0px !important" >TRÁMITES
                             <i class="icon ion-md-arrow-dropdown"></i>
                         </a>
                         <ul>
@@ -38,13 +38,13 @@
                         </ul>
                     </li>
                     <li class="main_nav_item">
-                        <a href="turismo.php" style="padding: 0px 0px !important">TURISMO</a>
+                        <a href="turismo.php" style="padding: 0px 0px !important">CAPÍTULOS</a>
                     </li>
                     <li class="main_nav_item">
-                        <a href="somos.php" style="padding: 0px 0px !important" >EMPRESA</a>
+                        <a href="somos.php" style="padding: 0px 0px !important" >SERVICIOS</a>
                     </li>
                     <li class="main_nav_item">
-                        <a href="contactanos.php" style="padding: 0px 0px !important">CONTACTANOS</a>
+                        <a href="contactanos.php" style="padding: 0px 0px !important">PUBLICACIONES</a>
                     </li>
 
                 </ul>

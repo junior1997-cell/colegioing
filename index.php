@@ -69,8 +69,10 @@ $resultado = ejecutarConsulta($sql);
                             <li class="main_nav_item"><a href="pasajes.php">TRÁMITES</a></li>
                             <li class="main_nav_item"><a href="turismo.php">CAPÍTULOS</a></li>
                             <li class="main_nav_item"><a href="somos.php">SERVICIOS</a></li>
-                            <li class="main_nav_item"><a href="contactanos.php">PUBLICACIONES</a></li>
-
+                            <li class="main_nav_item treeview"><a href="contactanos.php">PUBLICACIONES 
+                            <i class="icon ion-md-arrow-dropdown"></i>
+                            </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -148,43 +150,43 @@ $resultado = ejecutarConsulta($sql);
 
         <div class="container recent" id="activity">
             <div class="row">
-               <div class="owl-carousel owl-carousel2 owl-theme">
+             <div class="owl-carousel owl-carousel2 owl-theme">
 
-                  <div>
-                    <a href="https://cipvirtual.cip.org.pe/cas/login?service=https%3A%2F%2Fcipvirtual.cip.org.pe%2Fsiceseguridadweb%2Fj_spring_cas_security_check%3Bjsessionid%3DFauPLfqdCDu0n_gha9KS1Rs-UhObm5nm-xrLPzUA.serverweb%3Fspring-security-redirect%3D%2Finicio%2F" target="_blank">
-                      <div class="card" src=""> <img class="card-img" src="web/images/tecnologia.png" alt="">
-                        <div class="card-img-overlay"><img src="web/images/inalambrico.png" class="heart" alt="heart icon">
-                          <div class="bottom-text">
-                            <h5 class="card-title">CIP Virtual</h5>
-                            <p class="card-text">Ingresar</p>
-                        </div>
+              <div>
+                <a href="https://cipvirtual.cip.org.pe/cas/login?service=https%3A%2F%2Fcipvirtual.cip.org.pe%2Fsiceseguridadweb%2Fj_spring_cas_security_check%3Bjsessionid%3DFauPLfqdCDu0n_gha9KS1Rs-UhObm5nm-xrLPzUA.serverweb%3Fspring-security-redirect%3D%2Finicio%2F" target="_blank">
+                  <div class="card" src=""> <img class="card-img" src="web/images/tecnologia.png" alt="">
+                    <div class="card-img-overlay"><img src="web/images/inalambrico.png" class="heart" alt="heart icon">
+                      <div class="bottom-text">
+                        <h5 class="card-title">CIP Virtual</h5>
+                        <p class="card-text">Ingresar</p>
                     </div>
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
+    </div>
 
-        <div>
-            <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
-              <div class="card"> <img class="card-img" src="web/images/graduacion.png" alt="">
-                <div class="card-img-overlay"> <img src="web/images/sombrero.png" class="heart" alt="heart icon">
-                  <div class="bottom-text">
-                    <h5 class="card-title">Acceso Colegiados</h5>
-                    <p class="card-text">Ingresar</p>
-                </div>
+    <div>
+        <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
+          <div class="card"> <img class="card-img" src="web/images/graduacion.png" alt="">
+            <div class="card-img-overlay"> <img src="web/images/sombrero.png" class="heart" alt="heart icon">
+              <div class="bottom-text">
+                <h5 class="card-title">Acceso Colegiados</h5>
+                <p class="card-text">Ingresar</p>
             </div>
         </div>
-    </a>
+    </div>
+</a>
 </div>
 
 <div>
-   <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
-      <div class="card"> <img class="card-img" src="web/images/grupal.png" alt="">
-        <div class="card-img-overlay"><img src="web/images/coordinar.png" class="heart" alt="heart icon">
-          <div class="bottom-text">
-            <h5 class="card-title">Oportunidad Laboral</h5>
-            <p class="card-text">Revisar</p>
-        </div>
+ <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
+  <div class="card"> <img class="card-img" src="web/images/grupal.png" alt="">
+    <div class="card-img-overlay"><img src="web/images/coordinar.png" class="heart" alt="heart icon">
+      <div class="bottom-text">
+        <h5 class="card-title">Oportunidad Laboral</h5>
+        <p class="card-text">Revisar</p>
     </div>
+</div>
 </div>
 </a>
 </div>
@@ -207,23 +209,23 @@ $resultado = ejecutarConsulta($sql);
 
 <!-- COMUNICADOS -->
 
-<div class="popular page_section" style="padding: 30px">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="section_title text-center">
+<section class="">
+    <div class="popular page_section " style="padding: 30px">
+        <div class="container commdiv">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center ">
 
-                    <section class="commdiv">
-                        <div class="popular page_section " style="padding: 30px">
-                            <div class="container">
-                                <div class="row">
+                        <div class="popular page_section  " style="padding: 30px">
+                            <div class="container ">
+                                <div class="row ">
                                     <div class="col">
                                         <div class="section_title text-center">
                                             <h1>COMUNICADOS</h1>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-5">
+                                <div class="row my-1">
                                     <?php while ($row = $resultado->fetch_assoc()) {?>
                                         <div class="col-sm-6 col-lg-6">
                                             <div class="service-block-inner">
@@ -234,22 +236,22 @@ $resultado = ejecutarConsulta($sql);
                                         </div>
                                     <?php }?>
                                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                       <button type="button" class="btn btn-danger btn-sm " ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ver todos</button>
-                                   </div>
+                                     <button type="button" class="btn btn-danger btn-sm " ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ver todos</button>
+                                 </div>
 
-                               </div>
+                             </div>
 
-                           </div>
+                         </div>
 
-                       </div>
-                   </div>
-               </div>
+                     </div>
+                 </div>
+             </div>
 
-           </div>
-       </section>
+         </div>
+     </section>
 
-       <!-- PASAJES TERRESTRES -->
-       <div class="popular page_section" style="padding: 30px">
+     <!-- PASAJES TERRESTRES -->
+     <div class="popular page_section" style="padding: 30px">
         <div class="container">
             <div class="row">
                 <div class="col">
