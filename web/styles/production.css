@@ -397,8 +397,8 @@ h2 {
   .recent h2 {
     color: #fff; }
   .recent .owl-carousel .owl-stage-outer {
-    padding-top: 30px;
-    padding-bottom: 50px; }
+    padding-top: 0px;
+    padding-bottom: 0px; }
   .recent .owl-carousel .owl-nav {
     display: block;
     position: absolute;

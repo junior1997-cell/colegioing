@@ -28,6 +28,10 @@ $resultado = ejecutarConsulta($sql);
     <link rel="stylesheet" type="text/css" href="web/styles/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="web/styles/aos.css">
     <link rel="stylesheet" type="text/css" href="web/styles/swiper.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/responsi.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/estilo.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/modal.css">
     <style media="screen">
         .img-org{
           -webkit-filter: brightness(0.9) !important;
@@ -149,7 +153,7 @@ $resultado = ejecutarConsulta($sql);
         <br>
         <br>
 
-
+<section>
         <div class="container recent" id="activity">
             <div class="row">
                <div class="owl-carousel owl-carousel2 owl-theme">
@@ -208,6 +212,7 @@ $resultado = ejecutarConsulta($sql);
 </div>
 </div>
 </div>
+</section>
 
 <!-- COMUNICADOS -->
 
@@ -246,71 +251,179 @@ $resultado = ejecutarConsulta($sql);
                            </div>
 
                        </div>
-                   </div>
+                    </section>
+
+                   
                </div>
 
            </div>
-       </section>
-
-       <!-- PASAJES TERRESTRES -->
-       <div class="popular page_section" style="padding: 30px">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="section_title text-center">
-                        <h1>PASAJES TERRESTRES</h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row course_boxes" style="margin-top : 10px;" id="pasajes_t_data">
-
-
-            </div>
-
-
-        </div>
-    </div>
-    <!-- PASAJES AEREOS -->
-    <div class="popular page_section" style="padding: 30px">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="section_title text-center">
-                        <h1>PASAJES AEREOS</h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row course_boxes" style="margin-top : 10px;" id="pasajes_a_data">
-
-
-            </div>
-
-            <div class="row">
-
-              <div class="col-md-12">
-                  <br>
-                  <center>
-                      <a href="pasajes.php" class="btn btn-info">Ver mássss pasajes</a>
-                  </center>
-
-              </div>
-          </div>
-      </div>
-  </div>
-
-
-  <div class="popular page_section" style="padding: 30px">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-            </div>
-        </div>
-
-    </div>
+       </div>
+   </div>
 </div>
+
+
+ 
+
+<section class="recent-posts page-section portfolio" id="portfolio">
+<div class="row">
+ <div class="col">
+ <div class="section_title text-center">
+ <h1>EVENTOS</h1>
+ </div>
+</div>
+ </div>
+        
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right"
+                        data-aos-duration="800">
+                        <div class="post-content text-sm-right">
+                            <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
+                            <h3><span>Proudly for us to build stylish</span></h3>
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>                            
+                        </div>
+
+                        <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal1"> 
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>                         
+                            <img class="img-fluid" src="web/images/post1.jpg" style="height: 320px; width: 900px;" alt="Post 1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-duration="800">
+                        <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>  
+                            <img class="img-fluid" src="web/images/post2.jpg" style="height: 320px; width: 500px;" alt="Post 2">
+                        </div>
+                        <div class="post-content">
+                            <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
+                            <h3><span>Remind me to water the plants</span></h3>
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right" data-aos-delay="200"
+                        data-aos-duration="800">
+                        <div class="post-content text-sm-right">
+                            <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
+                            <h3><span>Add apples to the grocery list</span></h3>
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
+                            
+                        </div>
+                        <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>  
+                            <img class="img-fluid" src="web/images/tramite.png" style="height: 320px; width: 500px;" alt="Post 1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-delay="200"
+                        data-aos-duration="800">
+                        <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>  
+                            <img class="img-fluid" src="web/images/captura.png" style="height: 320px; width: 500px;" alt="Post 1">
+                        </div>
+                        <div class="post-content">
+                            <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
+                            <h3><span>Retos y Desafíos del sector agua y saneamiento en el ambito
+                            rural en la región san martin, en el contexto covid 19</span></h3>
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-primary">See More</a>
+            </div>
+        
+    </section>
+
+
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8" >
+                                    <img class="img-fluid rounded mb-5" src="web/images/post1.jpg" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8" >
+                                    <img class="img-fluid rounded mb-5" src="web/images/rioabiseo.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8" >
+                                    <img class="img-fluid rounded mb-5" src="web/images/post3.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8" >
+                                    <img class="img-fluid rounded mb-5" src="web/images/captura.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
 
 <!-- Footer -->
@@ -501,6 +614,10 @@ $resultado = ejecutarConsulta($sql);
 <script src="web/js/popper.min.js"></script>
 <script src="web/js/loaders.css.js"></script>
 <script src="web/js/aos.js"></script>
+<script src="web/js/lightgallery-all.min.js"></script>
+<script src="web/js/menu.js"></script>
+<script src="web/js/swiper.min.js"></script>
+<script src="web/js/modal.js"></script>
 
 <!--  script for google maps   -->
 
