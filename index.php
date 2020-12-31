@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
 include 'config/conexion.php';
 
-$sql = "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
+$sql       = "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
 $resultado = ejecutarConsulta($sql);
-     
+
 ?>
 
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>CIP Consejo departamental de San Martin-Moyobamba</title>
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Course Project">
     <link rel="shortcut icon" href="web/images/logoOficial.png" />
@@ -25,25 +25,25 @@ $resultado = ejecutarConsulta($sql);
     <link rel="stylesheet" type="text/css" href="web/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="web/styles/production.css">
     <style media="screen">
-    .img-org{
-      -webkit-filter: brightness(0.9) !important;
-      filter: brightness(0.5) !important;
-    }
+        .img-org{
+          -webkit-filter: brightness(0.9) !important;
+          filter: brightness(0.5) !important;
+      }
 
-    </style>
-    <style>
+  </style>
+  <style>
       .map-responsive {
         overflow: hidden;
         padding-bottom: 300px;
         position: relative;
         height: 0;
-      }
-      #map {
+    }
+    #map {
 
         height: 300px;
         width: 100%;
-      }
-    </style>
+    }
+</style>
 </head>
 <body>
     <div class="super_container">
@@ -88,7 +88,7 @@ $resultado = ejecutarConsulta($sql);
         </header>
 
 
-          <!-- Menu -->
+        <!-- Menu -->
         <div class="menu_container menu_mm">
 
             <!-- Menu Close Button -->
@@ -145,400 +145,394 @@ $resultado = ejecutarConsulta($sql);
         <br>
         <br>
 
-            
-            <div class="container recent" id="activity">
-                <div class="row">
-                 <div class="owl-carousel owl-carousel2 owl-theme">
-                    
-              <div>
-                <a href="https://cipvirtual.cip.org.pe/cas/login?service=https%3A%2F%2Fcipvirtual.cip.org.pe%2Fsiceseguridadweb%2Fj_spring_cas_security_check%3Bjsessionid%3DFauPLfqdCDu0n_gha9KS1Rs-UhObm5nm-xrLPzUA.serverweb%3Fspring-security-redirect%3D%2Finicio%2F" target="_blank">
-              <div class="card" src=""> <img class="card-img" src="web/images/tecnologia.png" alt="">
-                <div class="card-img-overlay"><img src="web/images/inalambrico.png" class="heart" alt="heart icon">
-                  <div class="bottom-text">
-                    <h5 class="card-title">CIP Virtual</h5>
-                    <p class="card-text">Ingresar</p>
-                  </div>
+
+        <div class="container recent" id="activity">
+            <div class="row">
+               <div class="owl-carousel owl-carousel2 owl-theme">
+
+                  <div>
+                    <a href="https://cipvirtual.cip.org.pe/cas/login?service=https%3A%2F%2Fcipvirtual.cip.org.pe%2Fsiceseguridadweb%2Fj_spring_cas_security_check%3Bjsessionid%3DFauPLfqdCDu0n_gha9KS1Rs-UhObm5nm-xrLPzUA.serverweb%3Fspring-security-redirect%3D%2Finicio%2F" target="_blank">
+                      <div class="card" src=""> <img class="card-img" src="web/images/tecnologia.png" alt="">
+                        <div class="card-img-overlay"><img src="web/images/inalambrico.png" class="heart" alt="heart icon">
+                          <div class="bottom-text">
+                            <h5 class="card-title">CIP Virtual</h5>
+                            <p class="card-text">Ingresar</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              </a> 
-            </div>  
-                 
-           <div>
+            </a>
+        </div>
+
+        <div>
             <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
               <div class="card"> <img class="card-img" src="web/images/graduacion.png" alt="">
                 <div class="card-img-overlay"> <img src="web/images/sombrero.png" class="heart" alt="heart icon">
                   <div class="bottom-text">
                     <h5 class="card-title">Acceso Colegiados</h5>
                     <p class="card-text">Ingresar</p>
-                  </div>
                 </div>
-              </div>
-          </a>
             </div>
+        </div>
+    </a>
+</div>
 
-            <div>
-                 <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
-              <div class="card"> <img class="card-img" src="web/images/grupal.png" alt="">
-                <div class="card-img-overlay"><img src="web/images/coordinar.png" class="heart" alt="heart icon">
-                  <div class="bottom-text">
-                    <h5 class="card-title">Oportunidad Laboral</h5>
-                    <p class="card-text">Revisar</p>
-                  </div>
-                </div>
-              </div>
-          </a>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="web/images/tramite.png" alt="">
-                <div class="card-img-overlay"> <a href="#"><img src="web/images/segtramite.png" class="heart" alt="heart icon"></a>
-                  <div class="bottom-text">
-                    <h5 class="card-title">Seguimiento Trámite</h5>
-                    <p class="card-text">Buscar</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            </div>
-    </div>
-         </div>
-     
-        
-
-        <!-- COMUNICADOS -->
-<<<<<<< HEAD
-        
-        <div class="popular page_section" style="padding: 30px">
-            <div class="container">        
-                <div class="row">
-                    <div class="col">
-                        <div class="section_title text-center">
-                            <h1>COMUNICADOS</h1>
-=======
-        <section class="commdiv">
-            <div class="popular page_section " style="padding: 30px">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="section_title text-center">
-                                <h1>COMUNICADOS</h1>
-                            </div>
->>>>>>> 770f464c46d6a9694a41323d314f580192e6ff3e
-                        </div>
-                    </div>
-                    <div class="row my-5">
-                        <?php while ($row = $resultado->fetch_assoc()) { ?>
-                            <div class="col-sm-6 col-lg-6">
-                                <div class="service-block-inner">
-                                    <h3><?php echo $row['titulo']; ?></h3>
-                                    <p><?php echo $row['descripcion']; ?></p>
-                                    <span><b>Publicado el </b><?php echo $row['fecha']; ?></span>
-                                </div>
-                            </div>
-                        <?php }
-                        ?>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                         <button type="button" class="btn btn-danger btn-sm " ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ver todos</button>
-                        </div>
-
-                    </div>
-                   
-                </div>
-<<<<<<< HEAD
-            </div>         
+<div>
+   <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
+      <div class="card"> <img class="card-img" src="web/images/grupal.png" alt="">
+        <div class="card-img-overlay"><img src="web/images/coordinar.png" class="heart" alt="heart icon">
+          <div class="bottom-text">
+            <h5 class="card-title">Oportunidad Laboral</h5>
+            <p class="card-text">Revisar</p>
+        </div>
     </div>
 </div>
-      
-=======
-            </div>
-        </section>
->>>>>>> 770f464c46d6a9694a41323d314f580192e6ff3e
+</a>
+</div>
 
-        <!-- PASAJES TERRESTRES -->
-        <div class="popular page_section" style="padding: 30px">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="section_title text-center">
-                            <h1>PASAJES TERRESTRES</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row course_boxes" style="margin-top : 10px;" id="pasajes_t_data">
+<div>
+  <div class="card"> <img class="card-img" src="web/images/tramite.png" alt="">
+    <div class="card-img-overlay"> <a href="#"><img src="web/images/segtramite.png" class="heart" alt="heart icon"></a>
+      <div class="bottom-text">
+        <h5 class="card-title">Seguimiento Trámite</h5>
+        <p class="card-text">Buscar</p>
+    </div>
+</div>
+</div>
+</div>
 
 
-                </div>
+</div>
+</div>
+</div>
 
 
-            </div>
-        </div>
-        <!-- PASAJES AEREOS -->
-        <div class="popular page_section" style="padding: 30px">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="section_title text-center">
-                            <h1>PASAJES AEREOS</h1>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row course_boxes" style="margin-top : 10px;" id="pasajes_a_data">
+<!-- COMUNICADOS -->
 
+<div class="popular page_section" style="padding: 30px">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center">
 
-                </div>
-
-                <div class="row">
-
-                  <div class="col-md-12">
-                      <br>
-                    <center>
-                      <a href="pasajes.php" class="btn btn-info">Ver más pasajes</a>
-                    </center>
-
-                  </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="popular page_section" style="padding: 30px">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-12">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Footer -->
-
-        <footer class="footer" style="padding: 15px !important;">
-          <div class="row">
-              <div class="col">
-                  <div class="section_title text-center">
-                      <h1>NUESTROS CONVENIOS</h1>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <center>
-                <img draggable="false" class="img-org" src="web/images/org2.png" width="150px;">
-              </center>
-            </div>
-            <div class="col-md-4">
-              <center>
-                <img draggable="false" class="img-org" src="web/images/org1.png" width="150px;">
-              </center>
-
-            </div>
-            <div class="col-md-4">
-              <center>
-                <img draggable="false" class="img-org" src="web/images/org3.png" width="150px;">
-              </center>
-
-            </div>
-          </div>
-            <div class="container">
-
-                <!-- Newsletter -->
-
-                <div class="newsletter" style="padding-bottom: 15px !important;">
-                    <div class="row">
-                        <div class="col">
-                            <div class="section_title text-center">
-                                <h1>UBIQUENOS Y CONTACTENOS</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-responsive">
-                        <div id="map"></div>
-                    </div>
-
-                </div>
-
-                <!-- Footer Content -->
-
-                <div class="footer_content" style="padding: 15px !important;">
-                    <div class="row">
-
-                        <!-- Footer Column - About -->
-                        <div class="col-lg-6 footer_col">
-
-                            <!-- Logo -->
-                            <div class="logo_container">
-                                <div class="logo">
-                                    <img src="web/images/logo-ex.png" width="240px;" alt="">
+                    <section class="commdiv">
+                        <div class="popular page_section " style="padding: 30px">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="section_title text-center">
+                                            <h1>COMUNICADOS</h1>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <p class="footer_about_text" id="descripcion"></p>
-
-                        </div>
-
-                        <!-- Footer Column - Menu -->
-
-                        <div class="col-lg-3 footer_col">
-                            <div class="footer_column_title">MENÚ</div>
-                            <div class="footer_column_content">
-                                <ul>
-                                  <li class="footer_list_item"><a href="http://planeaviajar.com/">INICIO</a></li>
-                                  <li class="footer_list_item"><a href="paquetes.php">COMUNICADOS</a></li>
-                                  <li class="footer_list_item"><a href="pasajes.php">PASAJES</a></li>
-                                  <li class="footer_list_item"><a href="turismo.php">TURISMO</a></li>
-                                  <li class="footer_list_item"><a href="somos.php">EMPRESA</a></li>
-                                  <li class="footer_list_item"><a href="contactanos.php">CONTACTANOS</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Footer Column - Usefull Links -->
-
-
-
-                        <!-- Footer Column - Contact -->
-
-                        <div class="col-lg-3 footer_col">
-                            <div class="footer_column_title">CONTACTANOS</div>
-                            <div class="footer_column_content">
-                                <ul>
-                                    <li class="footer_contact_item">
-                                        <div class="footer_contact_icon">
-                                            <img src="web/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                <div class="row my-5">
+                                    <?php while ($row = $resultado->fetch_assoc()) {?>
+                                        <div class="col-sm-6 col-lg-6">
+                                            <div class="service-block-inner">
+                                                <h3><?php echo $row['titulo']; ?></h3>
+                                                <p><?php echo $row['descripcion']; ?></p>
+                                                <span><b>Publicado el </b><?php echo $row['fecha']; ?></span>
+                                            </div>
                                         </div>
-                                        <span id="direccion"></span>
-                                    </li>
-                                    <li class="footer_contact_item">
-                                        <div class="footer_contact_icon">
-                                            <img src="web/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-                                        </div>
-                                        <span id="telefono-f"></span>
-                                    </li>
-                                    <li class="footer_contact_item">
-                                        <div class="footer_contact_icon">
-                                            <img src="web/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-                                        </div>
-                                        <span id="email"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                                    <?php }?>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                       <button type="button" class="btn btn-danger btn-sm " ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ver todos</button>
+                                   </div>
 
+                               </div>
+
+                           </div>
+
+                       </div>
+                   </div>
+               </div>
+
+           </div>
+       </section>
+
+       <!-- PASAJES TERRESTRES -->
+       <div class="popular page_section" style="padding: 30px">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h1>PASAJES TERRESTRES</h1>
                     </div>
                 </div>
+            </div>
 
-                <!-- Footer Copyright -->
+            <div class="row course_boxes" style="margin-top : 10px;" id="pasajes_t_data">
 
-                <div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
-                    <div class="footer_copyright">
-                        <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados por <i class="fa fa-heart" aria-hidden="true"></i> <a href="http://www.issi.pe/" target="_blank">ISSI</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-                    </div>
-                    <div class="footer_social ml-sm-auto">
-                        <ul class="menu_social">
-
-                            <li class="menu_social_item"><a href="https://www.instagram.com/jaexpeditions/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            <li class="menu_social_item"><a href="https://www.facebook.com/planeaviajar/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="menu_social_item"><a href="https://twitter.com/expeditions_a" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
 
             </div>
-        </footer>
 
 
-
-          <!-- Modal -->
-          <div class="modal fade" id="vervoleto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h2 class="modal-title" id="nombre_voleto">Modal title</h2>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+        </div>
+    </div>
+    <!-- PASAJES AEREOS -->
+    <div class="popular page_section" style="padding: 30px">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h1>PASAJES AEREOS</h1>
+                    </div>
                 </div>
-                <div class="modal-body">
+            </div>
+
+            <div class="row course_boxes" style="margin-top : 10px;" id="pasajes_a_data">
+
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-12">
+                  <br>
                   <center>
-                    <p id="descripcion_voleto"></p>
-                    <img src="multimedia/voletos/noimg.png" class="img-thumbnail" id="foto_voleto">
+                      <a href="pasajes.php" class="btn btn-info">Ver más pasajes</a>
                   </center>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
-                </div>
               </div>
-            </div>
           </div>
+      </div>
+  </div>
+
+
+  <div class="popular page_section" style="padding: 30px">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+
+<footer class="footer" style="padding: 15px !important;">
+  <div class="row">
+      <div class="col">
+          <div class="section_title text-center">
+              <h1>NUESTROS CONVENIOS</h1>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <center>
+        <img draggable="false" class="img-org" src="web/images/org2.png" width="150px;">
+    </center>
+</div>
+<div class="col-md-4">
+  <center>
+    <img draggable="false" class="img-org" src="web/images/org1.png" width="150px;">
+</center>
+
+</div>
+<div class="col-md-4">
+  <center>
+    <img draggable="false" class="img-org" src="web/images/org3.png" width="150px;">
+</center>
+
+</div>
+</div>
+<div class="container">
+
+    <!-- Newsletter -->
+
+    <div class="newsletter" style="padding-bottom: 15px !important;">
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center">
+                    <h1>UBIQUENOS Y CONTACTENOS</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-responsive">
+            <div id="map"></div>
+        </div>
 
     </div>
 
+    <!-- Footer Content -->
 
+    <div class="footer_content" style="padding: 15px !important;">
+        <div class="row">
 
-    <script src="web/js/jquery-3.2.1.min.js"></script>
-    <script src="web/styles/bootstrap4/popper.js"></script>
-    <script src="web/styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="web/plugins/greensock/TweenMax.min.js"></script>
-    <script src="web/plugins/greensock/TimelineMax.min.js"></script>
-    <script src="web/plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="web/plugins/greensock/animation.gsap.min.js"></script>
-    <script src="web/plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="web/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="web/plugins/scrollTo/jquery.scrollTo.min.js"></script>
-    <script src="web/plugins/easing/easing.js"></script>
-    <script src="web/js/custom.js"></script>
-    <script src="web/js/elements_custom.js"></script>
+            <!-- Footer Column - About -->
+            <div class="col-lg-6 footer_col">
 
-    <script src="web/js/main.js"></script>
-    <script src="web/js/owl.carousel.min.js"></script>
-    <script src="web/js/popper.min.js"></script>
+                <!-- Logo -->
+                <div class="logo_container">
+                    <div class="logo">
+                        <img src="web/images/logo-ex.png" width="240px;" alt="">
+                    </div>
+                </div>
 
-    <!--  script for google maps   -->
+                <p class="footer_about_text" id="descripcion"></p>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDadqvTI0dXKYyq2xoH6AhtJUTAkAthX-M"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min.js'></script>
-    <script src="web/js/maps.js"></script>
+            </div>
 
+            <!-- Footer Column - Menu -->
 
-    <script type="text/javascript" src="web/scripts/inicio.js"></script>
-    <script>
-        function innit() {
-          $.post("ajax/CCarousel.php?op=listar_web", {
-          }, function(data, status) {
-            $("#slider_data").html(data);
-            $('#slider_data').trigger('destroy.owl.carousel');
-            $("#slider_data").owlCarousel({
-              items:1,
-              loop:true,
-              smartSpeed:800,
-              autoplay:true,
-              nav:false,
-              dots:false
-            });
+            <div class="col-lg-3 footer_col">
+                <div class="footer_column_title">MENÚ</div>
+                <div class="footer_column_content">
+                    <ul>
+                      <li class="footer_list_item"><a href="http://planeaviajar.com/">INICIO</a></li>
+                      <li class="footer_list_item"><a href="paquetes.php">COMUNICADOS</a></li>
+                      <li class="footer_list_item"><a href="pasajes.php">PASAJES</a></li>
+                      <li class="footer_list_item"><a href="turismo.php">TURISMO</a></li>
+                      <li class="footer_list_item"><a href="somos.php">EMPRESA</a></li>
+                      <li class="footer_list_item"><a href="contactanos.php">CONTACTANOS</a></li>
+                  </ul>
+              </div>
+          </div>
 
-          });
-
-        };
-
-        innit();
-    </script>
+          <!-- Footer Column - Usefull Links -->
 
 
 
+          <!-- Footer Column - Contact -->
+
+          <div class="col-lg-3 footer_col">
+            <div class="footer_column_title">CONTACTANOS</div>
+            <div class="footer_column_content">
+                <ul>
+                    <li class="footer_contact_item">
+                        <div class="footer_contact_icon">
+                            <img src="web/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                        </div>
+                        <span id="direccion"></span>
+                    </li>
+                    <li class="footer_contact_item">
+                        <div class="footer_contact_icon">
+                            <img src="web/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                        </div>
+                        <span id="telefono-f"></span>
+                    </li>
+                    <li class="footer_contact_item">
+                        <div class="footer_contact_icon">
+                            <img src="web/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                        </div>
+                        <span id="email"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer Copyright -->
+
+<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+    <div class="footer_copyright">
+        <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados por <i class="fa fa-heart" aria-hidden="true"></i> <a href="http://www.issi.pe/" target="_blank">ISSI</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+        </div>
+        <div class="footer_social ml-sm-auto">
+            <ul class="menu_social">
+
+                <li class="menu_social_item"><a href="https://www.instagram.com/jaexpeditions/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li class="menu_social_item"><a href="https://www.facebook.com/planeaviajar/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="menu_social_item"><a href="https://twitter.com/expeditions_a" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</footer>
 
 
-    </script>
+
+<!-- Modal -->
+<div class="modal fade" id="vervoleto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="nombre_voleto">Modal title</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <center>
+        <p id="descripcion_voleto"></p>
+        <img src="multimedia/voletos/noimg.png" class="img-thumbnail" id="foto_voleto">
+    </center>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<script src="web/js/jquery-3.2.1.min.js"></script>
+<script src="web/styles/bootstrap4/popper.js"></script>
+<script src="web/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="web/plugins/greensock/TweenMax.min.js"></script>
+<script src="web/plugins/greensock/TimelineMax.min.js"></script>
+<script src="web/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="web/plugins/greensock/animation.gsap.min.js"></script>
+<script src="web/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="web/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="web/plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="web/plugins/easing/easing.js"></script>
+<script src="web/js/custom.js"></script>
+<script src="web/js/elements_custom.js"></script>
+
+<script src="web/js/main.js"></script>
+<script src="web/js/owl.carousel.min.js"></script>
+<script src="web/js/popper.min.js"></script>
+
+<!--  script for google maps   -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDadqvTI0dXKYyq2xoH6AhtJUTAkAthX-M"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min.js'></script>
+<script src="web/js/maps.js"></script>
+
+
+<script type="text/javascript" src="web/scripts/inicio.js"></script>
+<script>
+    function innit() {
+      $.post("ajax/CCarousel.php?op=listar_web", {
+      }, function(data, status) {
+        $("#slider_data").html(data);
+        $('#slider_data').trigger('destroy.owl.carousel');
+        $("#slider_data").owlCarousel({
+          items:1,
+          loop:true,
+          smartSpeed:800,
+          autoplay:true,
+          nav:false,
+          dots:false
+      });
+
+    });
+
+  };
+
+  innit();
+</script>
+
+
+
+
+
+</script>
 
 </body>
 </html>
