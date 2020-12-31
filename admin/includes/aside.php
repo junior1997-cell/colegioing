@@ -24,66 +24,66 @@ if (strlen(session_id()) < 1) {
 
       <li>
         <a href="usuario.php">
-        <i class="fa fa-user"></i> <span>Usuarios</span>
+          <i class="fa fa-user"></i> <span>Usuarios</span>
 
-      </a>
+        </a>
       </li>
       <li>
         <a href="carousel.php">
-        <i class="fa fa-newspaper-o"></i> <span>Carousel</span>
-      </a>
+          <i class="fa fa-newspaper-o"></i> <span>Carousel</span>
+        </a>
       </li>
       <li>
         <a href="paquetes.php">
-        <i class="fa fa-newspaper-o"></i> <span>Paquetes</span>
-      </a>
+          <i class="fa fa-newspaper-o"></i> <span>Paquetes</span>
+        </a>
       </li>
       <li>
         <a href="pasajes.php">
-        <i class="fa fa-newspaper-o"></i> <span>Pasajes</span>
-      </a>
+          <i class="fa fa-newspaper-o"></i> <span>Pasajes</span>
+        </a>
       </li>
       <li>
         <a href="turisticos.php">
-        <i class="fa fa-newspaper-o"></i> <span>Turismo</span>
-      </a>
+          <i class="fa fa-newspaper-o"></i> <span>Turismo</span>
+        </a>
       </li>
       <li>
         <a href="contactanos.php">
-        <i class="fa fa-newspaper-o"></i> <span>Contactanos y Empresa</span>
-      </a>
+          <i class="fa fa-newspaper-o"></i> <span>Contactanos y Empresa</span>
+        </a>
 
         <li id="mConsultaV" class="treeview">
-        <a href="#">
-          <i class="fa fa-newspaper-o"></i> <span>Publicaciones</span>
-          <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i> Comunicados</a></li> 
-          <li id="lConsulasV"><a href="eventos.php"><i class="fa fa-circle-o"></i> EVENTOS</a></li>
-          <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>NOTICIAS</a></li>
-           <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>CEREMONIAS DE COLEGIATURA</a></li> 
-           <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>ACTIVIDADES</a></li> 
-           <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-handshake-o"></i>CONVENIOS</a></li>
-           <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>                         
-        </ul>
-      </li>;
+          <a href="#">
+            <i class="fa fa-newspaper-o"></i> <span>Publicaciones</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i> Comunicados</a></li>
+            <li id="lConsulasV"><a href="eventos.php"><i class="fa fa-circle-o"></i> EVENTOS</a></li>
+            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>NOTICIAS</a></li>
+            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>CEREMONIAS DE COLEGIATURA</a></li>
+            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>ACTIVIDADES</a></li>
+            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-handshake-o"></i>CONVENIOS</a></li>
+            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>
+          </ul>
+        </li>
 
-      <li id="mCompras" class="treeview">
-              <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Institucion</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
-                <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
-                <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
-                <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
-              </ul>
-            </li>
+        <li id="mCompras" class="treeview">
+          <a href="#">
+            <i class="fa fa-th"></i>
+            <span>Institucion</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
+            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
+          </ul>
+        </li>
 
-    </ul>
-  </section>
-  <!-- /.sidebar -->
-</aside>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

@@ -209,8 +209,6 @@ $resultado = ejecutarConsulta($sql);
 </div>
 </div>
 
-
-
 <!-- COMUNICADOS -->
 
 <div class="popular page_section" style="padding: 30px">
