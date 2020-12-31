@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="web/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="web/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="web/styles/responsive.css">
+    
     <style>
       .map-responsive {
         overflow: hidden;

@@ -1,6 +1,8 @@
 <?php
-if (strlen(session_id()) < 1)
-  session_start();
+if (strlen(session_id()) < 1) {
+    session_start();
+}
+
 ?>
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
@@ -67,6 +69,19 @@ if (strlen(session_id()) < 1)
         </ul>
       </li>;
 
+      <li id="mCompras" class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Institucion</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
+                <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
+                <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
+                <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
+              </ul>
+            </li>
 
     </ul>
   </section>
