@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="web/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="web/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="web/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/production.css">
     <style media="screen">
     .img-org{
       -webkit-filter: brightness(0.9) !important;
@@ -143,13 +144,75 @@
             </div>
 
         </div>
+        <br>
+        <br>
+
+            
+            <div class="container recent" id="activity">
+                <div class="row">
+                 <div class="owl-carousel owl-carousel2 owl-theme">
+                    
+              <div>
+                <a href="https://cipvirtual.cip.org.pe/cas/login?service=https%3A%2F%2Fcipvirtual.cip.org.pe%2Fsiceseguridadweb%2Fj_spring_cas_security_check%3Bjsessionid%3DFauPLfqdCDu0n_gha9KS1Rs-UhObm5nm-xrLPzUA.serverweb%3Fspring-security-redirect%3D%2Finicio%2F" target="_blank">
+              <div class="card" src=""> <img class="card-img" src="web/images/tecnologia.png" alt="">
+                <div class="card-img-overlay"><img src="web/images/inalambrico.png" class="heart" alt="heart icon">
+                  <div class="bottom-text">
+                    <h5 class="card-title">CIP Virtual</h5>
+                    <p class="card-text">Ingresar</p>
+                  </div>
+                </div>
+              </div>
+              </a> 
+            </div>  
+                 
+           <div>
+            <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
+              <div class="card"> <img class="card-img" src="web/images/graduacion.png" alt="">
+                <div class="card-img-overlay"> <img src="web/images/sombrero.png" class="heart" alt="heart icon">
+                  <div class="bottom-text">
+                    <h5 class="card-title">Acceso Colegiados</h5>
+                    <p class="card-text">Ingresar</p>
+                  </div>
+                </div>
+              </div>
+          </a>
+            </div>
+
+            <div>
+                 <a href="http://colegiados.cipmoyobamba.org/" target="_blank">
+              <div class="card"> <img class="card-img" src="web/images/grupal.png" alt="">
+                <div class="card-img-overlay"><img src="web/images/coordinar.png" class="heart" alt="heart icon">
+                  <div class="bottom-text">
+                    <h5 class="card-title">Oportunidad Laboral</h5>
+                    <p class="card-text">Revisar</p>
+                  </div>
+                </div>
+              </div>
+          </a>
+            </div>
+
+            <div>
+              <div class="card"> <img class="card-img" src="web/images/tramite.png" alt="">
+                <div class="card-img-overlay"> <a href="#"><img src="web/images/segtramite.png" class="heart" alt="heart icon"></a>
+                  <div class="bottom-text">
+                    <h5 class="card-title">Seguimiento Trámite</h5>
+                    <p class="card-text">Buscar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
+            </div>
+    </div>
+         </div>
+     
+        
 
         <!-- COMUNICADOS -->
         
         <div class="popular page_section" style="padding: 30px">
-            <div class="container">
+            <div class="container">        
                 <div class="row">
                     <div class="col">
                         <div class="section_title text-center">
@@ -176,23 +239,11 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                 </div>
-            </div>
+            </div>         
+    </div>
+</div>
+      
 
-                <div class="row course_boxes" id="paquetes_data">
-
-
-                </div>
-
-                <div class="col-md-12">
-                  <br>
-                  <center>
-                    <a href="paquetes.php" class="btn btn-info">Ver más tours</a>
-                  </center>
-
-                </div>
-
-            </div>
-        </div>
         <!-- PASAJES TERRESTRES -->
         <div class="popular page_section" style="padding: 30px">
             <div class="container">
@@ -439,6 +490,10 @@
     <script src="web/plugins/easing/easing.js"></script>
     <script src="web/js/custom.js"></script>
     <script src="web/js/elements_custom.js"></script>
+
+    <script src="web/js/main.js"></script>
+    <script src="web/js/owl.carousel.min.js"></script>
+    <script src="web/js/popper.min.js"></script>
 
     <!--  script for google maps   -->
 
