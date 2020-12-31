@@ -60,7 +60,7 @@ if (!isset($_SESSION["usuario"])) {
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="himno" class="control-label">himno</label>
+                      <label for="himno" class="control-label">himnoo</label>
                       <textarea class="form-control" name="himno" id="himno" rows="3"></textarea>
                     </div>
 
