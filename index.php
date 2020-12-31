@@ -292,7 +292,7 @@ $resultado = ejecutarConsulta($sql);
               <div class="col-md-12">
                   <br>
                   <center>
-                      <a href="pasajes.php" class="btn btn-info">Ver más pasajes</a>
+                      <a href="pasajes.php" class="btn btn-info">Ver mássss pasajes</a>
                   </center>
 
               </div>
