@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+include 'config/conexion.php';
+
+$sql = "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
+$resultado = ejecutarConsulta($sql);
+     
+?>
 
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>CIP Consejo departamental de San Martin-Moyobamba</title>
@@ -37,16 +44,7 @@
       }
     </style>
 </head>
-<div class="top-bar">
-<i class="fa fa-university" aria-hidden="true"></i>
-    <!--<div class="padre">
-        <div class="hijo">COLEGIO DE INGENIEROS DEL PERÚ</div>
-    <div>-->
-</div>
-
 <body>
-
-    <audio id="audio_inicio" src="web/aves.mpeg" autoplay="false" loop="true"></audio>
     <div class="super_container">
 
         <!-- Header -->
@@ -147,52 +145,37 @@
 
 
         <!-- COMUNICADOS -->
-        
-        <div class="popular page_section" style="padding: 30px">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="section_title text-center">
-                            <h1>COMUNICADOS</h1>
+        <section class="commdiv">
+            <div class="popular page_section " style="padding: 30px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="section_title text-center">
+                                <h1>COMUNICADOS</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row my-5">
-                <div class="col-sm-4 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>Somos de confianza</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <div class="row my-5">
+                        <?php while ($row = $resultado->fetch_assoc()) { ?>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-block-inner">
+                                    <h3><?php echo $row['titulo']; ?></h3>
+                                    <p><?php echo $row['descripcion']; ?></p>
+                                    <span><b>Publicado el </b><?php echo $row['fecha']; ?></span>
+                                </div>
+                            </div>
+                        <?php }
+                        ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                         <button type="button" class="btn btn-danger btn-sm " ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ver todos</button>
+                        </div>
+
                     </div>
-                </div>
-                <div class="col-sm-4 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>Nosotros somos expertos</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>Nosotros somos expertos</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
+                   
                 </div>
             </div>
+        </section>
 
-                <div class="row course_boxes" id="paquetes_data">
-
-
-                </div>
-
-                <div class="col-md-12">
-                  <br>
-                  <center>
-                    <a href="paquetes.php" class="btn btn-info">Ver más tours</a>
-                  </center>
-
-                </div>
-
-            </div>
-        </div>
         <!-- PASAJES TERRESTRES -->
         <div class="popular page_section" style="padding: 30px">
             <div class="container">
@@ -247,9 +230,6 @@
                 <div class="row">
 
                     <div class="col-md-12">
-                      <center>
-                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/3xvVqo9teXA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                      </center>
                     </div>
                 </div>
 
@@ -478,3 +458,5 @@
 
 </body>
 </html>
+
+
