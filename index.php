@@ -251,8 +251,6 @@ $resultado = ejecutarConsulta($sql);
                              </div>
 
                          </div>
-
-<<<<<<< HEAD
                        </div>
                     </section>
 
@@ -275,8 +273,6 @@ $resultado = ejecutarConsulta($sql);
  </div>
 </div>
  </div>
-        
-=======
                      </div>
                  </div>
              </div>
@@ -287,7 +283,6 @@ $resultado = ejecutarConsulta($sql);
      <!-- PASAJES TERRESTRES -->
      <div class="popular page_section" style="padding: 30px">
         <div class="container">
->>>>>>> 540014afd120079e835e18a1f5c70661a704b538
             <div class="row">
                 <div class="col-lg-6">
                     <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right"
