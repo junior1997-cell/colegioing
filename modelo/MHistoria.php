@@ -20,19 +20,19 @@ class MHistoria
         		SET	reseña_historia='$reseña_historia',
         		decano_periodo_gestion='$decano_periodo_gestion',
         		himno='$himno'
-        		WHERE idcontactanos='1'";
+        		WHERE id='1'";
         return ejecutarConsulta($sql);
     }
 
     public function mostrar()
     {
-        $sql = "SELECT * FROM historia WHERE idcontactanos='1'";
+        $sql = "SELECT * FROM historia WHERE id='1'";
         return ejecutarConsultaSimpleFila($sql);
     }
 
     public function listar()
     {
-        $sql = "SELECT * FROM historia ORDER BY idcontactanos";
+        $sql = "SELECT * FROM historia ORDER BY id";
         return ejecutarConsulta($sql);
     }
 

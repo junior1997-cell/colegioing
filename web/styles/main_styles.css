@@ -73,28 +73,28 @@ div
 	display: block;
 	position: relative;
 	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 /*********************************
 2. div inicial
 *********************************/
 .top-bar{
-padding: 6px 0px 6px;
-background-color: #E31E24;
+	padding: 6px 0px 6px;
+	background-color: #E31E24;
 }
 
 .padre {
 	display: table;
 	height:1px;
 	padding-left: 25px;
- }
- .hijo {
+}
+.hijo {
 	/*display: table-cell;*/
 	vertical-align: middle;
 	color: #eaebec;
 
- }
+}
 ul
 {
 	list-style: none;
@@ -943,7 +943,7 @@ section
 .card-img-top
 {
 	border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+	border-top-right-radius: 0px;
 }
 .card-body
 {
@@ -1537,14 +1537,14 @@ input:last-of-type
 }
 
 .about-box-main a{
-   color: #ffffff;
-   font-size: 18px;
-   font-weight: 700;
-   border: none;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 700;
+	border: none;
 }
 
 .about-box-main a.btn{
-   padding: 12px 15px;
+	padding: 12px 15px;
 }
 
 .service-block-inner::before {
@@ -1586,22 +1586,27 @@ input:last-of-type
 }
 
 .service-block-inner:hover h3{
-   color: #000000;
-   transition: all 0.5s ease 0s;
+	color: #000000;
+	transition: all 0.5s ease 0s;
 }
 
 .service-block-inner:hover p{
-   color: #080000;
-   transition: all 0.5s ease 0s;
+	color: #080000;
+	transition: all 0.5s ease 0s;
 }
 
 .commdiv{
-	background-image:url("../images/ff.png");
-	background-size: cover;
+	background-image:url("../images/fff44.png");
+	/*background-size: cover;
 	position: relative;
 	width: 100%;
 	height: 100%;
 	top: 0;
-	left: 0;
+	left: 0;*/
 	z-index: 1;
+	background-size: auto auto;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
