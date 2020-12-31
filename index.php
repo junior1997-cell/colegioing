@@ -24,6 +24,10 @@ $resultado = ejecutarConsulta($sql);
     <link rel="stylesheet" type="text/css" href="web/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="web/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="web/styles/production.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/loaders.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/aos.css">
+    <link rel="stylesheet" type="text/css" href="web/styles/swiper.css">
     <style media="screen">
         .img-org{
           -webkit-filter: brightness(0.9) !important;
@@ -497,6 +501,8 @@ $resultado = ejecutarConsulta($sql);
 <script src="web/js/main.js"></script>
 <script src="web/js/owl.carousel.min.js"></script>
 <script src="web/js/popper.min.js"></script>
+<script src="web/js/loaders.css.js"></script>
+<script src="web/js/aos.js"></script>
 
 <!--  script for google maps   -->
 
