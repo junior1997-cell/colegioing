@@ -53,7 +53,7 @@ function actualizar_contactanos(e) {
         success: function(datos) {
             if (datos == 1) {
                 swal({
-                    title: "😃 Exitó 😀",
+                    title: "😃😃 Exitó 😀😀",
                     timer: 2000,
                     type: "success"
                 });

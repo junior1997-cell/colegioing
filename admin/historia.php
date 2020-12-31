@@ -50,17 +50,17 @@ if (!isset($_SESSION["usuario"])) {
                   <div class="box-body">
 
                     <div class="form-group col-md-12">
-                      <label for="reseña_historia" class="control-label">reseña_historia</label>
+                      <label for="reseña_historia" class="control-label">RESEÑA HISTORICA</label>
                       <textarea class="form-control" name="reseña_historia" id="reseña_historia" rows="3"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="decano_periodo_gestion" class="control-label">decano_periodo_gestion</label>
+                      <label for="decano_periodo_gestion" class="control-label">DECANOS</label>
                       <textarea class="form-control" name="decano_periodo_gestion" id="decano_periodo_gestion" rows="3"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="himno" class="control-label">himnoo</label>
+                      <label for="himno" class="control-label">HIMNO</label>
                       <textarea class="form-control" name="himno" id="himno" rows="3"></textarea>
                     </div>
 
