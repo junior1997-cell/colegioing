@@ -20,11 +20,9 @@ function init() {
 }
 
 function contactanos(a) {
-    $("#direccion").prop('disabled', a);
-    $("#coordenadas").prop('disabled', a);
-    $('#btn_actualizar_m').prop("disabled", a);
-    $('#telefono').prop("disabled", a);
-    $('#email').prop("disabled", a);
+    $("#reseña_historia").prop('disabled', a);
+    $("#decano_periodo_gestion").prop('disabled', a);
+    $('#himno').prop("disabled", a);
 }
 
 function editar_contactanos() {
@@ -35,10 +33,11 @@ function editar_contactanos() {
 function mostrar_contactanos() {
     $.post("../ajax/CHistoria.php?op=mostrar", {}, function(data, status) {
         data = JSON.parse(data);
-        $("#direccion").val(data.direccion);
-        $("#coordenadas").val(data.coordenadas);
-        $("#telefono").val(data.telefono);
-        $("#email").val(data.email);
+        console.log(data);
+        // console
+        $("#reseña_historia").val(data.reseña_historia);
+        $("#decano_periodo_gestion").val(data.decano_periodo_gestion);
+        $("#himno").val(data.himno);
     })
 }
 
@@ -74,14 +73,9 @@ function actualizar_contactanos(e) {
 }
 /****/
 function empresa(a) {
-    $("#nombre").prop('disabled', a);
-    $("#lema").prop('disabled', a);
-    $('#descripcion').prop("disabled", a);
-    $('#mision').prop("disabled", a);
-    $('#vision').prop("disabled", a);
-    $('#valores').prop("disabled", a);
-    $('#politica').prop("disabled", a);
-    $('#servicios').prop("disabled", a);
+    $('#reseña_historia').prop("disabled", a);
+    $('#decano_periodo_gestion').prop("disabled", a);
+    $('#himno').prop("disabled", a);
     $('#btn_actualizar_e').prop("disabled", a);
 }
 
@@ -91,17 +85,13 @@ function editar_empresa() {
 }
 
 function mostrar_empresa() {
-    $.post("../ajax/CEmpresa.php?op=mostrar", {}, function(data, status) {
+    $.post("../ajax/CHistoria.php?op=mostrar", {}, function(data, status) {
         data = JSON.parse(data);
         console.log(data);
-        $("#nombre").val(decodeHtml(data.nombre));
-        $("#lema").val(decodeHtml(data.lema));
-        $('#descripcion').val(decodeHtml(data.descripcion));
-        $('#mision').val(decodeHtml(data.mision));
-        $('#vision').val(decodeHtml(data.vision));
-        $('#valores').val(decodeHtml(data.valores));
-        $('#politica').val(decodeHtml(data.politica));
-        $('#servicios').val(decodeHtml(data.servicios));
+        
+        $('#reseña_historia').val(decodeHtml(data.reseña_historia));
+        $('#decano_periodo_gestion').val(decodeHtml(data.decano_periodo_gestion));
+        $('#himno').val(decodeHtml(data.himno));
     })
 }
 
@@ -109,7 +99,7 @@ function actualizar_empresa(e) {
     e.preventDefault(); //No se activará la acción predeterminada del evento
     var formData = new FormData($("#formulario_empresa")[0]);
     $.ajax({
-        url: "../ajax/CEmpresa.php?op=actualizar",
+        url: "../ajax/CHistoria.php?op=actualizar",
         type: "POST",
         data: formData,
         contentType: false,

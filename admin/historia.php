@@ -38,8 +38,9 @@ if (!isset($_SESSION["usuario"])) {
                   <h3 class="box-title fa fa-university"> DATOS DEL COLEGIO</h3>
                 </center>
                 <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                					</button>
+                  	<button type="button" class="btn btn-box-tool" data-widget="collapse">
+                  		<i class="fa fa-minus"></i>
+                	</button>
                 </div>
               </div>
 
@@ -48,31 +49,19 @@ if (!isset($_SESSION["usuario"])) {
                 <form class="form" id="formulario_empresa">
                   <div class="box-body">
 
-
                     <div class="form-group col-md-12">
-                      <label for="nombre" class="control-label">Nombre</label>
-                      <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese la dirección de J&A Expeditions...">
-                    </div>
-
-
-                    <div class="form-group col-md-12">
-                      <label for="descripcion" class="control-label">Presentacion</label>
-                      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                      <label for="reseña_historia" class="control-label">reseña_historia</label>
+                      <textarea class="form-control" name="reseña_historia" id="reseña_historia" rows="3"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="mision" class="control-label">Misión</label>
-                      <textarea class="form-control" name="mision" id="mision" rows="3"></textarea>
+                      <label for="decano_periodo_gestion" class="control-label">decano_periodo_gestion</label>
+                      <textarea class="form-control" name="decano_periodo_gestion" id="decano_periodo_gestion" rows="3"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="vision" class="control-label">Visión</label>
-                      <textarea class="form-control" name="vision" id="vision" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                      <label for="valores" class="control-label">Objetivos</label>
-                      <textarea class="form-control" name="valores" id="valores" rows="3"></textarea>
+                      <label for="himno" class="control-label">himno</label>
+                      <textarea class="form-control" name="himno" id="himno" rows="3"></textarea>
                     </div>
 
                    <!--  <div class="form-group col-md-12">
