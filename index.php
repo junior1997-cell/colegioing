@@ -392,7 +392,7 @@
                      data-aos-duration="800">
                      <div class="row">
                         <div class="col-lg-6" style="padding: 40px 0px 0px 0px !important" >
-                        <div class="post-content">
+                        <div class="post-content text-sm-right">
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                             <h3>
                                 <span>
