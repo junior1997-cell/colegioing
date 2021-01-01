@@ -32,6 +32,7 @@ $resultado = ejecutarConsulta($sql);
     <link rel="stylesheet" type="text/css" href="web/styles/estilo.css">
     <link rel="stylesheet" type="text/css" href="web/styles/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="web/styles/modal.css">
+    <link rel="stylesheet" type="text/css" href="web/css/menu.css">
     <style media="screen">
         .img-org{
           -webkit-filter: brightness(0.9) !important;
@@ -61,9 +62,9 @@ $resultado = ejecutarConsulta($sql);
         <header class="header d-flex flex-row">
             <div class="header_content d-flex flex-row align-items-center">
                 <!-- Logo -->
-                <div class="logo_container" style="padding-left: 10px;">
+                <div class="logo_container" >
                     <div class="logo">
-                        <img src="web/images/cip.png" alt="" width="200px;">
+                        <img src="web/images/1.png" alt="" width="150px; ">
                         <span> &nbsp;</span>
                     </div>
                 </div>
@@ -72,7 +73,19 @@ $resultado = ejecutarConsulta($sql);
                 <nav class="main_nav_container">
                     <div class="main_nav">
                         <ul class="main_nav_list">
-                            <li class="main_nav_item"><a href="index.php">INICIO </a></li>
+                            <li class="main_nav_item">
+                                <a href="pasajes.php">Inicio
+                                    <i class="icon ion-md-arrow-dropdown"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Colegiatura</a><i >
+
+                                    </li>
+                                    <li><a href="#">Desarrollo web</a></li>
+                                    <li><a href="#">Aplicaciones nativas</a></li>
+                                </ul>
+                            </li>
                             <li class="main_nav_item"><a href="paquetes.php">INSTITUCIÓN</a></li>
                             <li class="main_nav_item"><a href="pasajes.php">TRÁMITES</a></li>
                             <li class="main_nav_item"><a href="turismo.php">CAPÍTULOS</a></li>
@@ -253,7 +266,7 @@ $resultado = ejecutarConsulta($sql);
                        </div>
                     </section>
 
-                   
+
                </div>
 
            </div>
@@ -262,7 +275,7 @@ $resultado = ejecutarConsulta($sql);
 </div>
 
 
- 
+
 
 <section class="recent-posts page-section portfolio" id="portfolio">
 <div class="row">
@@ -272,7 +285,7 @@ $resultado = ejecutarConsulta($sql);
  </div>
 </div>
  </div>
-        
+
             <div class="row">
                 <div class="col-lg-6">
                     <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right"
@@ -280,12 +293,12 @@ $resultado = ejecutarConsulta($sql);
                         <div class="post-content text-sm-right">
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                             <h3><span>Proudly for us to build stylish</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>                            
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
                         </div>
 
-                        <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal1"> 
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>                         
+                        <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
                             <img class="img-fluid" src="web/images/post1.jpg" style="height: 320px; width: 900px;" alt="Post 1">
                         </div>
                     </div>
@@ -294,14 +307,14 @@ $resultado = ejecutarConsulta($sql);
                 <div class="col-lg-6">
                     <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-duration="800">
                         <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>  
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
                             <img class="img-fluid" src="web/images/post2.jpg" style="height: 320px; width: 500px;" alt="Post 2">
                         </div>
                         <div class="post-content">
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                             <h3><span>Remind me to water the plants</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>                            
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
                         </div>
                     </div>
                 </div>
@@ -313,11 +326,11 @@ $resultado = ejecutarConsulta($sql);
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                             <h3><span>Add apples to the grocery list</span></h3>
                             <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
-                            
+
                         </div>
                         <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>  
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
                             <img class="img-fluid" src="web/images/tramite.png" style="height: 320px; width: 500px;" alt="Post 1">
                         </div>
                     </div>
@@ -326,15 +339,15 @@ $resultado = ejecutarConsulta($sql);
                     <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-delay="200"
                         data-aos-duration="800">
                         <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">                         
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>  
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
                             <img class="img-fluid" src="web/images/captura.png" style="height: 320px; width: 500px;" alt="Post 1">
                         </div>
                         <div class="post-content">
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                             <h3><span>Retos y Desafíos del sector agua y saneamiento en el ambito
                             rural en la región san martin, en el contexto covid 19</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>                            
+                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
                         </div>
                     </div>
                 </div>
@@ -342,7 +355,7 @@ $resultado = ejecutarConsulta($sql);
             <div class="text-center">
                 <a href="#" class="btn btn-primary">See More</a>
             </div>
-        
+
     </section>
 
 

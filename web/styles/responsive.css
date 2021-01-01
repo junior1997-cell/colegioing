@@ -138,7 +138,26 @@
 {
 	.main_nav_item
 	{
-		margin-right: 33px;
+		margin-right: 0px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0rem 0.3rem !important;
+		line-height: 5rem;
+		color: #0a0a0a;
+		text-decoration: none;
+	}
+	.main_nav_item a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #3a3a3a;
+		-webkit-transition: all 200ms ease;
+		-moz-transition: all 200ms ease;
+		-ms-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
 	}
 }
 
@@ -154,7 +173,15 @@
 	}
 	.logo_container
 	{
-		padding-left: 30px;
+		padding-left: 10px;
+    	padding-top: 0px;
+	}
+	.header_side span
+	{
+		display: none;
+	}
+	.header_side img {
+		display: none;
 	}
 	.hamburger_container
 	{

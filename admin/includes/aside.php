@@ -39,11 +39,6 @@ if (strlen(session_id()) < 1) {
         </a>
       </li>
       <li>
-        <a href="pasajes.php">
-          <i class="fa fa-newspaper-o"></i> <span>Pasajes</span>
-        </a>
-      </li>
-      <li>
         <a href="turisticos.php">
           <i class="fa fa-newspaper-o"></i> <span>Turismo</span>
         </a>
@@ -64,7 +59,7 @@ if (strlen(session_id()) < 1) {
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>NOTICIAS</a></li>
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>CEREMONIAS DE COLEGIATURA</a></li>
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>ACTIVIDADES</a></li>
-            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-handshake-o"></i>CONVENIOS</a></li>
+            <li id="lConsulasV"><a href="convenios.php"><i class="fa fa-handshake-o"></i>CONVENIOS</a></li>
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>
           </ul>
         </li>

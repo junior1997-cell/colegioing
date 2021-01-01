@@ -1,12 +1,11 @@
 <?php
 if (strlen(session_id()) < 1)
     session_start();
-require_once '../modelo/MVoletos.php';
-$voletos= new MVoletos();
+require_once '../modelo/Mconvenios.php';
+$convenios= new Mconvenios();
 
-$idvoletos= isset($_POST["idpasajes"])?limpiarCadena($_POST["idpasajes"]):"";
+$idconvenios= isset($_POST["idconvenios"])?limpiarCadena($_POST["idconvenios"]):"";
 $nombre = isset($_POST["nombre"])?limpiarCadena($_POST["nombre"]):"";
-$tipo = isset($_POST["tipo"])?limpiarCadena($_POST["tipo"]):"";
 $descripcion = isset($_POST["descripcion"])?limpiarCadena($_POST["descripcion"]):"";
 $foto = isset($_POST["foto"])?limpiarCadena($_POST["foto"]):"";
 
@@ -24,86 +23,83 @@ switch($op){
         $ext_p = explode(".", $_FILES["foto"]["name"]);
         if ($_FILES['foto']['type'] == "image/jpg" || $_FILES['foto']['type'] == "image/jpeg" || $_FILES['foto']['type'] == "image/png"){
           $foto = rand(0, 20) . round(microtime(true)) . rand(21, 41) . '.' . end($ext_p);
-          move_uploaded_file($_FILES["foto"]["tmp_name"], "../multimedia/voletos/" . $foto);
+          move_uploaded_file($_FILES["foto"]["tmp_name"], "../multimedia/convenios/" . $foto);
         }
       }
 
-      if (empty($idvoletos)){
-        $rspta=$voletos->insertar($nombre,$descripcion,$tipo,$foto);
+      if (empty($idconvenios)){
+        $rspta=$convenios->insertar($nombre,$descripcion,$foto);
         echo $rspta;
       }else {
           if($flat_foto==true){
-              $datos_f =$voletos->nombreFoto($idvoletos);
+              $datos_f =$convenios->nombreFoto($idconvenios);
               $nombre_img_ant=$datos_f->fetch_object()->foto;
               if($nombre_img_ant!=""){
-                unlink("../multimedia/voletos/".$nombre_img_ant);
+                unlink("../multimedia/convenios/".$nombre_img_ant);
               }
           }
-          $rspta=$voletos->editar($idvoletos,$nombre,$descripcion,$tipo,$foto);
+          $rspta=$convenios->editar($idconvenios,$nombre,$descripcion,$foto);
           echo $rspta;
       }
 	break;
 
 	case 'desactivar':
-		$rspta=$voletos->desactivar($idvoletos);
+		$rspta=$convenios->desactivar($idconvenios);
  		echo $rspta;
 	break;
 
   case 'eliminar':
-    $datos_f =$voletos->nombreFoto($idvoletos);
+    $datos_f =$convenios->nombreFoto($idconvenios);
     $nombre_img_ant=$datos_f->fetch_object()->foto;
 
-		$rspta=$voletos->eliminar($idvoletos);
+		$rspta=$convenios->eliminar($idconvenios);
     if($rspta==1 && $nombre_img_ant!=""){
-      unlink("../multimedia/voletos/".$nombre_img_ant);
+      unlink("../multimedia/convenios/".$nombre_img_ant);
     }
  		echo $rspta;
 	break;
 
 	case 'activar':
-		$rspta=$voletos->activar($idvoletos);
+		$rspta=$convenios->activar($idconvenios);
  		echo $rspta;
 	break;
 
 	case 'mostrar':
-		$rspta=$voletos->mostrar($idvoletos);
+		$rspta=$convenios->mostrar($idconvenios);
  		echo json_encode($rspta);
 	break;
 
 	case 'listar':
-		$rspta=$voletos->listar();
+		$rspta=$convenios->listar();
  		$data = Array();
     $cont = $rspta->num_rows;
 
  		while ($reg=$rspta->fetch_object()){
-      $tipo_nombre="null";
-      if(($reg->tipo)==1){$tipo_nombre="Terrestre";}
-      if(($reg->tipo)==2){$tipo_nombre="Aereo";}
 
  			$data[]=array(
  				"0" => $cont--,
  				"1" => $reg->nombre,
-				"2" => $tipo_nombre,
-        "3" => '<img src="../multimedia/voletos/'.$reg->foto.'" class="img-thumbnail" width="100px">',
+				"2" => $reg->descripcion,
+        "3" => '<img src="../multimedia/convenios/'.$reg->foto.'" class="img-thumbnail" width="100px">',
         "4" => ($reg->estado)?'<small class="label pull-right bg-red">DESHABILITADO</small>':'<small class="label pull-right bg-green">ACTIVO</small>',
 				"5" => ($reg->estado)?'<center>'
-        .'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idvoletos.')">'
+        .'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idconvenio.')">'
           .'<i class="fa fa-edit"></i>'
         .'</button> '
-        .'<button class="btn btn-success btn-xs" onclick="activar('.$reg->idvoletos.')">'
+        .'<button class="btn btn-success btn-xs" onclick="activar('.$reg->idconvenio.')">'
           .'<i class="fa fa-check-circle"></i>'
         .'</button> '
-        .'<button class="btn btn-danger btn-xs" onclick="eliminar('.$reg->idvoletos.')">'
+        .'<button class="btn btn-danger btn-xs" onclick="eliminar('.$reg->idconvenio.')">'
           .'<i class="fa fa-trash"></i>'
         .'</button>'
         .'</center>':'<center>'
-        .'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idvoletos.')">'
+        .'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idconvenio.')">'
           .'<i class="fa fa-edit"></i>'
         .'</button> '
-        .'<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idvoletos.')">'
+        .'<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idconvenio.')">'
           .'<i class="fa fa-close"></i>'
         .'</button> '
-        .'<button class="btn btn-danger btn-xs" onclick="eliminar('.$reg->idvoletos.')">'
+        .'<button class="btn btn-danger btn-xs" onclick="eliminar('.$reg->idconvenio.')">'
           .'<i class="fa fa-trash"></i>'
         .'</button>'
         .'</center>'
@@ -119,10 +115,10 @@ switch($op){
 	break;
 
   case 'listar_web':
-      $rspta=$voletos->listar_web();
+      $rspta=$convenios->listar_web();
       while ($reg=$rspta->fetch_object()){
         $data[]=array(
-          "id" => $reg->idvoletos,
+          "id" => $reg->idconvenios,
           "nombre" => $reg->nombre,
           "foto" => $reg->foto,
           "descripcion" => $reg->descripcion,

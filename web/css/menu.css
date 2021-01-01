@@ -33,7 +33,7 @@ nav h3 {
 
 nav ul li a {
     display: block;
-    padding: 0rem 2rem;
+    padding: 0rem 1rem;
     line-height: 5rem;
     color: #0a0a0a;
     text-decoration: none;
@@ -63,3 +63,31 @@ nav ul li ul li a {
 nav ul li ul li a:hover {
     background-color: #efefef;
 }
+
+/*@media only screen and (max-width: 1024px)
+{
+	.main_nav_item
+	{
+		margin-right: 0px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0rem 0rem;
+		line-height: 5rem;
+		color: #0a0a0a;
+		text-decoration: none;
+    }
+
+	.main_nav_item a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: 400;
+		color: #3a3a3a;
+		-webkit-transition: all 200ms ease;
+		-moz-transition: all 200ms ease;
+		-ms-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+	}
+}*/

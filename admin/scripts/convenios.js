@@ -40,7 +40,7 @@ function guardaryeditar(e) {
   e.preventDefault();
   var formData = new FormData($("#formulario_pasajes")[0]);
   $.ajax({
-    url: "../ajax/CVoletos.php?op=guardaryeditar",
+    url: "../ajax/Cconvenios.php?op=guardaryeditar",
     type: "POST",
     data: formData,
     contentType: false,
@@ -77,7 +77,7 @@ function listar() {
             url: 'recursos/js/idioma.json'
         },
     "ajax": {
-			url: '../ajax/CVoletos.php?op=listar',
+			url: '../ajax/Cconvenios.php?op=listar',
 			type: "get",
 			dataType: "json",
 			error: function (e) {
@@ -90,15 +90,14 @@ function listar() {
 	}).DataTable();
 }
 
-function mostrar(idpasajes) {
-  $.post("../ajax/CVoletos.php?op=mostrar", {
-    idpasajes: idpasajes
+function mostrar(idconvenios) {
+  $.post("../ajax/Cconvenios.php?op=mostrar", {
+    idconvenios: idconvenios
   }, function(data, status) {
     data = JSON.parse(data);
     $("#add_pasajes").modal("show");
-    $("#idpasajes").val(data.idvoletos);
+    $("#idconvenios").val(data.idconvenio);
     $("#nombre").val(data.nombre);
-    $("#tipo").val(data.tipo);
     $("#descripcion").val(data.descripcion);
 
     $("#foto_actual").val(data.foto);
@@ -106,12 +105,12 @@ function mostrar(idpasajes) {
     if (data.foto == "") {
       $("#foto_i").attr("src", "recursos/img/img_defecto.png");
     } else {
-      $("#foto_i").attr("src", "../multimedia/voletos/" + data.foto);
+      $("#foto_i").attr("src", "../multimedia/convenios/" + data.foto);
     }
   })
 }
 
-function desactivar(idpasajes) {
+function desactivar(idconvenios) {
 	swal({
 			title: "¿Deseas desactivar este registro? ",
 			type: "warning",
@@ -124,8 +123,8 @@ function desactivar(idpasajes) {
 		},
 		function (isConfirm) {
 			if (isConfirm) {
-				$.post("../ajax/CVoletos.php?op=desactivar", {
-					idpasajes: idpasajes
+				$.post("../ajax/Cconvenios.php?op=desactivar", {
+					idconvenios: idconvenios
 				}, function (datos) {
           if (datos == 1) {
             swal({
@@ -153,7 +152,7 @@ function desactivar(idpasajes) {
 		});
 }
 
-function activar(idpasajes) {
+function activar(idconvenios) {
 	swal({
 			title: "¿Deseas activar este registro? ",
 			type: "warning",
@@ -166,8 +165,8 @@ function activar(idpasajes) {
 		},
 		function (isConfirm) {
 			if (isConfirm) {
-				$.post("../ajax/CVoletos.php?op=activar", {
-					idpasajes: idpasajes
+				$.post("../ajax/Cconvenios.php?op=activar", {
+					idconvenios: idconvenios
 				}, function (datos) {
           if (datos == 1) {
             swal({
@@ -195,7 +194,7 @@ function activar(idpasajes) {
 		});
 }
 
-function eliminar(idpasajes) {
+function eliminar(idconvenios) {
 	swal({
 			title: "¿Deseas eliminar permanentemente este registro? ",
 			type: "warning",
@@ -208,8 +207,8 @@ function eliminar(idpasajes) {
 		},
 		function (isConfirm) {
 			if (isConfirm) {
-				$.post("../ajax/CVoletos.php?op=eliminar", {
-					idpasajes: idpasajes
+				$.post("../ajax/Cconvenios.php?op=eliminar", {
+					idconvenios: idconvenios
 				}, function (datos) {
           if (datos == 1) {
             swal({
