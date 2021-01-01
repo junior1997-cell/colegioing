@@ -1,44 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<?php
-include 'config/conexion.php';
-
-$sql       = "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
-$resultado = ejecutarConsulta($sql);
-
-?>
-
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>CIP Consejo departamental de San Martin-Moyobamba</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Course Project">
-    <link rel="shortcut icon" href="web/images/logoOficial.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="web/styles/bootstrap4/bootstrap.min.css">
-    <link href="web/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="web/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="web/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="web/plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/responsive.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/production.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/loaders.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/aos.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/swiper.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/responsi.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/estilo.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="web/styles/modal.css">
-    <link rel="stylesheet" type="text/css" href="web/css/menu.css">
-    <style media="screen">
-        .img-org{
-          -webkit-filter: brightness(0.9) !important;
-          filter: brightness(0.5) !important;
-=======
     <?php
       include 'config/conexion.php';
       
@@ -60,7 +21,6 @@ $resultado = ejecutarConsulta($sql);
           }else{
               $menor_si= $id_si;
           }   
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
       }
       // var_dump($menor); die;
       $eventosql_sii = "SELECT*FROM eventos where idevento='$menor_si'";
@@ -177,42 +137,6 @@ $resultado = ejecutarConsulta($sql);
          <!-- Header -->
          <header class="header d-flex flex-row">
             <div class="header_content d-flex flex-row align-items-center">
-<<<<<<< HEAD
-                <!-- Logo -->
-                <div class="logo_container" >
-                    <div class="logo">
-                        <img src="web/images/1.png" alt="" width="150px; ">
-                        <span> &nbsp;</span>
-                    </div>
-                </div>
-
-                <!-- Main Navigation -->
-                <nav class="main_nav_container">
-                    <div class="main_nav">
-                        <ul class="main_nav_list">
-                            <li class="main_nav_item">
-                                <a href="pasajes.php">Inicio
-                                    <i class="icon ion-md-arrow-dropdown"></i>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Colegiatura</a><i >
-
-                                    </li>
-                                    <li><a href="#">Desarrollo web</a></li>
-                                    <li><a href="#">Aplicaciones nativas</a></li>
-                                </ul>
-                            </li>
-                            <li class="main_nav_item"><a href="paquetes.php">INSTITUCIÓN</a></li>
-                            <li class="main_nav_item"><a href="pasajes.php">TRÁMITES</a></li>
-                            <li class="main_nav_item"><a href="turismo.php">CAPÍTULOS</a></li>
-                            <li class="main_nav_item"><a href="somos.php">SERVICIOS</a></li>
-                            <li class="main_nav_item"><a href="contactanos.php">PUBLICACIONES</a></li>
-
-                        </ul>
-                    </div>
-                </nav>
-=======
                <!-- Logo -->
                <div class="logo_container" style="padding-left: 10px;">
                   <div class="logo">
@@ -233,7 +157,6 @@ $resultado = ejecutarConsulta($sql);
                      </ul>
                   </div>
                </nav>
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
             </div>
             <div class="header_side d-flex flex-row justify-content-center align-items-center">
                <img src="web/images/phone-call.svg" alt="">
@@ -379,32 +302,6 @@ $resultado = ejecutarConsulta($sql);
                                  </div>
                               </div>
                            </div>
-<<<<<<< HEAD
-
-                       </div>
-                    </section>
-
-
-               </div>
-
-           </div>
-       </div>
-   </div>
-</div>
-
-
-
-
-<section class="recent-posts page-section portfolio" id="portfolio">
-<div class="row">
- <div class="col">
- <div class="section_title text-center">
- <h1>EVENTOS</h1>
- </div>
-</div>
- </div>
-
-=======
                         </section>
                      </div>
                   </div>
@@ -419,25 +316,10 @@ $resultado = ejecutarConsulta($sql);
                   </div>
                </div>
             </div>
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
             <div class="row">
                 <!-- =====================SUPERIOR IZQUIERDA========================== -->
                 <?php while ($row1 = $eventos_sii->fetch_assoc()){?> 
                 <div class="col-lg-6">
-<<<<<<< HEAD
-                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right"
-                        data-aos-duration="800">
-                        <div class="post-content text-sm-right">
-                            <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
-                            <h3><span>Proudly for us to build stylish</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
-                        </div>
-
-                        <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
-                            <img class="img-fluid" src="web/images/post1.jpg" style="height: 320px; width: 900px;" alt="Post 1">
-=======
                   <div class="single-rpost d-sm-flex align-items-center" style="padding: 35px 35px 35px 35px !important" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
                     <div class="row">
                         <div class="col-lg-6" style="padding: 40px 0px 0px 0px !important" >
@@ -463,7 +345,6 @@ $resultado = ejecutarConsulta($sql);
                                 </div>
                                 <img class="img-fluid" src="web/images/<?php echo $row1['foto']; ?>" style="height: 320px; width: 500px;" alt="Post 1">
                             </div>
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                         </div>
                         </div>
                   </div>
@@ -476,11 +357,6 @@ $resultado = ejecutarConsulta($sql);
                     <div class="single-rpost d-sm-flex align-items-center" style="padding: 35px 35px 35px 35px !important" data-aos="fade-left" data-aos-duration="800">
 
                         <div class="post-thumb portfolio-item" data-toggle="modal" data-target="#portfolioModal2">
-<<<<<<< HEAD
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
-                            <img class="img-fluid" src="web/images/post2.jpg" style="height: 320px; width: 500px;" alt="Post 2">
-=======
 
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-black">
@@ -489,16 +365,11 @@ $resultado = ejecutarConsulta($sql);
                             </div>
 
                             <img class="img-fluid" src="web/images/<?php echo $row2['foto']; ?>" style="height: 320px; width: 500px;" alt="Post 2">
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                         </div>
 
                         <div class="post-content">
 
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
-<<<<<<< HEAD
-                            <h3><span>Remind me to water the plants</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
-=======
 
                             <h3>
                                 <span>
@@ -509,7 +380,6 @@ $resultado = ejecutarConsulta($sql);
                             <p>
                                 <?php echo $row2['descripcion']; ?>                                
                             </p>
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                         </div>
                   </div>
                 </div>
@@ -524,11 +394,6 @@ $resultado = ejecutarConsulta($sql);
                         <div class="col-lg-6" style="padding: 40px 0px 0px 0px !important" >
                         <div class="post-content">
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
-<<<<<<< HEAD
-                            <h3><span>Add apples to the grocery list</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
-
-=======
                             <h3>
                                 <span>
                                     <?php $img3 =$row3['foto']; echo $row3['titulo']; ?>                                    
@@ -537,21 +402,15 @@ $resultado = ejecutarConsulta($sql);
                             <p>
                                 <?php echo $row3['descripcion']; ?>                                
                             </p>
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding: 0px 0px !important">
                         <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-<<<<<<< HEAD
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
-                            <img class="img-fluid" src="web/images/tramite.png" style="height: 320px; width: 500px;" alt="Post 1">
-=======
                                <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="web/images/<?php echo $row3['foto']; ?>" style="height: 320px; width: 500px;" alt="Post 1">
                         </div>    
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                         </div>
                         </div>                    
                   </div>
@@ -565,16 +424,6 @@ $resultado = ejecutarConsulta($sql);
                      data-aos-duration="800">
                         <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal4">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-<<<<<<< HEAD
-                        <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div></div>
-                            <img class="img-fluid" src="web/images/captura.png" style="height: 320px; width: 500px;" alt="Post 1">
-                        </div>
-                        <div class="post-content">
-                            <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
-                            <h3><span>Retos y Desafíos del sector agua y saneamiento en el ambito
-                            rural en la región san martin, en el contexto covid 19</span></h3>
-                            <p><a href="#">Seanding</a>, <a href="#">Website</a>, <a href="#">E-commerce</a></p>
-=======
                                <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="web/images/<?php echo $row4['foto']; ?>" style="height: 320px; width: 500px;" alt="Post 1">
@@ -590,7 +439,6 @@ $resultado = ejecutarConsulta($sql);
                             <p>
                                 <?php echo $row4['descripcion']; ?>                                
                             </p>
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                         </div>
                     </div>
                 </div>
@@ -600,20 +448,6 @@ $resultado = ejecutarConsulta($sql);
             <div class="text-center">
                <a href="#" class="btn btn-primary">Ver masuyhrtfur Eventos</a>
             </div>
-<<<<<<< HEAD
-
-    </section>
-
-
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-=======
          </section>
             <!-- ==================IMAGEN SUPERIOR IZQUIERDA======================== -->
              
@@ -625,7 +459,6 @@ $resultado = ejecutarConsulta($sql);
                       </button>
                       <div class="modal-body text-center">
                          <div class="container">
->>>>>>> 235ae3f7b793c78ff113a12263195485de229bbd
                             <div class="row justify-content-center">
                                <div class="col-lg-8" >
                                 <p>sasas</p>
