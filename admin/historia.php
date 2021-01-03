@@ -27,7 +27,6 @@ if (!isset($_SESSION["usuario"])) {
       <!-- CONTENIDO  -->
       <section class="content">
 
-
         <div class="row">
 
           <div class="col-md-12">
@@ -55,44 +54,166 @@ if (!isset($_SESSION["usuario"])) {
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="decano_periodo_gestion" class="control-label">DECANOS</label>
-                      <textarea class="form-control" name="decano_periodo_gestion" id="decano_periodo_gestion" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-group col-md-12">
                       <label for="himno" class="control-label">HIMNO</label>
                       <textarea class="form-control" name="himno" id="himno" rows="3"></textarea>
                     </div>
 
-                   <!--  <div class="form-group col-md-12">
-                      <label for="politica" class="control-label">Pólitica</label>
-                      <textarea class="form-control" name="politica" id="politica" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                      <label for="servicios" class="control-label">Servicios</label>
-                      <textarea class="form-control" name="servicios" id="servicios" rows="3"></textarea>
-                    </div> -->
-
                   </div>
                 </form>
-
               </div>
+
               <div class="box-footer">
                 <center>
-                  <button id="btn_editar_e" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button>
-                  <button id="btn_actualizar_e" type="submit" class="btn btn-primary"><i class="fa fa-refresh"></i> Actualizar datos empresa</button>
+                  <button id="btn_editar_e" type="button" class="btn btn-warning">
+                    <i class="fa fa-pencil"></i> Editar
+                  </button>
+                  <button id="btn_actualizar_e" type="submit" class="btn btn-primary">
+                    <i class="fa fa-refresh"></i> Actualizar datos
+                  </button>
                 </center>
               </div>
-            </div>
+              
+              
+              <!-- FIN AGREGAR -->
+              <!-- TABLA REPORTE-->
+              <div class="row">
+                <div class="col-md-12  ">
 
+                  <div class="box" style="border-top: 4px solid #540118 !important;">
+                    <div class="box-header">
+
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <!-- BOTÓN AGREGAR -->
+                      <button type="button" class="btn btn-success" onclick="limpiar()" data-toggle="modal" data-target="#agregar_usuario">
+                        <i class="fa fa-user-plus"></i> Agregar Decano
+                      </button> <br><br>
+                     
+                      <div class="table-responsive">
+                        <table id="ListarDecano" class="table table-bordered table-striped">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+
+                              <th>
+                                <center>Periodo</center>
+                              </th>
+
+                              <th>
+                                <center>Nombre y Apellidos</center>
+                              </th>
+
+                              <th>
+                                <center>Profesion</center>
+                              </th>
+
+                              <th>
+                                <center>REG.CIP</center>
+                              </th>
+
+                              <th>
+                                <center>Estado</center>
+                              </th>
+
+                              <th>
+                                <center>Opciones</center>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+
+                </div>
+              </div>
+              <!-- FIN TABLA REPORTE-->
+              <!-- MODAL AGREGAR USUARIO-->
+              <div class="modal fade" id="agregar_usuario">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <form id="formulario_historia">
+
+                      <input type="text" id="id_decano" name="id_decano">
+
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">
+                          <i class="fa fa-user-plus"></i> Agregar Decano
+                        </h4>
+                      </div>
+
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="box box-default box-solid">
+                              <div class="box-body">
+                                <div class="row">
+                                  <div class="col-md-12">
+
+                                    <div class="row">
+                                      <!-- PERIODO -->
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label for="periodo" class="control-label">Periodo</label>
+                                          <input type="text" class="form-control" id="decano_periodo" name="decano_periodo" minlength="4" maxlength="11" required>
+                                        </div>
+                                      </div>
+
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label for="nomape" class="control-label">Nombre y Apellidos</label>
+                                          <input type="text" class="form-control" id="decano_nom_ape" name="decano_nom_ape" pattern="[Aa-Zz]{9,1000}" minlength="9" required="">
+                                        </div>
+                                      </div>
+
+                                       <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label for="profesion" class="control-label">Profesion</label>
+                                          <input type="text" class="form-control" id="decano_profesion" name="decano_profesion" required="" minlength="7" maxlength="50">
+                                        </div>
+                                      </div>
+
+                                       <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label for="cip" class="control-label">REG. CIP</label>
+                                          <input type="text" class="form-control" id="decano_cip" name="decano_cip" pattern="[0-9]{1,6}" min="4" required="">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">
+                          <i class="fa fa-check"></i> Guardar
+                        </button>
+                        <button type="button" onclick="limpiar();" class="btn btn-default " data-dismiss="modal">
+                          <i class="fa fa-close"></i> Cancelar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+              </div>
+              <!-- /.modal -->
+              <!-- FIN MODAL AGREGAR USUARIO-->
+            </div>
           </div>
         </div>
-
-        <div class="row">
-
-        </div>
-
       </section>
       <!-- FIN CONTENIDO -->
     </div>

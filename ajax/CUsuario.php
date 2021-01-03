@@ -15,7 +15,7 @@ switch($op){
 	case 'guardaryeditar':
 		require_once '../modelo/e_d.php';
 		$e_d = new e_d();
-    $clavehash = $e_d->openCypher('encrypt',$clave);//EMCRIPTAMOS LA CLAVE
+    	$clavehash = $e_d->openCypher('encrypt',$clave);//EMCRIPTAMOS LA CLAVE
 		if (empty($idusuario)){
 			$rspta = $usuario->insertar($user,$clavehash);
 			echo $rspta;
