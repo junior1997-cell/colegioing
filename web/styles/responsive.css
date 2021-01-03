@@ -133,8 +133,113 @@
 /************
 5. 1024px
 ************/
+@media screen and (max-width: 1125px){
+	.main_nav_item
+	{
+		margin-right: 0px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0rem 0rem;
+		line-height: 5rem;
+		color: #0a0a0a;
+		text-decoration: none;
+	}
+	.main_nav_item a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #3a3a3a;
+		-webkit-transition: all 200ms ease;
+		-moz-transition: all 200ms ease;
+		-ms-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+		}
+}
+
+@media screen and (max-width: 1079px){
+	.main_nav_item
+	{
+		margin-right: 0px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0rem 0rem;
+		line-height: 5rem;
+		color: #0a0a0a;
+		text-decoration: none;
+	}
+	.main_nav_item a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 11px!important;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #3a3a3a;
+		-webkit-transition: all 200ms ease;
+		-moz-transition: all 200ms ease;
+		-ms-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+		}
+}
+
+@media only screen and (max-width: 1042px)
+{
+	.main_nav_item
+	{
+		margin-right: 0px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0rem 0.3rem !important;
+		line-height: 5rem;
+		color: #0a0a0a;
+		text-decoration: none;
+	}
+	.main_nav_item a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 11px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #3a3a3a;
+		-webkit-transition: all 200ms ease;
+		-moz-transition: all 200ms ease;
+		-ms-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+	}
+}
+
 
 @media only screen and (max-width: 1024px)
+{
+	.main_nav_item
+	{
+		margin-right: 0px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0rem 0.3rem !important;
+		line-height: 5rem;
+		color: #0a0a0a;
+		text-decoration: none;
+	}
+	.main_nav_item a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 10px!important;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #3a3a3a;
+		-webkit-transition: all 200ms ease;
+		-moz-transition: all 200ms ease;
+		-ms-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+	}
+}
+@media only screen and (max-width: 1003px)
 {
 	.main_nav_item
 	{
@@ -174,7 +279,7 @@
 	.logo_container
 	{
 		padding-left: 10px;
-    	padding-top: 0px;
+		padding-top: 0px;
 	}
 	.header_side span
 	{
@@ -328,10 +433,11 @@
 	.logo_container
 	{
 		padding-left: 15px;
+
 	}
 	.logo img
 	{
-		width: 30px;
+		width: 100px;
 	}
 	.logo span
 	{

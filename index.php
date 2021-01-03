@@ -1,92 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-      include 'config/conexion.php';
-      
-      $sql       = "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
-      $resultado = ejecutarConsulta($sql);
-      
-      $eventosql = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 2";
-      $eventos = ejecutarConsulta($eventosql);
-      // SUPERIOR IZQUIERDA--------------------------------------------------------------
-      $eventosql_si = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 4";
-      $eventos_si = ejecutarConsulta($eventosql_si);
-      $menor_si = 1000000000000000;
-      while ($row_si = $eventos_si->fetch_assoc()) {
-         
-          $id_si = $row_si['idevento'];
-      
-          if($menor_si<$id_si){
-              $menor_si= $menor_si;
-          }else{
-              $menor_si= $id_si;
-          }   
-      }
-      // var_dump($menor); die;
-      $eventosql_sii = "SELECT*FROM eventos where idevento='$menor_si'";
-      $eventos_sii = ejecutarConsulta($eventosql_sii);
-      // $imgsii = $eventos_sii->fetch_assoc();
-      // $img1= $imgsii['foto'];
-      // var_dump($img1);die;
+include 'config/conexion.php';
 
-      // SUPERIOR DERECHA--------------------------------------------------------------------
-      $eventosql_sd = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 3";
-      $eventos_sd = ejecutarConsulta($eventosql_sd);
-      $menor_sd = 1000000000000000;
-      while ($row_sd = $eventos_sd->fetch_assoc()) {
-         
-          $id_sd = $row_sd['idevento'];
-      
-          if($menor_sd<$id_sd){
-              $menor_sd= $menor_sd;
-          }else{
-              $menor_sd= $id_sd;
-          }   
-      }
-      // var_dump($menor); die;
-      $eventosql_sdd = "SELECT*FROM eventos where idevento='$menor_sd'";
-      $eventos_sdd = ejecutarConsulta($eventosql_sdd);
+$sql       = "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
+$resultado = ejecutarConsulta($sql);
 
+$eventosql = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 2";
+$eventos   = ejecutarConsulta($eventosql);
+// SUPERIOR IZQUIERDA--------------------------------------------------------------
+$eventosql_si = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 4";
+$eventos_si   = ejecutarConsulta($eventosql_si);
+$menor_si     = 1000000000000000;
+while ($row_si = $eventos_si->fetch_assoc()) {
 
-      // INFERIOR IZQUIERDA-------------------------------------------------------------------
-      $eventosql_ii = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 2";
-      $eventos_ii = ejecutarConsulta($eventosql_ii);
-      $menor_ii = 1000000000000000;
-      while ($row_ii = $eventos_ii->fetch_assoc()) {
-         
-          $id_ii = $row_ii['idevento'];
-      
-          if($menor_ii<$id_ii){
-              $menor_ii= $menor_ii;
-          }else{
-              $menor_ii= $id_ii;
-          }   
-      }
-      // var_dump($menor); die;
-      $eventosql_iii = "SELECT*FROM eventos where idevento='$menor_ii'";
-      $eventos_iii = ejecutarConsulta($eventosql_iii);
+    $id_si = $row_si['idevento'];
 
-      // INFERIOR DERECHA-----------------------------------------------------------------------
-      $eventosql_id = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 1";
-      $eventos_id = ejecutarConsulta($eventosql_id);
-      $menor_id = 1000000000000000;
-      while ($row_id = $eventos_id->fetch_assoc()) {
-         
-          $id_id = $row_id['idevento'];
-      
-          if($menor_id<$id_id){
-              $menor_id= $menor_id;
-          }else{
-              $menor_id= $id_id;
-          }   
-      }
-      // var_dump($menor); die;
-      $eventosql_idd = "SELECT*FROM eventos where idevento='$menor_id'";
-      $eventos_idd = ejecutarConsulta($eventosql_idd);
+    if ($menor_si < $id_si) {
+        $menor_si = $menor_si;
+    } else {
+        $menor_si = $id_si;
+    }
+}
+// var_dump($menor); die;
+$eventosql_sii = "SELECT*FROM eventos where idevento='$menor_si'";
+$eventos_sii   = ejecutarConsulta($eventosql_sii);
+// $imgsii = $eventos_sii->fetch_assoc();
+// $img1= $imgsii['foto'];
+// var_dump($img1);die;
 
-      $tevento = "SELECT COUNT(idevento) FROM eventos";
-      $totalE = ejecutarConsulta($tevento);
-    ?>
+// SUPERIOR DERECHA--------------------------------------------------------------------
+$eventosql_sd = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 3";
+$eventos_sd   = ejecutarConsulta($eventosql_sd);
+$menor_sd     = 1000000000000000;
+while ($row_sd = $eventos_sd->fetch_assoc()) {
+
+    $id_sd = $row_sd['idevento'];
+
+    if ($menor_sd < $id_sd) {
+        $menor_sd = $menor_sd;
+    } else {
+        $menor_sd = $id_sd;
+    }
+}
+// var_dump($menor); die;
+$eventosql_sdd = "SELECT*FROM eventos where idevento='$menor_sd'";
+$eventos_sdd   = ejecutarConsulta($eventosql_sdd);
+
+// INFERIOR IZQUIERDA-------------------------------------------------------------------
+$eventosql_ii = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 2";
+$eventos_ii   = ejecutarConsulta($eventosql_ii);
+$menor_ii     = 1000000000000000;
+while ($row_ii = $eventos_ii->fetch_assoc()) {
+
+    $id_ii = $row_ii['idevento'];
+
+    if ($menor_ii < $id_ii) {
+        $menor_ii = $menor_ii;
+    } else {
+        $menor_ii = $id_ii;
+    }
+}
+// var_dump($menor); die;
+$eventosql_iii = "SELECT*FROM eventos where idevento='$menor_ii'";
+$eventos_iii   = ejecutarConsulta($eventosql_iii);
+
+// INFERIOR DERECHA-----------------------------------------------------------------------
+$eventosql_id = "SELECT*FROM eventos where estado=0 ORDER by idevento DESC LIMIT 1";
+$eventos_id   = ejecutarConsulta($eventosql_id);
+$menor_id     = 1000000000000000;
+while ($row_id = $eventos_id->fetch_assoc()) {
+
+    $id_id = $row_id['idevento'];
+
+    if ($menor_id < $id_id) {
+        $menor_id = $menor_id;
+    } else {
+        $menor_id = $id_id;
+    }
+}
+// var_dump($menor); die;
+$eventosql_idd = "SELECT*FROM eventos where idevento='$menor_id'";
+$eventos_idd   = ejecutarConsulta($eventosql_idd);
+
+$tevento = "SELECT COUNT(idevento) FROM eventos";
+$totalE  = ejecutarConsulta($tevento);
+?>
 
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -148,12 +147,12 @@
                <nav class="main_nav_container">
                   <div class="main_nav">
                      <ul class="main_nav_list">
-                        <li class="main_nav_item"><a href="index.php">INICIO </a></li>
-                        <li class="main_nav_item"><a href="paquetes.php">INSTITUCIÓN</a></li>
-                        <li class="main_nav_item"><a href="pasajes.php">TRÁMITES</a></li>
-                        <li class="main_nav_item"><a href="turismo.php">CAPÍTULOS</a></li>
-                        <li class="main_nav_item"><a href="somos.php">SERVICIOS</a></li>
-                        <li class="main_nav_item"><a href="contactanos.php">PUBLICACIONES</a></li>
+                        <li class="main_nav_item"><a href="index.php" style="padding: 0px 0px !important">INICIO </a></li>
+                        <li class="main_nav_item"><a href="paquetes.php" style="padding: 0px 0px !important">INSTITUCIÓN</a></li>
+                        <li class="main_nav_item"><a href="pasajes.php" style="padding: 0px 0px !important">TRÁMITES</a></li>
+                        <li class="main_nav_item"><a href="turismo.php" style="padding: 0px 0px !important">CAPÍTULOS</a></li>
+                        <li class="main_nav_item"><a href="somos.php" style="padding: 0px 0px !important">SERVICIOS</a></li>
+                        <li class="main_nav_item"><a href="contactanos.php" style="padding: 0px 0px !important">PUBLICACIONES</a></li>
                      </ul>
                   </div>
                </nav>
@@ -206,7 +205,6 @@
                <div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200"><i class="fa fa-chevron-right" aria-hidden="true"></i></span></div>
             </div>
          </div>
-         <br>
          <br>
          <section>
             <div class="container recent" id="activity">
@@ -318,22 +316,24 @@
             </div>
             <div class="row">
                 <!-- =====================SUPERIOR IZQUIERDA========================== -->
-                <?php while ($row1 = $eventos_sii->fetch_assoc()){?> 
+                <?php while ($row1 = $eventos_sii->fetch_assoc()) {
+    ?>
                 <div class="col-lg-6">
                   <div class="single-rpost d-sm-flex align-items-center" style="padding: 35px 35px 35px 35px !important" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
                     <div class="row">
                         <div class="col-lg-6" style="padding: 40px 0px 0px 0px !important" >
                             <div class="post-content text-sm-right">
-                                 
+
                                 <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                                 <h3>
                                     <span>
-                                        <?php $img1 =$row1['foto'];  echo $row1['titulo']; ?>                                    
+                                        <?php $img1 = $row1['foto'];
+    echo $row1['titulo'];?>
                                     </span>
                                 </h3>
 
                                 <p>
-                                    <?php echo $row1['descripcion']; ?>                                
+                                    <?php echo $row1['descripcion']; ?>
                                 </p>
                             </div>
                         </div>
@@ -352,7 +352,8 @@
                <?php }?>
 
                <!-- ===========================SUPERIOR DERECHA================== -->
-               <?php while ($row2 = $eventos_sdd->fetch_assoc()){ ?>
+               <?php while ($row2 = $eventos_sdd->fetch_assoc()) {
+    ?>
                <div class="col-lg-6">
                     <div class="single-rpost d-sm-flex align-items-center" style="padding: 35px 35px 35px 35px !important" data-aos="fade-left" data-aos-duration="800">
 
@@ -373,12 +374,13 @@
 
                             <h3>
                                 <span>
-                                    <?php $img2 =$row2['foto']; echo $row2['titulo']; ?>                                    
+                                    <?php $img2 = $row2['foto'];
+    echo $row2['titulo'];?>
                                 </span>
                             </h3>
 
                             <p>
-                                <?php echo $row2['descripcion']; ?>                                
+                                <?php echo $row2['descripcion']; ?>
                             </p>
                         </div>
                   </div>
@@ -386,7 +388,8 @@
                 <?php }?>
 
                 <!-- ===========================INFERIORR IZQUIERDA===================== -->
-                <?php while ($row3 = $eventos_iii->fetch_assoc()){ ?>
+                <?php while ($row3 = $eventos_iii->fetch_assoc()) {
+    ?>
                 <div class="col-lg-6">
                   <div class="single-rpost d-sm-flex align-items-center" style="padding: 35px 35px 35px 35px !important" data-aos="fade-left" data-aos-delay="200"
                      data-aos-duration="800">
@@ -396,11 +399,12 @@
                             <time datetime="2019-04-06T13:53">15 Oct, 2019</time>
                             <h3>
                                 <span>
-                                    <?php $img3 =$row3['foto']; echo $row3['titulo']; ?>                                    
+                                    <?php $img3 = $row3['foto'];
+    echo $row3['titulo'];?>
                                 </span>
                             </h3>
                             <p>
-                                <?php echo $row3['descripcion']; ?>                                
+                                <?php echo $row3['descripcion']; ?>
                             </p>
                         </div>
                     </div>
@@ -410,15 +414,16 @@
                                <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="web/images/<?php echo $row3['foto']; ?>" style="height: 320px; width: 500px;" alt="Post 1">
-                        </div>    
                         </div>
-                        </div>                    
+                        </div>
+                        </div>
                   </div>
                 </div>
                 <?php }?>
 
                 <!-- ===========================INFERIORR DERECHA===================== -->
-                <?php while ($row4 = $eventos_idd->fetch_assoc()){ ?>
+                <?php while ($row4 = $eventos_idd->fetch_assoc()) {
+    ?>
                 <div class="col-lg-6">
                     <div class="single-rpost d-sm-flex align-items-center" style="padding: 35px 35px 35px 35px !important" data-aos="fade-right" data-aos-delay="200"
                      data-aos-duration="800">
@@ -433,11 +438,12 @@
                             <h3>
 
                                 <span>
-                                    <?php $img4 =$row4['foto']; echo $row4['titulo']; ?>                                    
+                                    <?php $img4 = $row4['foto'];
+    echo $row4['titulo'];?>
                                 </span>
                             </h3>
                             <p>
-                                <?php echo $row4['descripcion']; ?>                                
+                                <?php echo $row4['descripcion']; ?>
                             </p>
                         </div>
                     </div>
@@ -450,7 +456,7 @@
             </div>
          </section>
             <!-- ==================IMAGEN SUPERIOR IZQUIERDA======================== -->
-             
+
             <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
                    <div class="modal-content">
@@ -470,10 +476,10 @@
                    </div>
                 </div>
             </div>
-             
+
 
             <!-- ==================IMAGEN SUPERIOR DERECHA======================== -->
-             
+
             <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
                    <div class="modal-content">
@@ -483,7 +489,7 @@
                         <div class="modal-body text-center">
                             <div class="container">
                                 <div class="row justify-content-center">
-                                   <div class="col-lg-8" >                                     
+                                   <div class="col-lg-8" >
                                       <img class="img-fluid rounded mb-5" src="web/images/<?php echo $img2; ?>" alt="" />
                                    </div>
                                 </div>
@@ -492,7 +498,7 @@
                    </div>
                 </div>
             </div>
-             
+
             <!-- ==================IMAGEN INFERIOR IZQUIERDA======================== -->
             <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
@@ -711,11 +717,11 @@
                        nav:false,
                        dots:false
                    });
-                 
+
                 });
             };
-         
+
             innit();
-      </script>     
+      </script>
     </body>
 </html>
