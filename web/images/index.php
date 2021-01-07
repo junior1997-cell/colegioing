@@ -111,7 +111,6 @@ $totalE  = ejecutarConsulta($tevento);
   <link rel="stylesheet" type="text/css" href="web/styles/estilo.css">
   <link rel="stylesheet" type="text/css" href="web/styles/lightgallery.min.css">
   <link rel="stylesheet" type="text/css" href="web/styles/modal.css">
-  <link rel="stylesheet" type="text/css" href="web/styles/style_carousel.css">
 
   <style media="screen">
     .img-org{
@@ -331,7 +330,7 @@ $totalE  = ejecutarConsulta($tevento);
         </div>
       </div>
       <div class="col-lg-6" style="padding: 0px 0px !important">
-        <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal1">
+        <div class="post-thumb  portfolio-item" data-toggle="modal" data-target="#portfolioModal3">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
            <div class="portfolio-item-caption-content text-center text-black"><i class="fas fa-plus fa-3x"></i></div>
          </div>
@@ -443,13 +442,13 @@ $totalE  = ejecutarConsulta($tevento);
 </div>
 <!-- ==============================VER MAS EVENTOS============================ -->
 <div class="text-center">
- <a href="#" class="btn btn-primary">Ver mas Eventos</a>
+ <a href="#" class="btn btn-primary">Ver masuyhrtfur Eventos</a>
 </div>
 </section>
 <!-- ==================IMAGEN SUPERIOR IZQUIERDA======================== -->
 
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl" style="width: 50%!important" role="document">
+  <div class="modal-dialog modal-xl" role="document">
    <div class="modal-content">
     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true"><i class="fas fa-times"></i></span>
@@ -459,7 +458,7 @@ $totalE  = ejecutarConsulta($tevento);
       <div class="row justify-content-center">
        <div class="col-lg-8" >
         <p>sasas</p>
-        <img class="img-fluid rounded mb-5" src="multimedia/eventos/<?php echo $img1; ?>" alt=""/>
+        <img class="img-fluid rounded mb-5" src="web/images/<?php echo $img1; ?>" alt=""/>
       </div>
     </div>
   </div>
@@ -467,6 +466,7 @@ $totalE  = ejecutarConsulta($tevento);
 </div>
 </div>
 </div>
+
 
 <!-- ==================IMAGEN SUPERIOR DERECHA======================== -->
 
@@ -480,8 +480,7 @@ $totalE  = ejecutarConsulta($tevento);
       <div class="container">
         <div class="row justify-content-center">
          <div class="col-lg-8" >
-          <p>mo sesdfn7m</p>
-          <img class="img-fluid rounded mb-5" src="multimedia/eventos/<?php echo $img2; ?>" alt="" />
+          <img class="img-fluid rounded mb-5" src="web/images/<?php echo $img2; ?>" alt="" />
         </div>
       </div>
     </div>
@@ -501,7 +500,7 @@ $totalE  = ejecutarConsulta($tevento);
       <div class="container">
         <div class="row justify-content-center">
          <div class="col-lg-8" >
-          <img class="img-fluid rounded mb-5" src="multimedia/eventos/<?php echo $img3; ?>" alt="" />
+          <img class="img-fluid rounded mb-5" src="web/images/<?php echo $img3; ?>" alt="" />
         </div>
       </div>
     </div>
@@ -521,7 +520,7 @@ $totalE  = ejecutarConsulta($tevento);
       <div class="container">
         <div class="row justify-content-center">
          <div class="col-lg-8" >
-          <img class="img-fluid rounded mb-5" src="multimedia/eventos/<?php echo $img4; ?>" alt="" />
+          <img class="img-fluid rounded mb-5" src="web/images/<?php echo $img4; ?>" alt="" />
         </div>
       </div>
     </div>
@@ -529,17 +528,6 @@ $totalE  = ejecutarConsulta($tevento);
 </div>
 </div>
 </div>
-<!-- NUESTROS CONVENIOS -->
-  <div class="row">
-   <div class="col">
-    <div class="section_title text-center">
-     <h1>NUESTROS CONVENIOS</h1>
-   </div>
- </div>
-</div>
-<!--============================-->
-
-<!--============================-->
 <!-- Footer -->
 <footer class="footer" style="padding: 15px !important;">
 <div class="container">
@@ -548,7 +536,7 @@ $totalE  = ejecutarConsulta($tevento);
   <div class="row">
    <div class="col">
     <div class="section_title text-center">
-     <h1>UBIQUENOS Y CONTACTENOS</h1>
+     <h1 style="font-size: 15px!important">UBIQUENOS Y CONTACTENOS</h1>
    </div>
  </div>
 </div>
@@ -564,7 +552,7 @@ $totalE  = ejecutarConsulta($tevento);
     <!-- Logo -->
     <div class="logo_container">
      <div class="logo">
-      <img src="web/images/logo-ex.png" width="240px;" alt="">
+      <img src="web/images/2.png" width="240px;" alt="">
     </div>
   </div>
   <p class="footer_about_text" id="descripcion"></p>
@@ -575,11 +563,11 @@ $totalE  = ejecutarConsulta($tevento);
   <div class="footer_column_content">
    <ul>
     <li class="footer_list_item"><a href="http://planeaviajar.com/">INICIO</a></li>
-    <li class="footer_list_item"><a href="paquetes.php">COMUNICADOS</a></li>
-    <li class="footer_list_item"><a href="pasajes.php">PASAJES</a></li>
-    <li class="footer_list_item"><a href="turismo.php">TURISMO</a></li>
-    <li class="footer_list_item"><a href="somos.php">EMPRESA</a></li>
-    <li class="footer_list_item"><a href="contactanos.php">CONTACTANOS</a></li>
+    <li class="footer_list_item"><a href="paquetes.php">INSTITUCIÓN</a></li>
+    <li class="footer_list_item"><a href="pasajes.php">TRÁMITES</a></li>
+    <li class="footer_list_item"><a href="turismo.php">CAPÍTULOS</a></li>
+    <li class="footer_list_item"><a href="somos.php">SERVICIOS</a></li>
+    <li class="footer_list_item"><a href="contactanos.php">PUBLICACIONES</a></li>
   </ul>
 </div>
 </div>
@@ -676,7 +664,6 @@ $totalE  = ejecutarConsulta($tevento);
 <script src="web/js/menu.js"></script>
 <script src="web/js/swiper.min.js"></script>
 <script src="web/js/modal.js"></script>
-<script src="web/js/style_carousel.js"></script>
 <!--  script for google maps   -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDadqvTI0dXKYyq2xoH6AhtJUTAkAthX-M"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min.js'></script>

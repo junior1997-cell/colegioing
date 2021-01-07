@@ -63,6 +63,20 @@ if (strlen(session_id()) < 1) {
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>
           </ul>
         </li>
+        
+        <li id="servicios" class="treeview">
+          <a href="#">
+            <i class="fa fa-th"></i>
+            <span>servicios</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="lIngresos"><a href="benficio_cole.php"><i class="fa fa-circle-o"></i> Beneficio al colegiado</a></li>
+            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Especialización de ingeniería</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Capacitaciones</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Alquiler</a></li>
+          </ul>
+        </li>
 
         <li id="mCompras" class="treeview">
           <a href="#">
@@ -77,6 +91,7 @@ if (strlen(session_id()) < 1) {
             <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
           </ul>
         </li>
+
 
       </ul>
     </section>

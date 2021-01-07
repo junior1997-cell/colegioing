@@ -1597,14 +1597,12 @@ input:last-of-type
 	transition: all 0.5s ease 0s;
 }
 
-.commdiv{
+.page_section{
 	background-image:url("../images/fff44.png");
 	/*background-size: cover;
 	position: relative;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;*/
+	width: 100%;*/
+	height: 50%;
 	z-index: 1;
 	background-size: auto auto;
 	-webkit-background-size: cover;
