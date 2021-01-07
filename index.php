@@ -149,7 +149,6 @@ $totalE  = ejecutarConsulta($tevento);
                   </div>
                </div>
                <!-- Main Navigation -->
-<<<<<<< HEAD
                <nav id="mainav" class="hoc clear main_nav_container"> 
     <ul>
       <li class="active"><a href="index.html">Inicio</a></li>
@@ -276,20 +275,6 @@ $totalE  = ejecutarConsulta($tevento);
     </ul>
     <!-- ################################################################################################ -->
   </nav>
-=======
-               <nav class="main_nav_container">
-                  <div class="main_nav">
-                     <ul class="main_nav_list">
-                        <li class="main_nav_item"><a href="index.php" style="padding: 0px 0px !important">INICIO </a></li>
-                        <li class="main_nav_item"><a href="paquetes.php" style="padding: 0px 0px !important">INSTITUCIÓN</a></li>
-                        <li class="main_nav_item"><a href="pasajes.php" style="padding: 0px 0px !important">TRÁMITES</a></li>
-                        <li class="main_nav_item"><a href="turismo.php" style="padding: 0px 0px !important">CAPÍTULOS</a></li>
-                        <li class="main_nav_item"><a href="somos.php" style="padding: 0px 0px !important">SERVICIOS</a></li>
-                        <li class="main_nav_item"><a href="contactanos.php" style="padding: 0px 0px !important">PUBLICACIONES</a></li>
-                     </ul>
-                  </div>
-               </nav>
->>>>>>> 6e86858803d81b4b7aab27af46467f7bb36b9883
             </div>
             <div class="header_side d-flex flex-row justify-content-center align-items-center">
                <img src="web/images/phone-call.svg" alt="">
