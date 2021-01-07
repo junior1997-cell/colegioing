@@ -113,6 +113,11 @@
       <link rel="stylesheet" type="text/css" href="web/styles/lightgallery.min.css">
       <link rel="stylesheet" type="text/css" href="web/styles/modal.css">
 
+      <link rel="stylesheet" type="text/css" href="web/styles/nav/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="web/styles/nav/css/framework.css">
+      <link rel="stylesheet" type="text/css" href="web/styles/nav/css/layout.css">
+
+
         <style media="screen">
             .img-org{
                 -webkit-filter: brightness(0.9) !important;
@@ -138,25 +143,139 @@
          <header class="header d-flex flex-row">
             <div class="header_content d-flex flex-row align-items-center">
                <!-- Logo -->
-               <div class="logo_container" style="padding-left: 10px;">
+               <div class="logo_container" >
                   <div class="logo">
                      <img src="web/images/cip.png" alt="" width="200px;">
                      <span> &nbsp;</span>
                   </div>
                </div>
                <!-- Main Navigation -->
-               <nav class="main_nav_container">
-                  <div class="main_nav">
-                     <ul class="main_nav_list">
-                        <li class="main_nav_item"><a href="index.php">INICIO </a></li>
-                        <li class="main_nav_item"><a href="paquetes.php">INSTITUCIÓN</a></li>
-                        <li class="main_nav_item"><a href="pasajes.php">TRÁMITES</a></li>
-                        <li class="main_nav_item"><a href="turismo.php">CAPÍTULOS</a></li>
-                        <li class="main_nav_item"><a href="somos.php">SERVICIOS</a></li>
-                        <li class="main_nav_item"><a href="contactanos.php">PUBLICACIONES</a></li>
-                     </ul>
-                  </div>
-               </nav>
+               <nav id="mainav" class="hoc clear main_nav_container"> 
+    <ul>
+      <li class="active"><a href="index.html">Inicio</a></li>
+      <li><a class="drop" href="#">Institución</a>
+        <ul>
+          <li><a class="drop" href="#">Nosotros</a>
+            <ul>
+              <li><a href="#">Presentación</a></li>
+              <li><a href="#">Misión</a></li>
+              <li><a href="#">Visión</a></li>
+              <li><a href="#">Objetivos</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Historia</a>
+            <ul>
+              <li><a href="#">Reseña Historica</a></li>
+              <li><a href="#">Decanos y Periodos de Gestión</a></li>
+              <li><a href="#">Himno</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Directiva</a>
+            <ul>
+              <li><a href="#">Miembros Del Consejo Departamental</a></li>
+              <li><a href="#">Miembros Del CAP. Agronomos y Afines</a></li>
+              <li><a href="#">Miembros Del CAP. Ambientales y Afines</a></li>
+              <li><a href="#">Miembros Del CAP. Industriales y Afines</a></li>
+              <li><a href="#">Miembros Del CAP. Civiles</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Documentos Normativos</a>
+            <ul>
+              <li><a href="#">Reglamentos</a></li>
+              <li><a href="#">Leyes</a></li>
+              <li><a href="#">Estatutos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">Trámites</a>
+        <ul>
+          <li><a class="drop" href="#">Colegiatura</a>
+            <ul>
+              <li><a href="#">Miembro Ordinario</a></li>
+              <li><a href="#">Miembro Temporal</a></li>
+              <li><a href="#">Miembro Vitalicio</a></li>
+              <li><a href="#">Segunda Especialización</a></li>
+              <li><a href="#">Prórroga De Colegiatura Temporal</a></li>
+              <li><a href="#">Traslado De Consejo Departamental</a></li>
+            </ul>
+          </li>
+           <li><a class="drop" href="#">Certificados De Habilidad</a>
+            <ul>
+              <li><a href="#">Certificado De Habilidad (A)</a></li>
+              <li><a href="#">Certificado De Habilidad Para Obras Publicas (B)</a></li>
+              <li><a href="#">Certificado De Habilidad Por Proyecto (C)</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Requisitos Para Colegiatura</a>
+            <ul>
+              <li><a href="#">Requisitos Para Colegiatura</a></li>
+              <li><a href="#">Requisitos Para Cambio de Sede</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Tarifario</a>
+            <ul>
+              <li><a href="#">Tarifario CIP</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Otros</a>
+            <ul>
+              <li><a href="#">Duplicado De Carnet</a></li>
+              <li><a href="#">Constancia De No Adeudo</a></li>
+              <li><a href="#">Exoneración De Cuotas</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">Capítulos</a>
+        <ul>
+            <li><a href="#">Agrónomos y Afines</a></li>  
+            <li><a href="#">Ambientales y Afines</a></li> 
+            <li><a href="#">Industriales y Afines</a></li> 
+            <li><a href="#">Civiles</a></li>              
+        </ul>
+      </li>
+      <li><a class="drop" href="#">Servicios</a>
+        <ul>
+          <li><a class="drop" href="#">Beneficio Al Colegiado</a>
+            <ul>
+              <li><a href="#">Instituto De Servicios Adicionales</a></li>
+            </ul>
+          </li>
+           <li><a class="drop" href="#">Especialización De Ingeniería</a>
+            <ul>
+              <li><a href="#">Centros De Peritaje</a></li>
+              <li><a href="#">Centros De Arbitraje</a></li>
+              <li><a href="#">Centros De Certificación De Calidad</a></li>
+               <li><a href="#">Comisión De Asuntos Municipales</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Capacitaciones</a>
+            <ul>
+              <li><a href="#">Diplomados, Cursos y Otros</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Alquiler</a>
+            <ul>
+              <li><a href="#">Ambientes y Mobiliarios</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">Publicacion</a>
+        <ul>
+            <li><a href="#">Comunicados</a></li>  
+            <li><a href="#">Eventos</a></li> 
+            <li><a href="#">Noticias</a></li> 
+            <li><a href="#">Ceremonias De Colegiatura</a></li>
+            <li><a href="#">Actividades</a></li> 
+            <li><a href="#">Convenios</a></li> 
+            <li><a href="#">Galeria</a></li>               
+        </ul>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
             </div>
             <div class="header_side d-flex flex-row justify-content-center align-items-center">
                <img src="web/images/phone-call.svg" alt="">
@@ -532,6 +651,36 @@
                    </div>
                 </div>
             </div>
+
+             <section>
+        <div class="container">
+          <div class="clients" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
+                <div class="swiper-container clients-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="web/images/vuelo4.png" alt="Client 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="web/images/vuelo6.png" alt="Client 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="web/images/vuelo4.png" alt="Client 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="web/images/vuelo5.png" alt="Client 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="web/images/vuelo6.png" alt="Client 5">
+                        </div>
+                    </div>
+                    <div class="test-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
          <!-- Footer -->
          <footer class="footer" style="padding: 15px !important;">
             <div class="row">
@@ -692,6 +841,10 @@
       <script src="web/js/menu.js"></script>
       <script src="web/js/swiper.min.js"></script>
       <script src="web/js/modal.js"></script>
+
+      <script src="web/js/nav/js/jquery.backtotop.js"></script>
+      <script src="web/js/nav/js/jquery.min.js"></script>
+      <script src="web/js/nav/js/jquery.mobilemenu.js"></script>
       <!--  script for google maps   -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDadqvTI0dXKYyq2xoH6AhtJUTAkAthX-M"></script>
       <script src='http://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min.js'></script>
