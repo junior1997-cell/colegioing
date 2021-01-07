@@ -149,7 +149,7 @@ $totalE  = ejecutarConsulta($tevento);
                   </div>
                </div>
                <!-- Main Navigation -->
-               <nav id="mainav" class="hoc clear main_nav_container"> 
+               <nav id="mainav" class="hoc clear main_nav_container">
     <ul>
       <li class="active"><a href="index.html">Inicio</a></li>
       <li><a class="drop" href="#">Institución</a>
@@ -228,10 +228,10 @@ $totalE  = ejecutarConsulta($tevento);
       </li>
       <li><a class="drop" href="#">Capítulos</a>
         <ul>
-            <li><a href="#">Agrónomos y Afines</a></li>  
-            <li><a href="#">Ambientales y Afines</a></li> 
-            <li><a href="#">Industriales y Afines</a></li> 
-            <li><a href="#">Civiles</a></li>              
+            <li><a href="#">Agrónomos y Afines</a></li>
+            <li><a href="#">Ambientales y Afines</a></li>
+            <li><a href="#">Industriales y Afines</a></li>
+            <li><a href="#">Civiles</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">Servicios</a>
@@ -263,13 +263,13 @@ $totalE  = ejecutarConsulta($tevento);
       </li>
       <li><a class="drop" href="#">Publicacion</a>
         <ul>
-            <li><a href="#">Comunicados</a></li>  
-            <li><a href="#">Eventos</a></li> 
-            <li><a href="#">Noticias</a></li> 
+            <li><a href="#">Comunicados</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Noticias</a></li>
             <li><a href="#">Ceremonias De Colegiatura</a></li>
-            <li><a href="#">Actividades</a></li> 
-            <li><a href="#">Convenios</a></li> 
-            <li><a href="#">Galeria</a></li>               
+            <li><a href="#">Actividades</a></li>
+            <li><a href="#">Convenios</a></li>
+            <li><a href="#">Galeria</a></li>
         </ul>
       </li>
     </ul>

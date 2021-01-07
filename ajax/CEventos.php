@@ -5,7 +5,7 @@ if (strlen(session_id()) < 1)
 /*Aqui se crea, se edita, se eimina y se lista las categorias*/
 require_once '../modelo/MEventos.php';
 
-$eventos= new Meventos();
+$eventos= new MEventos();
 
 $ideventos = isset($_POST["ideventos"])?limpiarCadena($_POST["ideventos"]):"";
 $titulo = isset($_POST["titulo"])?limpiarCadena($_POST["titulo"]):"";
@@ -98,7 +98,7 @@ switch($op){
 
 	break;
 
-    case 'listar_web':
+   /* case 'listar_web':
         $rspta=$eventos->listar_web();
         $html_data ="";
         while ($reg=$rspta->fetch_object()){
@@ -112,7 +112,7 @@ switch($op){
             .'</div>';
         }
   	echo ($html_data);
-    break;
+    break;*/
 
     case 'desactivar':
   		$rspta=$eventos->desactivar($ideventos);

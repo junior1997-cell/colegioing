@@ -1,12 +1,12 @@
 function innit() {
-  mostrar_paquetes();
-  mostrar_pasajes();
+ // mostrar_paquetes();
+  //mostrar_pasajes();
   mostrar_contactanos();
-  mostrar_empresa();
+ // mostrar_empresa();
 }
 
 
-function mostrar_paquetes(){
+/*function mostrar_paquetes(){
   $.post("ajax/CPaquetes.php?op=listar_web", {
   }, function(data, status) {
     data = JSON.parse(data);
@@ -67,7 +67,7 @@ function mostrar_pasajes(){
 
 function ir_paquete(id){
   $("#form_ir_paquete"+id).submit()
-}
+}*/
 
 function mostrar_contactanos() {
   $.post("ajax/CContactanos.php?op=mostrar", {
@@ -83,7 +83,7 @@ function mostrar_contactanos() {
   })
 }
 
-function mostrar_empresa() {
+/*function mostrar_empresa() {
   $.post("ajax/CEmpresa.php?op=mostrar", {
   }, function(data, status) {
     data = JSON.parse(data);
@@ -111,6 +111,6 @@ function vervoleto(id) {
       $("#foto_voleto").attr("src", "multimedia/voletos/" + data.foto);
     }
   })
-}
+}*/
 
 innit();

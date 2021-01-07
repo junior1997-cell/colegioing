@@ -405,7 +405,7 @@
     }
 
     .recent-posts .btn {
-      margin-top: 60px;
+      margin-top: -50px;
     }
 
     .recent-posts .row .col-lg-6:nth-of-type(odd) .post-thumb {
@@ -417,7 +417,14 @@
     }
 
     .single-rpost {
-      margin: 35px 0 0;
+      margin: 15px 0 0;
+
+    }
+    .padding-2primeros{
+        padding: 0px 35px 0px 35px !important;
+    }
+    .padding-2ultimos{
+        padding: 0px 35px 0px 35px !important;
     }
 
     .post-thumb {

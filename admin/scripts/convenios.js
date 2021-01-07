@@ -25,9 +25,8 @@ function innit() {
 }
 
 function limpiar(){
-  $("#idpasajes").val("");
+  $("#idconvenios").val("");
   $("#nombre").val("");
-  $("#tipo").val("1");
   $("#descripcion").val("");
 
   $("#foto_i").attr("src", "recursos/img/img_defecto3.png");

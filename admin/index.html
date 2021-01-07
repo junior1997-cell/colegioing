@@ -16,16 +16,43 @@
 
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    .btn-color{
+      background-color: #D7B56D;
+      color: antiquewhite;
+      font-size: 16px;
+    }
+    textarea:focus, input:focus, input[type]:focus {
+    border-color:#D7B56D;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6);
+    outline: 0 none;
+    }
+
+    .card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(255, 255, 255, 0.712);
+    border-top: 1px solid rgba(230, 93, 93, 0.377);
+    
+    font-size: 13px;
+
+    }
+    .card-footer:last-child {
+        border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+    }
+  </style>
 </head>
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <div class="login-logo">
-      <a><b>J&A EXPEDITIONS</b></a>
-    </div>
+
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Ingrese sus credenciales</p>
+      <div class="login-logo">
+        <a><img src="../web/images/1.png" alt="" style="width: 250px;"></a>
+      </div>
+      <p class="login-box-msg" style="font-size: 21px;">Administración del portal web <br>
+        <span style="color: #E31E24;">  <b>Ingrese sus credenciales</b> </span></p>
+                
       <form name="form_login" id="form_login" method="POST">
         <div class="form-group has-feedback" id="user_login">
           <input name="user_login" id="user_login" type="text" class="form-control" placeholder="Usuario">
@@ -37,13 +64,17 @@
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" id="submit_login">Ingresar</button>
+          <button type="submit" class="btn btn-color btn-block btn-flat" id="submit_login">Ingresar</button>
         </div>
       </form>
       <div id="alert_obj" class="shake-horizontal shake-constant" style="width: 100% !important;">
 
       </div>
 
+
+    </div>
+    <div class="card-footer text-center" >
+      <a href="#" class="btn btn-sm text-primary"> <i> Volver a Página Web</i></a>
     </div>
     <!-- /.login-box-body -->
   </div>
