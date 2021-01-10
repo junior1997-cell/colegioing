@@ -90,6 +90,7 @@ if (strlen(session_id()) < 1) {
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i> Comunicados</a></li>
             <li id="lConsulasV"><a href="eventos.php"><i class="fa fa-circle-o"></i> EVENTOS</a></li>
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>NOTICIAS</a></li>
@@ -97,6 +98,12 @@ if (strlen(session_id()) < 1) {
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>ACTIVIDADES</a></li>
             <li id="lConsulasV"><a href="convenios.php"><i class="fa fa-handshake-o"></i>CONVENIOS</a></li>
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>
+=======
+            <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
+            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
+            <li id="lProveedores"><a href="directiva.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
+>>>>>>> 61b83a25b83e467dfd8f71fa93008e574ed13e9b
           </ul>
         </li>
         

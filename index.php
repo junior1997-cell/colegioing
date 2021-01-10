@@ -111,6 +111,9 @@ $totalE  = ejecutarConsulta($tevento);
       <link rel="stylesheet" type="text/css" href="web/styles/estilo.css">
       <link rel="stylesheet" type="text/css" href="web/styles/lightgallery.min.css">
       <link rel="stylesheet" type="text/css" href="web/styles/modal.css">
+      <link rel="stylesheet" type="text/css" href="web/styles/eventos.css">
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
 
       <link rel="stylesheet" type="text/css" href="web/styles/nav/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="web/styles/nav/css/framework.css">
@@ -149,7 +152,7 @@ $totalE  = ejecutarConsulta($tevento);
                   </div>
                </div>
                <!-- Main Navigation -->
-               <nav id="mainav" class="hoc clear main_nav_container">
+               <nav id="mainav" class="hoc clear main_nav_container"> 
     <ul>
       <li class="active"><a href="index.html">Inicio</a></li>
       <li><a class="drop" href="#">Institución</a>
@@ -228,10 +231,10 @@ $totalE  = ejecutarConsulta($tevento);
       </li>
       <li><a class="drop" href="#">Capítulos</a>
         <ul>
-            <li><a href="#">Agrónomos y Afines</a></li>
-            <li><a href="#">Ambientales y Afines</a></li>
-            <li><a href="#">Industriales y Afines</a></li>
-            <li><a href="#">Civiles</a></li>
+            <li><a href="#">Agrónomos y Afines</a></li>  
+            <li><a href="#">Ambientales y Afines</a></li> 
+            <li><a href="#">Industriales y Afines</a></li> 
+            <li><a href="#">Civiles</a></li>              
         </ul>
       </li>
       <li><a class="drop" href="#">Servicios</a>
@@ -263,13 +266,13 @@ $totalE  = ejecutarConsulta($tevento);
       </li>
       <li><a class="drop" href="#">Publicacion</a>
         <ul>
-            <li><a href="#">Comunicados</a></li>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Noticias</a></li>
+            <li><a href="#">Comunicados</a></li>  
+            <li><a href="#">Eventos</a></li> 
+            <li><a href="#">Noticias</a></li> 
             <li><a href="#">Ceremonias De Colegiatura</a></li>
-            <li><a href="#">Actividades</a></li>
-            <li><a href="#">Convenios</a></li>
-            <li><a href="#">Galeria</a></li>
+            <li><a href="#">Actividades</a></li> 
+            <li><a href="#">Convenios</a></li> 
+            <li><a href="#">Galeria</a></li>               
         </ul>
       </li>
     </ul>
@@ -658,6 +661,68 @@ $totalE  = ejecutarConsulta($tevento);
                 </div>
             </div>
 
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-9">
+            <div id="carousel-main" class="carousel slide " data-ride="carousel" data-interval="5000">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img src="http://placehold.it/900/f44336/000000&text=First+Slide" class="img-responsive">
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/900/e91e63/000000&text=Second+Slide" class="img-responsive">
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/900/9c27b0/000000&text=Third+Slide" class="img-responsive">
+                    </div>
+                </div>
+
+
+                <!-- Controls -->
+                <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="carousel-pager" class="carousel slide " data-ride="carousel" data-interval="1000">
+                <!-- Carousel items -->
+                <div class="carousel-inner vertical">
+                    <div class="active item">
+                        <img src="http://placehold.it/600/f44336/000000&text=First+Slide" class="img-responsive" data-target="#carousel-main" data-slide-to="0">
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/600/e91e63/000000&text=Second+Slide" class="img-responsive" data-target="#carousel-main" data-slide-to="1">
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/600/9c27b0/000000&text=Third+Slide" class="img-responsive" data-target="#carousel-main" data-slide-to="2">
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-pager" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-pager" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
              <section>
         <div class="container">
           <div class="clients" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
@@ -847,6 +912,8 @@ $totalE  = ejecutarConsulta($tevento);
       <script src="web/js/menu.js"></script>
       <script src="web/js/swiper.min.js"></script>
       <script src="web/js/modal.js"></script>
+      <script src="web/js/eventos.js"></script>
+   
 
       <script src="web/js/nav/js/jquery.backtotop.js"></script>
       <script src="web/js/nav/js/jquery.min.js"></script>
