@@ -6,9 +6,9 @@ if (strlen(session_id()) < 1)
   <!-- Logo -->
   <a href="municipalidad.php" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>J&A</b></span>
+    <span class="logo-mini"><b>CIP</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>J&A</b>EXPEDITIONS</span>
+    <span class="logo-lg"><b>CIP | </b>Moyobamba</span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">

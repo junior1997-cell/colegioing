@@ -34,19 +34,55 @@ if (strlen(session_id()) < 1) {
         </a>
       </li>
       <li>
-        <a href="paquetes.php">
-          <i class="fa fa-newspaper-o"></i> <span>Paquetes</span>
-        </a>
-      </li>
-      <li>
-        <a href="turisticos.php">
-          <i class="fa fa-newspaper-o"></i> <span>Turismo</span>
-        </a>
-      </li>
-      <li>
         <a href="contactanos.php">
           <i class="fa fa-newspaper-o"></i> <span>Contactanos y Empresa</span>
         </a>
+        <li id="mCompras" class="treeview">
+          <a href="#">
+            <i class="fa fa-university"></i>
+            <span>Institucion</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
+            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
+          </ul>
+        </li>
+        <li id="mCompras" class="treeview">
+          <a href="#">
+            <i class="fa fa-file-text-o"></i>
+            <span>Tramítes</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="lIngresos"><a href="colegiatura.php"><i class="fa fa-circle-o"></i> Colegiatura</a></li>
+            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Requisitos para colegiatura </a></li>
+            <li id="lProveedores"><a href="certihabilidad.php"><i class="fa fa-circle-o"></i>Certificados de habilidad</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i>Otros</a></li>
+            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i>Tarifario</a></li>
+          </ul>
+        </li>
+        <li>
+        <a href="capitulos.php">
+          <i class="fa fa-newspaper-o"></i> <span>Capítulos</span>
+        </a>
+      </li>
+        
+        <li id="servicios" class="treeview">
+          <a href="#">
+            <i class="fa fa-th"></i>
+            <span>servicios</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="lIngresos"><a href="benficio_cole.php"><i class="fa fa-circle-o"></i> Beneficio al colegiado</a></li>
+            <li id="lProveedores"><a href="especial_ing.php"><i class="fa fa-circle-o"></i> Especialización de ingeniería</a></li>
+            <li id="lProveedores"><a href="#"><i class="fa fa-circle-o"></i> Capacitaciones</a></li>
+            <li id="lProveedores"><a href="#"><i class="fa fa-circle-o"></i> Alquiler</a></li>
+          </ul>
+        </li>
 
         <li id="mConsultaV" class="treeview">
           <a href="#">
@@ -64,33 +100,9 @@ if (strlen(session_id()) < 1) {
           </ul>
         </li>
         
-        <li id="servicios" class="treeview">
-          <a href="#">
-            <i class="fa fa-th"></i>
-            <span>servicios</span>
-            <i class="fa fa-angle-left pull-right"></i>
-          </a>
-          <ul class="treeview-menu">
-            <li id="lIngresos"><a href="benficio_cole.php"><i class="fa fa-circle-o"></i> Beneficio al colegiado</a></li>
-            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Especialización de ingeniería</a></li>
-            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Capacitaciones</a></li>
-            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Alquiler</a></li>
-          </ul>
-        </li>
+        
 
-        <li id="mCompras" class="treeview">
-          <a href="#">
-            <i class="fa fa-th"></i>
-            <span>Institucion</span>
-            <i class="fa fa-angle-left pull-right"></i>
-          </a>
-          <ul class="treeview-menu">
-            <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
-            <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
-            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
-            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
-          </ul>
-        </li>
+       
 
 
       </ul>
