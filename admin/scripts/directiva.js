@@ -2,8 +2,8 @@ var tabla;
 
 function init() {
     // formulario decanos
-    $("#formulario_historia").on("submit", function (e) {
-        guardaryeditarDecano(e);
+    $("#formulario_directiva").on("submit", function (e) {
+        guardaryeditarDirectiva(e);
     });
 
     $("#btn_editar_m").click(function() {
@@ -18,18 +18,14 @@ function init() {
     $("#btn_actualizar_e").click(function(e) {
         actualizar_empresa(e);
     });
-    contactanos(true);
-    empresa(true);
-    mostrar_contactanos();
-    mostrar_empresa();
     
     listar_directiva(); 
 }
 
-// tabla decanos
-function guardaryeditarDecano(e) {
+// tabla Directivas
+function guardaryeditarDirectiva(e) {
     e.preventDefault();
-    var formData = new FormData($("#formulario_historia")[0]);
+    var formData = new FormData($("#formulario_directiva")[0]);
     console.log(formData);
     $.ajax({
         url: "../ajax/CDirectiva.php?op=guardaryeditar",
@@ -38,36 +34,41 @@ function guardaryeditarDecano(e) {
         contentType: false,
         processData: false,
         success: function (datos) {
-         if (datos == 1) {
+            if (datos == 1) {
                 swal({
-                    title: "Decano Registrado.",
+                    title: "Miembro Directivo Registrado.",
                     type: "success",
                     text: "Exito.",
                     timer: 1500,
                     showConfirmButton: false
                 });
+                 
             } else {
                 swal({
-                    title: "¡No se Pudo Registrar Decano!",
+                    title: "¡No se Pudo Registrar Miembro!",
                     type: "error",
                     text: "Error.",
                     timer: 1500,
                     showConfirmButton: false
                 });
+                 
             }
-        tabla.ajax.reload();
+            console.log(datos);
+            tabla.ajax.reload();
         }
     });
         $("#agregar_usuario").modal("hide");
-        limpiar();
+     limpiarDirectiva();
 }
 
-function limpiar(){
-  $("#decano_periodo").val("");
-  $("#decano_nom_ape").val("");
-  $("#decano_profesion").val("");
-  $("#decano_cip").val("");
-  $("#id_decano").val("");
+function limpiarDirectiva(){
+  $("#cip_directiva").val("");
+  $("#cargo_directiva").val("");
+  $("#miembro_directiva").val("");
+  $("#correo_directiva").val("");
+  $("#id_tipo_directiva").html("Seleccione");
+  $("#id_tipo_directiva2").val("");
+  $("#id_directiva").val("");
 }
 // ================================ LISTAR CONSEJO DEPARTAMENTAL =============================
 function listar_directiva() {
@@ -79,7 +80,7 @@ function listar_directiva() {
         },
         "ajax":
                 {
-                    url: '../ajax/CDirectiva.php?op=listarDecano',
+                    url: '../ajax/CDirectiva.php?op=listarDirectiva',
                     type: "get",
                     dataType: "json",
                     error: function (e) {
@@ -94,92 +95,25 @@ function listar_directiva() {
 }
 
 // mostrar decano
-function mostrarDecano(iddecano){
-  $.post("../ajax/CDirectiva.php?op=mostrarDecano", {
-    iddecano: iddecano
+function mostrarDirectiva(iddirectiva){
+  $.post("../ajax/CDirectiva.php?op=mostrarDirectiva", {
+    iddirectiva: iddirectiva
   }, function (data){
       data = JSON.parse(data);
       // console.log(data);
       $('#agregar_usuario').modal('show');
-      $("#decano_periodo").val(data[0].decano_periodo);
-      $("#decano_nom_ape").val(data[0].decano_nom_ape);
-      $("#decano_profesion").val(data[0].decano_profesion);
-      $("#decano_cip").val(data[0].decano_cip);
-      $("#id_decano").val(data[0].id_decano);
+      $("#id_directiva").val(data[0].id_directiva);
+      $("#cip_directiva").val(data[0].cip_directiva);
+      $("#cargo_directiva").val(data[0].cargo_directiva);
+      $("#miembro_directiva").val(data[0].miembro_directiva);
+      $("#correo_directiva").val(data[0].correo_directiva);
+      $("#id_tipo_directiva").html(data[0].id_tipo_directiva);
+      $("#id_tipo_directiva2").val(data[0].id_tipo_directiva2);
   });
 }
 
-function contactanos(a) {
-    $("#reseña_historia").prop('disabled', a);
-    $('#himno').prop("disabled", a);
-}
 
-function editar_contactanos() {
-    contactanos(false);
-    $('#btn_editar_m').prop("disabled", true);
-}
 
-function mostrar_contactanos() {
-    $.post("../ajax/CDirectiva.php?op=mostrar", {}, function(data, status) {
-        data = JSON.parse(data);
-        // console.log(data);
-        // console
-        $("#reseña_historia").val(data.reseña_historia);
-        $("#himno").val(data.himno);
-    })
-}
-
-function actualizar_contactanos(e) {
-    e.preventDefault(); //No se activará la acción predeterminada del evento
-    var formData = new FormData($("#formulario_contactanos")[0]);
-    $.ajax({
-        url: "../ajax/CDirectiva.php?op=actualizar",
-        type: "POST",
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(datos) {
-            if (datos == 1) {
-                swal({
-                    title: "😃😃 Exitó 😀😀",
-                    timer: 2000,
-                    type: "success"
-                });
-                /*alertify.success('😃 Agregado con exitó 😀');*/
-            } else {
-                swal({
-                    title: "😓 Error 😔",
-                    timer: 2000,
-                    type: "error"
-                });
-            }
-        }
-    });
-    mostrar_contactanos();
-    contactanos(true);
-    $('#btn_editar_m').prop("disabled", false);
-}
-/****/
-function empresa(a) {
-    $('#reseña_historia').prop("disabled", a);
-    $('#himno').prop("disabled", a);
-    $('#btn_actualizar_e').prop("disabled", a);
-}
-
-function editar_empresa() {
-    empresa(false);
-    $('#btn_editar_e').prop("disabled", true);
-}
-
-function mostrar_empresa() {
-    $.post("../ajax/CDirectiva.php?op=mostrar", {}, function(data, status) {
-        data = JSON.parse(data);
-        // console.log(data);
-        
-        $('#reseña_historia').val(decodeHtml(data.reseña_historia));
-        $('#himno').val(decodeHtml(data.himno));
-    })
-}
 
 function actualizar_empresa(e) {
     e.preventDefault(); //No se activará la acción predeterminada del evento
@@ -225,11 +159,11 @@ function decodeHtml(str) {
     });
 }
 
-// =============================================== DESACTIVAR DECANO ==================================================
-function desactivar_decano(id_decano) {
-    console.log(id_decano);
+// =============================================== DESACTIVAR DIRECTIVA ==================================================
+function desactivar_directiva(id_directiva) {
+    console.log(id_directiva);
     swal({
-        title: "¿Deseas DESACTIVAR este Decano?",
+        title: "¿Deseas DESACTIVAR este Miembro?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -239,7 +173,7 @@ function desactivar_decano(id_decano) {
         closeOnCancel: false},
         function (isConfirm) {
             if (isConfirm) {
-                $.post("../ajax/CDirectiva.php?op=desactivar_decano", {id_decano: id_decano}, function (e) {
+                $.post("../ajax/CDirectiva.php?op=desactivar_directiva", {id_directiva: id_directiva}, function (e) {
                     if (e) {
                         swal({
                             title: "Se Desactivó con éxito.",
@@ -264,8 +198,8 @@ function desactivar_decano(id_decano) {
 
 }
 // =============================================== ACTIVAR DECANO ==================================================
-function activar_decano(id_decano) {
-    console.log(id_decano);
+function activar_directiva(id_directiva) {
+    console.log(id_directiva);
     swal({
         title: "¿Deseas ACTIVAR este Decano?",
         type: "warning",
@@ -277,7 +211,7 @@ function activar_decano(id_decano) {
         closeOnCancel: false},
         function (isConfirm) {
             if (isConfirm) {
-                $.post("../ajax/CDirectiva.php?op=activar_decano", {id_decano: id_decano}, function (e) {
+                $.post("../ajax/CDirectiva.php?op=activar_directiva", {id_directiva: id_directiva}, function (e) {
                     swal({
                         title: "Se activó con éxito.",
                         type: "success",

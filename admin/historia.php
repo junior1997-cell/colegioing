@@ -18,9 +18,9 @@ if (!isset($_SESSION["usuario"])) {
     <div class="content-wrapper">
       <section class="content-header">
         <h1>
-					NOSOTROS
-					<small>Gestionar información general</small>
-				</h1>
+          NOSOTROS
+          <small>Gestionar información general</small>
+        </h1>
 
       </section>
 
@@ -37,9 +37,9 @@ if (!isset($_SESSION["usuario"])) {
                   <h3 class="box-title fa fa-university"> DATOS DEL COLEGIO</h3>
                 </center>
                 <div class="box-tools pull-right">
-                  	<button type="button" class="btn btn-box-tool" data-widget="collapse">
-                  		<i class="fa fa-minus"></i>
-                	</button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                      <i class="fa fa-minus"></i>
+                  </button>
                 </div>
               </div>
 
@@ -49,13 +49,19 @@ if (!isset($_SESSION["usuario"])) {
                   <div class="box-body">
 
                     <div class="form-group col-md-12">
-                      <label for="reseña_historia" class="control-label">RESEÑA HISTORICA</label>
-                      <textarea class="form-control" name="reseña_historia" id="reseña_historia" rows="3"></textarea>
+                      <label for="reseña_historia" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        RESEÑA HISTORICA
+                      </label>
+                      <textarea class="form-control" name="reseña_historia" id="reseña_historia" rows="8"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="himno" class="control-label">HIMNO</label>
-                      <textarea class="form-control" name="himno" id="himno" rows="3"></textarea>
+                      <label for="himno" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        HIMNO
+                      </label>
+                      <textarea class="form-control" name="himno" id="himno" rows="8"></textarea>
                     </div>
 
                   </div>
@@ -72,8 +78,8 @@ if (!isset($_SESSION["usuario"])) {
                   </button>
                 </center>
               </div>
-              
-              
+
+
               <!-- FIN AGREGAR -->
               <!-- TABLA REPORTE-->
               <div class="row">
@@ -89,7 +95,7 @@ if (!isset($_SESSION["usuario"])) {
                       <button type="button" class="btn btn-success" onclick="limpiar()" data-toggle="modal" data-target="#agregar_usuario">
                         <i class="fa fa-user-plus"></i> Agregar Decano
                       </button> <br><br>
-                     
+
                       <div class="table-responsive">
                         <table id="ListarDecano" class="table table-bordered table-striped">
                           <thead>
@@ -132,21 +138,24 @@ if (!isset($_SESSION["usuario"])) {
                 </div>
               </div>
               <!-- FIN TABLA REPORTE-->
+
               <!-- MODAL AGREGAR USUARIO-->
               <div class="modal fade" id="agregar_usuario">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <form id="formulario_historia">
 
-                      <input type="text" id="id_decano" name="id_decano">
+                      <input type="hidden" id="id_decano" name="id_decano">
 
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title">
-                          <i class="fa fa-user-plus"></i> Agregar Decano
-                        </h4>
+                        <center>
+                          <h4 class="modal-title">
+                            <i class="fa fa-user-plus"></i> Agregar Decano
+                          </h4>
+                        </center>
                       </div>
 
                       <div class="modal-body">
@@ -158,32 +167,56 @@ if (!isset($_SESSION["usuario"])) {
                                   <div class="col-md-12">
 
                                     <div class="row">
-                                      <!-- PERIODO -->
-                                      <div class="col-md-6">
+                                      <!-- ====================== INPUT PERIODO ====================== -->
+                                      <div class="col-md-4">
                                         <div class="form-group">
                                           <label for="periodo" class="control-label">Periodo</label>
-                                          <input type="text" class="form-control" id="decano_periodo" name="decano_periodo" minlength="4" maxlength="11" required>
+                                          <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">
+                                                <i class="fa fa-calendar"
+                                                style="font-size: 20px; "></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="decano_periodo" name="decano_periodo" minlength="4" maxlength="11" required>
+                                          </div>
                                         </div>
                                       </div>
-
-                                      <div class="col-md-6">
+                                      <!-- ====================== INPUT NOMBRE APELLIDOS ====================== -->
+                                      <div class="col-md-8">
                                         <div class="form-group">
                                           <label for="nomape" class="control-label">Nombre y Apellidos</label>
-                                          <input type="text" class="form-control" id="decano_nom_ape" name="decano_nom_ape" pattern="[Aa-Zz]{9,1000}" minlength="9" required="">
+                                          <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">
+                                                <i class="fa fa-user"
+                                                style="font-size: 20px; "></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="decano_nom_ape" name="decano_nom_ape" pattern="[Aa-Zz]{9,1000}" minlength="9" required="">
+                                          </div>
                                         </div>
                                       </div>
-
-                                       <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label for="profesion" class="control-label">Profesion</label>
-                                          <input type="text" class="form-control" id="decano_profesion" name="decano_profesion" required="" minlength="7" maxlength="50">
-                                        </div>
-                                      </div>
-
-                                       <div class="col-md-6">
+                                      <!-- ====================== INPUT REG CIP ====================== -->
+                                      <div class="col-md-4">
                                         <div class="form-group">
                                           <label for="cip" class="control-label">REG. CIP</label>
-                                          <input type="text" class="form-control" id="decano_cip" name="decano_cip" pattern="[0-9]{1,6}" min="4" required="">
+                                          <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">
+                                                <i class="fa fa-barcode"
+                                                style="font-size: 20px; "></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="decano_cip" name="decano_cip" pattern="[0-9]{1,6}" min="4" required="">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- ====================== INPUT PROFESION ====================== -->
+                                      <div class="col-md-8">
+                                        <div class="form-group">
+                                          <label for="profesion" class="control-label">Profesion</label>
+                                          <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">
+                                                <i class="fa fa-graduation-cap"
+                                                style="font-size: 20px; "></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="decano_profesion" name="decano_profesion" required="" minlength="7" maxlength="50">
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -195,6 +228,7 @@ if (!isset($_SESSION["usuario"])) {
                         </div>
                       </div>
 
+                      <!-- FOOTER -->
                       <div class="modal-footer">
                         <button type="submit" class="btn btn-success">
                           <i class="fa fa-check"></i> Guardar

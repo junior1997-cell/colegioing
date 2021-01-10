@@ -35,7 +35,9 @@ if (!isset($_SESSION["usuario"])) {
                                         <!-- /.box-header -->
                                         <div class="box-body">
                                             <!-- BOTÓN AGREGAR -->
-                                            <button type="button" class="btn btn-success" onclick="limpiar()" data-toggle="modal" data-target="#agregar_usuario"><i class="fa fa-user-plus"></i> Agregar Miembro</button> <br />
+                                            <button type="button" class="btn btn-success" onclick="limpiarDirectiva();" data-toggle="modal" data-target="#agregar_usuario">
+                                                <i class="fa fa-user-plus"></i> Agregar Miembro
+                                            </button> <br />
                                             <br />
 
                                             <div class="table-responsive">
@@ -84,16 +86,21 @@ if (!isset($_SESSION["usuario"])) {
                             <!-- FIN TABLA REPORTE-->
                             <!-- MODAL AGREGAR USUARIO-->
                             <div class="modal fade" id="agregar_usuario">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog ">
                                     <div class="modal-content">
-                                        <form id="formulario_historia">
-                                            <input type="text" id="id_decano" name="id_decano" />
+                                        <!-- ============ FORMULARIO DIRECTIVA ==================== -->
+                                        <form id="formulario_directiva">
+                                            <input type="hidden" id="id_directiva" name="id_directiva" />
 
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
-                                                <h4 class="modal-title"><i class="fa fa-user-plus"></i> Agregar Miembro</h4>
+                                                <center>
+                                                    <h4 class="modal-title">
+                                                        <i class="fa fa-user-plus"> </i> Agregar Miembro
+                                                    </h4>
+                                                </center>
                                             </div>
 
                                             <div class="modal-body">
@@ -104,60 +111,85 @@ if (!isset($_SESSION["usuario"])) {
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="row">
-                                                                            <!-- CIP -->
+                                                                            <!-- =================== CIP ==================== -->
                                                                             <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="periodo" class="control-label">CIP</label>
-                                                                                    <input type="text" class="form-control" id="decano_periodo" name="decano_periodo" minlength="4" maxlength="11" required />
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- CARGO -->
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="nomape" class="control-label">Cargo</label>
-                                                                                    <input type="text" class="form-control" id="decano_nom_ape" name="decano_nom_ape" pattern="[Aa-Zz]{9,1000}" minlength="9" required="" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- MIEMBRO -->
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="profesion" class="control-label">Miembro</label>
-                                                                                    <input type="text" class="form-control" id="decano_profesion" name="decano_profesion" required="" minlength="7" maxlength="50" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- CORREO -->
-                                                                            <div class="col-md-6">
-                                                                            	<label for="profesion" class="control-label">Correo</label>
+                                                                                <label for="profesion" class="control-label">CIP</label>
                                                                                 <div class="input-group">
-                                                                                    <span class="input-group-addon" id="basic-addon1">@</span>
-                                                                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
+                                                                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-barcode" style="font-size: 20px; "></i></span>
+                                                                                    <input required="" type="text" class="form-control" placeholder="Username" minlength="4" name="cip_directiva" id="cip_directiva" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- ================== CARGO ===================== -->
+                                                                            <div class="col-md-6">
+                                                                                <label for="profesion" class="control-label">Cargo</label>
+                                                                                <div class="input-group">
+                                                                                    <span class="input-group-addon" id="basic-addon1">
+                                                                                        <i class="fa fa-address-card"
+                                                                                        style="font-size: 20px; "></i>
+                                                                                    </span>
+                                                                                    <input required="" type="text" class="form-control" placeholder="Username" minlength="4" name="cargo_directiva" id="cargo_directiva" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- ====================MIEMBRO====================== -->
+                                                                            <div class="col-md-6">
+                                                                                <label for="profesion" class="control-label">Miembro</label>
+                                                                                <div class="input-group">
+                                                                                    <span class="input-group-addon" id="basic-addon1">
+                                                                                        <i class="fa fa-user-circle" style="font-size: 20px; "></i>
+                                                                                    </span>
+                                                                                    <input required="" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="miembro_directiva" id="miembro_directiva" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- ====================CORREO============================ -->
+                                                                            <div class="col-md-6">
+                                                                                <label for="profesion" class="control-label">Correo</label>
+                                                                                <div class="input-group">
+                                                                                    <span class="input-group-addon" id="basic-addon1">
+                                                                                        <i class="fa fa-envelope" style="font-size: 20px; "></i>
+                                                                                    </span>
+                                                                                    <input required="" type="text" class="form-control" placeholder="Username" minlength="6" name="correo_directiva" id="correo_directiva" />
                                                                                 </div>
                                                                                 <!-- <div class="form-group">
                                                                                     <div class="input-group-prepend">
-																			          <div class="input-group-text">@</div>
-																			        </div>
+                                                                                      <div class="input-group-text">@</div>
+                                                                                    </div>
                                                                                     <input type="text" class="form-control" id="decano_cip" name="decano_cip" pattern="[0-9]{1,6}" min="4" required="" />
                                                                                 </div> -->
                                                                             </div>
 
-                                                                            <!-- TIPO -->
+                                                                            <!-- ===================== TIPO MIEMBRO ================= -->
                                                                             <div class="col-md-12">
                                                                                 <div class="form-group">
-                                                                                    <label for="cip" class="control-label">Tipo Miembro</label>
+                                                                                    <label for="cip" class="control-label">
+                                                                                        Tipo Miembro
+                                                                                    </label>
+                                                                                    <input type="hidden" id="id_tipo_directiva2" name="id_tipo_directiva2" />
                                                                                     <div class="input-group">
-	                                                                                    <span class="input-group-addon" id="basic-addon1">@
-	                                                                                    </span>
-	                                                                                    <select class="form-control">
-	                                                                                    	<option>Selecione</option>
-	                                                                                    	<option>Miembro del Consejo Departamental</option>
-	                                                                                    	<option>Miembro del CAP. Agrónomos y Fines</option>
-	                                                                                    	<option>Miembro del CAP. Ambiental y Fines</option>
-	                                                                                    	<option>Miembro del CAP. Industrial y Fines</option>
-	                                                                                    	<option>Miembro del CAP. Civiles</option>
-	                                                                                    </select>
-                                                                                	</div>
+                                                                                        <span class="input-group-addon" id="basic-addon1">
+                                                                                            <i class="fa fa-bullseye" style="font-size: 20px; "></i>
+                                                                                        </span>
+                                                                                        <select required="" class="form-control" name="id_tipo_directiva">
+                                                                                            <option id="id_tipo_directiva">Seleccione</option>
+                                                                                            <option value="1">
+                                                                                                Miembro del Consejo Departamental
+                                                                                            </option>
+                                                                                            <option value="2">
+                                                                                                Miembro del CAP. Agrónomos y Fines
+                                                                                            </option>
+                                                                                            <option value="3">
+                                                                                                Miembro del CAP. Ambiental y Fines
+                                                                                            </option>
+                                                                                            <option value="4">
+                                                                                                Miembro del CAP. Industrial y Fines
+                                                                                            </option>
+                                                                                            <option value="5">
+                                                                                                Miembro del CAP. Civiles
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -166,18 +198,19 @@ if (!isset($_SESSION["usuario"])) {
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <!-- ==========BOTONES DE accion DEL FORMULARIO -->
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Guardar</button>
-                                                <button type="button" onclick="limpiar();" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
+                                                <button type="submit" class="btn btn-success">
+                                                    <i class="fa fa-check"></i> Guardar
+                                                </button>
+                                                <button type="button" onclick="limpiarDirectiva();" class="btn btn-default" data-dismiss="modal">
+                                                    <i class="fa fa-close"></i> Cancelar
+                                                </button>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <!-- /.modal-content -->
-                                </div>
-                                <!-- /.modal-dialog -->
-                            </div>
-                            <!-- /.modal -->
+                                        </form> <!-- END FORMULARIO -->
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
                             <!-- FIN MODAL AGREGAR USUARIO-->
                         </div>
                     </div>

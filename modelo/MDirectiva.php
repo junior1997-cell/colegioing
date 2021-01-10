@@ -7,35 +7,8 @@ class MDirectiva
     public function __construct()
     {}
 
-    public function insertar($reseña_historia, $himno)
-    {
-        $sql = "INSERT INTO historia (reseña_historia,himno)
-        		VALUES ('$reseña_historia','$himno')";
-        return ejecutarConsulta($sql);
-    }
-
-    public function editar($reseña_historia, $himno)
-    {
-        $sql = "UPDATE historia
-        		SET	reseña_historia='$reseña_historia',
-        		himno='$himno'
-        		WHERE id='1'";
-        return ejecutarConsulta($sql);
-    }
-
-    public function mostrar()
-    {
-        $sql = "SELECT * FROM historia WHERE id='1'";
-        return ejecutarConsultaSimpleFila($sql);
-    }
-
-    public function listar()
-    {
-        $sql = "SELECT * FROM historia ORDER BY id";
-        return ejecutarConsulta($sql);
-    }
-
-    // ====================================== MODELO DIRECTIVA =======================================
+    // ====================================== ..:: MODELO DIRECTIVA ::.. =======================================
+    // ====================================== LISTAR DIRECTIVA PARA LA TABLA =======================================
     public function listarDirectiva()
     {
         $sql = "SELECT * FROM directiva d, tipodirectiva td
@@ -43,38 +16,41 @@ class MDirectiva
         ORDER BY id_directiva DESC";
         return ejecutarConsulta($sql);
     }
-    public function mostrardecano($id_decano)
+    // ====================================== MOSTRAR PARA EDITAR DIRECTIVA =======================================
+    public function mostrarDirectiva($id_directiva)
     {
-        $sql = "SELECT * FROM decano WHERE id_decano='$id_decano'";
+        $sql = "SELECT * FROM directiva d, tipodirectiva td WHERE id_directiva='$id_directiva' AND td.id_td = d.id_tipo_directiva";
         return ejecutarConsulta($sql);
     }
-    public function insertarDecano($decano_periodo, $decano_nom_ape, $decano_profesion, $decano_cip)
+    // ====================================== INSERTAR DIRECTIVA =======================================
+    public function insertarDirectiva($cip_directiva, $cargo_directiva, $miembro_directiva, $correo_directiva, $id_tipo_directiva)
     {
-        $sql = "INSERT INTO decano (decano_periodo,decano_nom_ape,decano_profesion,decano_cip)
-                     VALUES ('$decano_periodo','$decano_nom_ape','$decano_profesion','$decano_cip')";
+        $sql = "INSERT INTO directiva (cip_directiva, cargo_directiva, miembro_directiva, correo_directiva, id_tipo_directiva)
+                     VALUES ('$cip_directiva', '$cargo_directiva', '$miembro_directiva', '$correo_directiva', '$id_tipo_directiva')";
         return ejecutarConsulta($sql);
 
     }
-    public function editarDecano($id_decano, $decano_periodo, $decano_nom_ape, $decano_profesion, $decano_cip)
+    public function editarDirectiva($id_directiva, $cip_directiva, $cargo_directiva, $miembro_directiva, $correo_directiva, $id_tipo_directiva)
     {
-        $sql = "UPDATE decano
-        SET decano_periodo='$decano_periodo',
-            decano_nom_ape='$decano_nom_ape',
-            decano_profesion='$decano_profesion',
-            decano_cip='$decano_cip'
-        WHERE id_decano='$id_decano'";
+        $sql = "UPDATE directiva
+        SET cip_directiva='$cip_directiva',
+            cargo_directiva='$cargo_directiva',
+            miembro_directiva='$miembro_directiva',
+            correo_directiva='$correo_directiva',
+            id_tipo_directiva='$id_tipo_directiva'
+        WHERE id_directiva = '$id_directiva' ";
         return ejecutarConsulta($sql);
     }
 
-    public function activar_decano($id_decano)
+    public function activar_directiva($id_directiva)
     {
-        $sql = "UPDATE decano set estado_decano = '0' WHERE id_decano='$id_decano'";
+        $sql = "UPDATE directiva set estado_directiva = '0' WHERE id_directiva='$id_directiva'";
         return ejecutarConsulta($sql);
     }
 
-    public function desactivar_decano($id_decano)
+    public function desactivar_directiva($id_directiva)
     {
-        $sql = "UPDATE decano set estado_decano = '1' WHERE id_decano='$id_decano'";
+        $sql = "UPDATE directiva set estado_directiva = '1' WHERE id_directiva='$id_directiva'";
         return ejecutarConsulta($sql);
     }
 
