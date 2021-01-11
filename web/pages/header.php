@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -11,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>CIP Consejo departamental de San Martin-Moyobamba</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/logonave.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logonave.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -44,60 +43,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                            <option>¥ JPY</option>
-                            <option>$ USD</option>
-                            <option>€ EUR</option>
-                        </select>
-                    </div>
-                    <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
-                    </div>
                     <div class="our-link">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
-                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
-                        </ul>
+                        <a href="http://www.cip.org.pe/" target="_blank" style="color:white;"><i class="fa fa-university" aria-hidden="true"></i> COLEGIO DE INGENIEROS DEL PERÚ</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="login-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                            <option>Register Here</option>
-                            <option>Sign In</option>
-                        </select>
-                    </div>
-                    <div class="text-slid-box">
-                        <div id="offer-box" class="carouselTicker">
-                            <ul class="offer-box">
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="our-link" style="float: right;">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-map-marker s_color"></i> Jr. Pedro Canga #390 - Moyobamba</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> (042) 352654 - 973532762</a> </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -113,48 +68,68 @@
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                    <a class="navbar-brand" href="index.php"><img src="../images/logoupeu.png" width="250" class="logo" alt=""></a>
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.php"><img src="../images/logo-default.png" width="250" class="logo" alt=""></a>
                 </div>
-                <!-- End Header Navigation -->
+                <!-- End Header Navigation TRÁMITES-->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">INICIO</a></li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">INSTITUCIÓN</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.php">Sidebar Shop</a></li>
-                                <li><a href="shop-detail.php">Shop Detail</a></li>
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="checkout.php">Checkout</a></li>
-                                <li><a href="my-account.php">My Account</a></li>
-                                <li><a href="wishlist.php">Wishlist</a></li>
+                                <li><a href="shop.php">NOSOTROS</a></li>
+                                <li><a href="shop-detail.php">HISTORIA</a></li>
+                                <li><a href="cart.php">DIRECTIVA</a></li>
+                                <li><a href="checkout.php">DOCUMENTOS</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">TRÁMITES</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.php">COLEGIATURA</a></li>
+                                <li><a href="shop-detail.php">REQUISITOS PARA COLEGIATURA</a></li>
+                                <li><a href="cart.php">CERTIFICADO DE HABILIDAD</a></li>
+                                <li><a href="checkout.php">OTROS</a></li>
+                                <li><a href="my-account.php">TARIFARIO</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">CAPÍTULOS</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.php">AGRÓNOMOS Y AFINES</a></li>
+                                <li><a href="shop-detail.php">AMBIENTALES Y AFINES</a></li>
+                                <li><a href="cart.php">INDUSTRIALES Y AFINES</a></li>
+                                <li><a href="checkout.php">CIVILES</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SERVICIOS</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.php">DE BENEFICIO AL COLEGIADO</a></li>
+                                <li><a href="shop-detail.php">DE ESPECIALIZACIÓN DE INGENIERÍA</a></li>
+                                <li><a href="cart.php">CAPACITACIONES</a></li>
+                                <li><a href="checkout.php">ALQUILER</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">PUBLICACIONES</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.php">COMUNICADOS</a></li>
+                                <li><a href="shop-detail.php">EVENTOS</a></li>
+                                <li><a href="cart.php">NOTICIAS</a></li>
+                                <li><a href="checkout.php">CEREMONIAS DE COLEGIATURA</a></li>
+                                <li><a href="my-account.php">ACTIVIDADES</a></li>
+                                <li><a href="wishlist.php">CONVENIOS</a></li>
+                                <li><a href="galeria.php">GALERÍA</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
-
-                <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
-                    <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu">
-                            <a href="#">
-                                <i class="fa fa-shopping-bag"></i>
-                                <span class="badge">3</span>
-                                <p>My Cart</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
             <div class="side">
