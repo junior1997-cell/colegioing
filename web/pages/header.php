@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/zoom.css">
+     <link rel="stylesheet" href="../css/eventos.css">
+     <link rel="stylesheet" href="../css/fondo.css">
+     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
 

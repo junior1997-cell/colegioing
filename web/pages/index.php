@@ -64,7 +64,7 @@ require'header.php';
         </div>
     </div>
     
-    <div class="products-box">
+    <!-- <div class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -618,52 +618,230 @@ require'header.php';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
      
 
     <!-- Start Categories  -->
     <div class="categories-shop">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="../images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="#">Virtual CIP</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="../images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="#">Acceso Colegiados</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="../images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="#">Opurtunidad Laboral</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="../images/categories_img_03.jpg" alt="" />
+                        <a class="btn hvr-hover" href="#">Seguimiento trámite</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Categories -->
+
+     <div class="latest-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Comunicados</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="../images/blog-img.jpg" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3>Fusce in augue non nisi fringilla</h3>
+                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            </div>
+                            <ul class="option-blog">
+                                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#"><i class="far fa-comments"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="../images/blog-img-01.jpg" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3>Fusce in augue non nisi fringilla</h3>
+                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            </div>
+                            <ul class="option-blog">
+                                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#"><i class="far fa-comments"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="../images/blog-img-02.jpg" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3>Fusce in augue non nisi fringilla</h3>
+                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            </div>
+                            <ul class="option-blog">
+                                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#"><i class="far fa-comments"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	
-	<div class="box-add-products">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="../images/add-img-01.jpg" alt="" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="../images/add-img-02.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+<!--<main id="main">
+    <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1 >Comunicados</h1>
+                        <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 3">
+                    </div>
+
+                </div>
+                <br><div class="container">
+                <div class="overlay">
+                    <div class="row my-5">
+                <div class="col-sm-6 col-lg-6">
+                    <div class="service-block-inner">
+                        <h3>Somos de confianza</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="service-block-inner">
+                        <h3>Nosotros somos expertos</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+            </div>
+
+        </main>
+
+
+
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Eventos</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+    <div class="row">
+
+        <div class="col-md-9">
+            <div id="carousel-main"  class="carousel slide " data-ride="carousel" data-interval="5000" >
+                <-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img src="../images/about-img.jpg" style="width: 800px; height: 700px;">
+                    </div>
+                    <div class="item">
+                        <img src="../images/add-img-01.jpg" style="width: 800px; height: 700px;">
+                    </div>
+                    <div class="item">
+                        <img src="../images/big-img-02.jpg" style="width: 800px; height: 700px;">
+                    </div>
+                </div>
+
+
+                <!-- Controls -->
+                <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="carousel-pager" class="carousel slide " data-ride="carousel" data-interval="1000">
+                <!-- Carousel items -->
+                <div class="carousel-inner vertical">
+                    <div class="active item">
+                        <img src="../images/about-img.jpg" class="img-responsive" data-target="#carousel-main" data-slide-to="0">
+                    </div>
+                    <div class="item">
+                        <img src="../images/add-img-01.jpg" class="img-responsive" data-target="#carousel-main" data-slide-to="1">
+                    </div>
+                    <div class="item">
+                        <img src="../images/big-img-02.jpg" class="img-responsive" data-target="#carousel-main" data-slide-to="2">
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-pager" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-pager" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div> --!>
 
     <!-- Start Products  -->
     
