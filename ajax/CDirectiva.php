@@ -30,11 +30,14 @@ switch ($op) {
             $rspta = $directiva->insertarDirectiva($cip_directiva, $cargo_directiva, $miembro_directiva, $correo_directiva, $id_tipo_directiva);
             echo $rspta;
         } else {
-            if (!empty($id_tipo_directiva)) {
-                $id_tipo_directiva2 = $id_tipo_directiva;
+            $tipodirec = 0;
+            if ($id_tipo_directiva >= 1) {
+                $tipodirec = $id_tipo_directiva;
+            } else {
+                $tipodirec = $id_tipo_directiva2;
             }
             // ==================================EDITAR UNA DIRECTIVA EXISTENTE===============
-            $rspta = $directiva->editarDirectiva($id_directiva, $cip_directiva, $cargo_directiva, $miembro_directiva, $correo_directiva, $id_tipo_directiva2);
+            $rspta = $directiva->editarDirectiva($id_directiva, $cip_directiva, $cargo_directiva, $miembro_directiva, $correo_directiva, $tipodirec);
             echo $rspta;
         }
         break;
