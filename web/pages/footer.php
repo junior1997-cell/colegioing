@@ -49,7 +49,7 @@
                             <?php while ($row = $objetivo->fetch_assoc()) { ?>
                                 <p><?php echo $row['valores']; ?></p>
                             <?php } ?>
-                            <a href="../../admin/index.html" style="color:aliceblue;"> Ingresar</a>
+                            <a href="../../admin/index.html" style="color:aliceblue;" target="_blank"> Ingresar</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">

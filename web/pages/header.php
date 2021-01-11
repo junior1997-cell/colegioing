@@ -102,13 +102,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">CAPÍTULOS</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop.php">AGRÓNOMOS Y AFINES</a></li>
-                                <li><a href="shop-detail.php">AMBIENTALES Y AFINES</a></li>
-                                <li><a href="cart.php">INDUSTRIALES Y AFINES</a></li>
-                                <li><a href="checkout.php">CIVILES</a></li>
-                            </ul>
+                            <a href="#" class="nav-link" data-toggle="dropdown">CAPÍTULOS</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SERVICIOS</a>

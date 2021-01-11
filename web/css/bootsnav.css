@@ -538,15 +538,15 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
         border-radius: 0px;
         padding: 0;
         width: 200px;
-        background: #000000;
-		border: none;
+        background: #f9f9f9;
+		border:1px solid #e0e0e0;
 		padding: 30px 0;
     }
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover,
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover{
         background-color: transparent;
-		color: #b0b435;
+		color: #E31E24;
 		-ms-transform: translateX(3px);
 		-webkit-transform: translateX(3px);
 		transform: translateX(3px);
@@ -554,7 +554,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li > a{
         padding: 10px 15px;
-        color: #6f6f6f;
+        color: #000000;
     }
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li:last-child > a{

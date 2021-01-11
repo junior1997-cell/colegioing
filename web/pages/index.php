@@ -1,70 +1,51 @@
 <?php
-require'header.php';
+require 'header.php';
+include '../../config/conexion.php';
+$sql= "SELECT*FROM comunicados where estado=1 ORDER by idcomunicado DESC LIMIT 2";
+$comunicados = ejecutarConsulta($sql);
+
+$sql="SELECT * FROM carousel WHERE estado = '0' ORDER BY idcarousel";
+$carousel= ejecutarConsulta($sql);
+
 ?>
 
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+<div id="slides-shop" class="cover-slides">
+    <ul class="slides-container">
+    <?php while ($row = $carousel->fetch_assoc()) { ?>
+        <li class="text-center">
+            <img src="../../multimedia/carousel/<?php echo $row['foto']; ?>" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 banner-cell">
+                        <h1 style="font-family:CLAN PRO THIN" class="m-b-20"><strong>BIENVENIDOS Al CONSEJO<br> Departamental de </strong></h1>
+                        <h1 style="font-family:Brush Script MT">San Martín <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Moyobamba:Moyobamba:Moyobamba" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </li>
+        <?php } ?>
+    </ul>
+    <div class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
     </div>
-    <!-- End Top Search -->
+</div>
 
-    <!-- Start Slider -->
-    <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
-            <li class="text-center">
-                <img src="../images/banner-01.jpg" alt="">
-                <div class="container">
-                    <div class="row">                        
-                          <div class="col-md-12 banner-cell">                       
-                            <h1 style = "font-family:CLAN PRO THIN" class="m-b-20"><strong>BIENVENIDOS A <br> Freshshop</strong></h1>
-                            <h1 style = "font-family:Brush Script MT">Disfrutalo con tus  <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Amigos:Familia:Compañeros" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-
-                </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="../images/banner-02.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 banner-cell">
-                            <h1 style = "font-family:CLAN PRO THIN" class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <h1 style = "font-family:Brush Script MT">Disfrutalo con tus   <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Amigos:Familia:Compañeros" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>                            
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="../images/banner-03.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 banner-cell">
-                            <h1 style = "font-family:CLAN PRO THIN" class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <h1 style = "font-family:Brush Script MT">Disfrutalo con tus   <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Amigos:Familia:Compañeros" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>                            
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
-    </div>
-    
-    <!-- <div class="products-box">
+<!-- <div class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -619,198 +600,117 @@ require'header.php';
             </div>
         </div>
     </div> -->
-     
-
-    <!-- Start Categories  -->
-    <div class="categories-shop">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Virtual CIP</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Acceso Colegiados</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Opurtunidad Laboral</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Seguimiento trámite</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Categories -->
-
-     <div class="latest-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Comunicados</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img-01.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img-02.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	
 
 
-<!--<main id="main">
-    <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1 >Comunicados</h1>
-                        <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 3">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/categories_img_03.jpg" class="d-block w-100" alt="imagen 3">
-                    </div>
-
-                </div>
-                <br><div class="container">
-                <div class="overlay">
-                    <div class="row my-5">
-                <div class="col-sm-6 col-lg-6">
-                    <div class="service-block-inner">
-                        <h3>Somos de confianza</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-6">
-                    <div class="service-block-inner">
-                        <h3>Nosotros somos expertos</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div>
-                </div>
-            </div>
-            </div>
-
-        </main>
-
-
-
+<!-- Start Categories  -->
+<div class="categories-shop">
     <div class="container">
         <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Eventos</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                    </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../images/tecnologiam.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Virtual CIP</a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../images/graduacionm.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Acceso Colegiados</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../images/grupalm.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Opurtunidad Laboral</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../images/tramitem.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Seguimiento trámite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Categories -->
+
+<div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Comunicados</h1>
+                    <p>A NUESTRA COMUNIDAD DE COLEGIADOS</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <?php while ($row = $comunicados->fetch_assoc()) { ?>
+            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6 ">
+            
+                <div class="blog-box">
+               
+                    <div class="blog-img">
+                        <img class="img-fluid" src="../images/moyo.png" alt="" style="width: 100%;" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3><?php echo $row['titulo']; ?></h3>
+                            <textarea style="border: #D7B56D 5px solid;" class="form-control" rows="4" > <?php echo $row['descripcion']; ?></textarea>
+                            <span style="color: red;">Actualizado al <?php echo $row['fecha']; ?></span>
+                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <?php } ?> 
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="title-all text-center">
+                <h1>Eventos</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+            </div>
+        </div>
+    </div>
     <div class="row">
 
         <div class="col-md-9">
-            <div id="carousel-main"  class="carousel slide " data-ride="carousel" data-interval="5000" >
+            <div id="carousel-main" class="carousel slide " data-ride="carousel" data-interval="5000">
                 <-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="active item">
-                        <img src="../images/about-img.jpg" style="width: 800px; height: 700px;">
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <img src="../images/about-img.jpg" style="width: 800px; height: 700px;">
+                        </div>
+                        <div class="item">
+                            <img src="../images/add-img-01.jpg" style="width: 800px; height: 700px;">
+                        </div>
+                        <div class="item">
+                            <img src="../images/big-img-02.jpg" style="width: 800px; height: 700px;">
+                        </div>
                     </div>
-                    <div class="item">
-                        <img src="../images/add-img-01.jpg" style="width: 800px; height: 700px;">
-                    </div>
-                    <div class="item">
-                        <img src="../images/big-img-02.jpg" style="width: 800px; height: 700px;">
-                    </div>
-                </div>
 
 
-                <!-- Controls -->
-                <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
             </div>
         </div>
 
@@ -828,7 +728,7 @@ require'header.php';
                         <img src="../images/big-img-02.jpg" class="img-responsive" data-target="#carousel-main" data-slide-to="2">
                     </div>
                 </div>
-                
+
                 <!-- Controls -->
                 <a class="left carousel-control" href="#carousel-pager" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
@@ -841,82 +741,126 @@ require'header.php';
             </div>
         </div>
     </div>
-</div> --!>
+</div>
 
-    <!-- Start Products  -->
-    
-    <!-- End Products  -->
 
-    <!-- Start Blog  -->
-    <div class="latest-blog">
+<div class="about-box-main">
         <div class="container">
+        <div class="col-lg-12">
+            <div class="title-all text-center">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+            </div>
+        </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>latest blog</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+				<div class="col-lg-6">
+                    <div class="banner-frame ecfecto "> 
+                        <img class="img-fluid " src="../images/colegio.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top">Nosotros<span> somos</span></h2>
+                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<a class="btn hvr-hover" href="#">Read More</a>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-6">
+                    <div class="service-block-inner">
+                        <h3>Somos de confianza</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="service-block-inner">
+                        <h3>Nosotros somos expertos</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img.jpg" alt="" />
+        </div>
+</div>
+
+
+
+<!-- Start Products  -->
+
+<!-- End Products  -->
+
+<!-- Start Blog  -->
+<div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>latest blog</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="../images/blog-img.jpg" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Fusce in augue non nisi fringilla</h3>
+                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                         </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img-01.jpg" alt="" />
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="../images/blog-img-01.jpg" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Fusce in augue non nisi fringilla</h3>
+                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                         </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img-02.jpg" alt="" />
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="../images/blog-img-02.jpg" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Fusce in augue non nisi fringilla</h3>
+                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                         </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Blog  -->
+</div>
+<!-- End Blog  -->
 <?php
-require'footer.php';
+require 'footer.php';
 ?>
