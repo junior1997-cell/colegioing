@@ -18,9 +18,9 @@ if (!isset($_SESSION["usuario"])) {
     <div class="content-wrapper">
       <section class="content-header">
         <h1>
-			NOSOTROS
-			<small>Gestionar información general</small>
-	   </h1>
+      NOSOTROS
+      <small>Gestionar información general</small>
+     </h1>
 
       </section>
 
@@ -37,9 +37,9 @@ if (!isset($_SESSION["usuario"])) {
                   <h3 class="box-title fa fa-university"> INSTITUTO DE SERVICIOS SOCIALES</h3>
                 </center>
                 <div class="box-tools pull-right">
-                  	<button type="button" class="btn btn-box-tool" data-widget="collapse">
-                  		<i class="fa fa-minus"></i>
-                	</button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                      <i class="fa fa-minus"></i>
+                  </button>
                 </div>
               </div>
 
@@ -55,18 +55,18 @@ if (!isset($_SESSION["usuario"])) {
 
                     <div class="form-group col-md-12">
                       <label for="iss_cip" class="control-label">QUIENES INTEGRAN EL ISS-CIP</label>
-                      <textarea class="form-control" name="iss_cip" id="iss_cip" rows="3"></textarea>   
+                      <textarea class="form-control" name="iss_cip" id="iss_cip" rows="3"></textarea>
                     </div>
 
-					          <div class="form-group col-md-12">
+                    <div class="form-group col-md-12">
                       <label for="derechobenef" class="control-label">QUIENES TIENEN DERECHO A LOS BENEFICIOS DEL ISS-CIP</label>
                       <textarea class="form-control" name="derechobenef" id="derechobenef" rows="3"></textarea>
                     </div>
-					          <div class="form-group col-md-12">
+                    <div class="form-group col-md-12">
                       <label for="himno" class="control-label">CUALES SON LOS SERVICIOS QUE BRINDA ACTUALMENTE EL ISS-CIP:</label>
-                      <textarea class="form-control" name="actualidad" id="actualidad" rows="3"></textarea>     
+                      <textarea class="form-control" name="actualidad" id="actualidad" rows="3"></textarea>
                     </div>
-				 	          <div class="form-group col-md-12">
+                    <div class="form-group col-md-12">
                       <label for="himno" class="control-label">IMPORTANTE</label>
                       <textarea class="form-control" name="important" id="important" rows="3"></textarea>
                     </div>
@@ -84,8 +84,8 @@ if (!isset($_SESSION["usuario"])) {
                   </button>
                 </center>
               </div>
-              
-              
+
+
               <!-- FIN AGREGAR -->
               <!-- TABLA REPORTE-->
               <div class="row">
@@ -98,10 +98,10 @@ if (!isset($_SESSION["usuario"])) {
                     <!-- /.box-header -->
                     <div class="box-body">
                       <!-- BOTÓN AGREGAR -->
-                      <button type="button" class="btn btn-success" onclick="limpiar()" disabled data-toggle="modal" data-target="#agregar_usuario">
+                      <button type="button" class="btn btn-success" onclick="limpiar()"  data-toggle="modal" data-target="#agregar_usuario">
                         <i class="fa fa-file-text"></i>  Agregar Documento
                       </button> <br><br>
-                     
+
                       <div class="table-responsive">
                         <table id="ListarDecano" class="table table-bordered table-striped">
                           <thead>
@@ -136,7 +136,7 @@ if (!isset($_SESSION["usuario"])) {
               </div>
               <!-- FIN TABLA REPORTE-->
               <!-- MODAL AGREGAR USUARIO-->
-              <div class="modal fade" id="agregar_documento">
+              <div class="modal fade" id="agregar_usuario">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <form id="formulario_documentos">
@@ -165,8 +165,8 @@ if (!isset($_SESSION["usuario"])) {
                                       <div class="col-md-12">
                                         <div class="form-group">
                                           <label for="periodo" class="control-label">Nombre</label>
-										  <textarea class="form-control" name="titulo" id="titulo" rows="3"></textarea>
-                                          
+                      <textarea class="form-control" name="titulo" id="titulo" rows="3"></textarea>
+
                                         </div>
                                       </div>
 

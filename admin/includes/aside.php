@@ -46,8 +46,8 @@ if (strlen(session_id()) < 1) {
           <ul class="treeview-menu">
             <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
             <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
-            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
-            <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
+            <li id="lProveedores"><a href="directiva.php"><i class="fa fa-circle-o"></i> Directiva</a></li>
+            <li id="lProveedores"><a href="docnorma.php"><i class="fa fa-circle-o"></i> Doc. Normativos</a></li>
           </ul>
         </li>
         <li id="mCompras" class="treeview">

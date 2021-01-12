@@ -163,7 +163,7 @@ if (!isset($_SESSION["usuario"])) {
                                                                                     <label for="cip" class="control-label">
                                                                                         Tipo Miembro
                                                                                     </label>
-                                                                                    <input type="text" id="id_tipo_directiva2" name="id_tipo_directiva2" />
+                                                                                    <input type="hidden" id="id_tipo_directiva2" name="id_tipo_directiva2" />
                                                                                     <div class="input-group">
                                                                                         <span class="input-group-addon" id="basic-addon1">
                                                                                             <i class="fa fa-bullseye" style="font-size: 20px; "></i>
