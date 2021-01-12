@@ -96,7 +96,7 @@ if (strlen(session_id()) < 1) {
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>CEREMONIAS DE COLEGIATURA</a></li>
             <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>ACTIVIDADES</a></li>
             <li id="lConsulasV"><a href="convenios.php"><i class="fa fa-handshake-o"></i>CONVENIOS</a></li>
-            <li id="lConsulasV"><a href="comunicados.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>
+            <li id="lConsulasV"><a href="galeria.php"><i class="fa fa-circle-o"></i>GELERIA</a></li>
             <li id="lIngresos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> Nosotros</a></li>
             <li id="lProveedores"><a href="historia.php"><i class="fa fa-circle-o"></i> Historia</a></li>
             <li id="lProveedores"><a href="directiva.php"><i class="fa fa-circle-o"></i> Directiva</a></li>

@@ -1,122 +1,99 @@
-      <!--<link rel="stylesheet" href="css/footer.css">
+    <?php
+    include '../../config/conexion.php';
+
+    $sql = "SELECT*FROM empresa";
+    $objetivo = ejecutarConsulta($sql);
+
+    $contact = "SELECT * FROM contactanos";
+    $contactanos = ejecutarConsulta($contact);
+    $sql = "SELECT * FROM galeria WHERE estado = '0' ORDER BY idgaleria";
+    $galeria = ejecutarConsulta($sql);
+
+    ?>
+    <!--<link rel="stylesheet" href="css/footer.css">
 
 
 
    Start Footer  -->
 
-   
+
     <!-- Start Instagram Feed  -->
+    
     <div class="instagram-box">
+    
         <div class="main-instagram owl-carousel owl-theme">
+        <?php while ($row = $galeria->fetch_assoc()) { ?>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero1.jpg" alt="" />
+                    <img src="../../multimedia/galeria/<?php echo $row['foto']; ?>"/>
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-camera-retro"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero1.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero2.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero3.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero4.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero5.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero6.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero7.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero8.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/masetero9.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
+            <?php } ?> 
         </div>
+        
     </div>
-    <!-- End Instagram Feed  -->
+    
+    <!-- End Instagram Feed style="background:#5f5e5c8c!important;" -->
     <footer>
         <div class="footer-main">
             <div class="container">
-				<hr>
+                <hr>
                 <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+
+                        <a class="navbar-brand" href="index.php"><img src="../images/logo-default.png" width="250" class="logo" alt=""></a>
                         <div class="footer-widget">
-                            <h4>ACERCA DE VIVERO UPeU</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
+                            <?php while ($row = $objetivo->fetch_assoc()) { ?>
+                                <p><?php echo $row['valores']; ?></p>
+                            <?php } ?>
+                            <a href="../../admin/index.html" style="color:aliceblue;" target="_blank"> Ingresar</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>CONTÁCTENOS</h4>
+                            <?php while ($row = $contactanos->fetch_assoc()) { ?>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Dirección: <?php echo $row['direccion']; ?> </p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                    <p><i class="fas fa-phone-square"></i>Teléfono: <?php echo $row['telefono']; ?></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>E-mail: <?php echo $row['email']; ?> </p>
                                 </li>
                             </ul>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4> <i fas fa-calendar-week text-color-light></i> HORARIO DE ATENCIÓN</h4>
+                            <ul class="list list-icons list-icons-lg text-left">
+                                <li class="mb-1 pl-0">
+                                    <p class="text-color-light" style="font-size: 18px; color:white; padding-bottom: 1px;">Lunes a Viernes </p>
+                                </li>
+                                <li class="mb-1 ">
+                                    <p class="m-0 text-color-light" style="padding-bottom: 1px;"><i class="fas fa-clock text-color-light"> </i> 8:00am a 1:00pm</p>
+                                </li>
+                                <li class="mb-1 ">
+                                    <p class="m-0 text-color-light" style="padding-bottom: 1px;"><i class="fas fa-clock text-color-light"> </i> 3:00pm a 6:00pm</p>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list list-icons list-icons-lg text-left">
+                                <li class="mb-1 pl-0">
+                                    <p class="text-color-light" style="font-size: 18px; color:white; padding-bottom: 1px;">Sábados </p>
+                                </li>
+                                <li class="mb-1 ">
+                                    <p class="m-0 text-color-light"><i class="fas fa-clock text-color-light"> </i> 9:00am a 12:00pm</p>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -127,8 +104,9 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <img src="https://tarapoto.upeu.edu.pe/wp-content/uploads/2019/09/logo-footer-UPeU.png">
-        <p class="footer-company">Todos los derechos son reservados. &copy; 2020 <a href="https://www.upeu.edu.pe/">Universidad Peruana union</a> 
+        <img src="../images/issi-logo4.fw.png">
+        <p class="footer-company">Todos los derechos son reservados. &copy; 2021 <a href="http://issi.pe/">Ingeniería en Servicios y Soluciones Informáticas</a> ISSI S.A.C
+        </p>
     </div>
     <!-- End copyright  -->
 
@@ -151,9 +129,13 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
+    <script src="../js/eventos.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-</body>
- <!--#6b202e
+    </body>
+    <!--#6b202e
 negro
  #282828-->
-</html>
+
+    </html>
