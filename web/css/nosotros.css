@@ -1,0 +1,135 @@
+
+    .subtitle {
+        font-size: 17px;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .contenido {
+        text-align: justify;
+    }
+
+    .contenido:hover {
+        color: #245C85;
+    }
+
+
+    /** estilo card */
+    .divcard {
+        border-color: #BDB6B6;
+        border-width: 1px;
+        border-style: solid;
+        padding: 2em 2em 0.1em 2em;
+    }
+
+    .divcard div {
+        width: 23rem;
+        border: none;
+    }
+
+    .stylecard {
+        width: 130% !important;
+    }
+
+    .stylecard li {
+        background-color: #E8E7E3;
+        height: 4rem;
+    }
+
+    .stylecard .activo {
+        background-color: #FFC733;
+    }
+
+    .stylecard li a {
+        font-size: 16px;
+        color: black;
+    }
+
+    /**Responsive */
+    @media (min-width: 990px) and (max-width: 1199px) {
+        .stylecard {
+        width: 100% !important;
+    }
+    }
+    @media (min-width: 513px) and (max-width: 989px) {
+        .stylecard {
+        width: 100% !important;
+        padding-left: 70px;
+        }
+        .divcard div {
+            width: 80%;
+            border: none;
+        }
+    }
+    @media (min-width: 256px) and (max-width: 512.99px) {
+        .stylecard {
+        width: 110% !important;
+        padding-left: 70px;
+    }
+        .divcard div {
+            width: 80%;
+            border: none;
+    }
+    
+
+
+    }
+
+
+    /**------------------------- */
+    .all-title-boxx {
+        background: url("../images/historia.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        text-align: center;
+        background-attachment: fixed;
+        padding: 70px 0px;
+        position: relative;
+    }
+
+    .all-title-boxx::before {
+        background: rgba(0, 0, 0, 0.6);
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    .all-title-boxx h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #ffffff;
+        float: left;
+        padding: 10px 0px;
+    }
+
+    .all-title-boxx .breadcrumb {
+        background: #b0b435;
+        margin: 0px;
+        display: inline-block;
+        border-radius: 0px;
+        float: right;
+    }
+
+    .all-title-boxx .breadcrumb li {
+        display: inline-block;
+        color: #000000;
+        font-size: 16px;
+    }
+
+    .all-title-boxx .breadcrumb li a {
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    
+    .all-title-boxx .breadcrumb-item.breadcrumb-item::before {
+        color: #000000;
+    }

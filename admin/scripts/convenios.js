@@ -260,5 +260,30 @@ function addImage(e,id) {
     $("#"+id).val("");
   }
 }
+// WEB CONVENIOS
+function convenios_web(id_convenios) {
+  console.log(id_convenios);
+  $.post(
+    "../ajax/Cconvenios.php?op=mostrar",
+    {
+        idconvenios: idconvenios,
+    },
+    function (data, status) {
+        data = JSON.parse(data);
+        $("#add_pasajes").modal("show");
+        $("#idconvenios").val(data.idconvenio);
+        $("#nombre").val(data.nombre);
+        $("#descripcion").val(data.descripcion);
 
+        $("#foto_actual").val(data.foto);
+
+        if (data.foto == "") {
+            $("#foto_i").attr("src", "recursos/img/img_defecto.png");
+        } else {
+            $("#foto_i").attr("src", "../multimedia/convenios/" + data.foto);
+        }
+    }
+  );
+
+}
 innit();

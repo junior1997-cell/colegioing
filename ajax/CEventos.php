@@ -11,9 +11,10 @@ $ideventos = isset($_POST["ideventos"])?limpiarCadena($_POST["ideventos"]):"";
 $titulo = isset($_POST["titulo"])?limpiarCadena($_POST["titulo"]):"";
 $descripcion = isset($_POST["descripcion"])?limpiarCadena($_POST["descripcion"]):"";
 $foto = isset($_POST["foto"])?limpiarCadena($_POST["foto"]):"";
+$tipopublicacion = isset($_POST["tipopublicacion"])?limpiarCadena($_POST["tipopublicacion"]):"";
+$fecha = isset($_POST["fechaActual"])?limpiarCadena($_POST["fechaActual"]):"";
 
 $op = $_GET["op"];
-
 
 switch($op){
 
@@ -32,7 +33,7 @@ switch($op){
     }
 
     if (empty($ideventos)){
-      $rspta=$eventos->insertar($titulo,$descripcion,$foto);
+      $rspta=$eventos->insertar($titulo,$descripcion,$foto,$tipopublicacion,$fecha);
       echo $rspta;
     }else {
         if($flat_foto==true){
@@ -42,7 +43,11 @@ switch($op){
               unlink("../multimedia/eventos/".$nombre_img_ant);
             }
         }
-        $rspta=$eventos->editar($ideventos,$titulo,$descripcion,$foto);
+        // $fecha_act = strtotime($fecha);
+        // $event = ['ideventos'=>$ideventos,'titulo'=>$titulo,'descripcion'=>$descripcion,
+        // 'foto'=>$foto,'tipopublicacion'=>$tipopublicacion,'fecha'=>$fecha];
+        // echo json_encode($event);
+        $rspta=$eventos->editar($ideventos,$titulo,$descripcion,$foto,$tipopublicacion,$fecha);        
         echo $rspta;
     }
 
@@ -64,9 +69,11 @@ switch($op){
  				"0" => $cont--,
  				"1" => $reg->titulo,
  				"2" => $reg->descripcion,
-				"3" => '<img src="../multimedia/eventos/'.$reg->foto.'" class="img-thumbnail" width="100px">',
-        "4" => ($reg->estado)?'<small class="label pull-right bg-red">DESHABILITADO</small>':'<small class="label pull-right bg-green">ACTIVO</small>',
-        "5" => ($reg->estado)?'<center>'
+ 				"3" => $reg->tipopublicacion,
+ 				"4" => $reg->fecha,
+				"5" => '<img src="../multimedia/eventos/'.$reg->foto.'" class="img-thumbnail" width="100px">',
+        "6" => ($reg->estado)?'<small class="label pull-right bg-red">DESHABILITADO</small>':'<small class="label pull-right bg-green">ACTIVO</small>',
+        "7" => ($reg->estado)?'<center>'
         .'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idevento.')">'
           .'<i class="fa fa-edit"></i>'
         .'</button> '

@@ -7,16 +7,16 @@ Class Mcomunicados{
 
 	}
 
-	public function insertar($titulo,$descripcion,$fechaActual){
+	public function insertar($titulo,$descripcion,$foto,$fechaActual){
 		$sql="INSERT INTO ".
-		"comunicados(titulo,descripcion,fecha) ".
-		"VALUES ('$titulo','$descripcion','$fechaActual')";
+		"comunicados(titulo,descripcion,foto,fecha) ".
+		"VALUES ('$titulo','$descripcion','$foto','$fechaActual')";
 		return ejecutarConsulta($sql);
 	}
 
-	public function editar($idcomunicado,$titulo,$descripcion,$fechaActual){
+	public function editar($idcomunicado,$titulo,$descripcion,$foto,$fechaActual){
 		$sql="UPDATE comunicados SET ".
-				 "titulo='$titulo',descripcion='$descripcion',fecha='$fechaActual' ".
+				 "titulo='$titulo',descripcion='$descripcion',foto='$foto',fecha='$fechaActual' ".
 				 "WHERE idcomunicado='$idcomunicado'";
 		return ejecutarConsulta($sql);
 	}
@@ -36,10 +36,12 @@ Class Mcomunicados{
 		return ejecutarConsulta($sql);
 	}
 
-	public function nombreFoto($idturisticos,$numFoto){
-    $sql = "SELECT foto".$numFoto." FROM turisticos WHERE idturisticos='$idturisticos'";
-    return ejecutarConsulta($sql);
-  }
+	public function nombreFoto($idcomunicado)
+    {
+        $sql = "SELECT foto FROM comunicados WHERE idcomunicado='$idcomunicado'";
+        return ejecutarConsulta($sql);
+    }
+
 
 	public function eliminar($idcomunicado){
 		$sql = "DELETE FROM comunicados WHERE idcomunicado = '$idcomunicado'";

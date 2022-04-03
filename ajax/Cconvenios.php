@@ -69,6 +69,11 @@ switch($op){
  		echo json_encode($rspta);
 	break;
 
+  case 'count_convenios':
+		$rspta=$convenios->count_convenios($idconvenios);
+ 		echo json_encode($rspta);
+	break;
+
 	case 'listar':
 		$rspta=$convenios->listar();
  		$data = Array();

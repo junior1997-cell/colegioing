@@ -52,6 +52,12 @@ Class Mconvenios{
 	public function nombreFoto($idconvenios){
       $sql = "SELECT foto FROM convenios WHERE idconvenio='$idconvenios'";
       return ejecutarConsulta($sql);
-  }
+  	}
+
+	public function count_convenios($idconvenio)
+    {
+        $sql = "SELECT COUNT(idconvenio) as idconvenio FROM convenios WHERE estado = '$idconvenio' ";
+        return ejecutarConsultaSimpleFila($sql);
+    }
 }
 ?>

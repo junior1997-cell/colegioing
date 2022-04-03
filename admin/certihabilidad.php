@@ -2,18 +2,18 @@
 ob_start();
 session_start();
 if (!isset($_SESSION["usuario"])) {
-	header("Location: index.html");
+    header("Location: index.html");
 } else {
-?>
+    ?>
 	<!DOCTYPE html>
 	<html>
-	<?php require 'includes/head.php' ?>
+	<?php require 'includes/head.php'?>
 
 	<body class="hold-transition skin-blue sidebar-mini">
 		<!-- Site wrapper -->
 		<div class="wrapper">
-			<?php require 'includes/header.php' ?>
-			<?php require 'includes/aside.php' ?>
+			<?php require 'includes/header.php'?>
+			<?php require 'includes/aside.php'?>
 
 			<!-- =============================================== -->
 
@@ -85,90 +85,74 @@ if (!isset($_SESSION["usuario"])) {
 			</div>
 			<!-- /.content-wrapper -->
 
-			<?php require 'includes/footer.php' ?>
+			<?php require 'includes/footer.php'?>
 			<div class="control-sidebar-bg"></div>
 		</div>
 
-		<!-- /**
-		*================================
-			Modal registrar CERTIFICADOS DE HABILIDAD
-		*======================
-		*/-->
+		<!-- ======================== ...:::MODAL AGREGAR Y EDITAR CERT. DE HABILIDAD :::... ==================== -->
 
 		<div class="modal fade" id="add_carousel" data-backdrop="static" data-keyboard="false">
 			<div class="modal-dialog">
 
+				<div class="modal-content">
 
-				<form id="formulario_carousel" class="form">
+					<div class="modal-header">
 
-
-					<div class="modal-content">
-						<form action="">
-							<div class="modal-header">
-
-								<h4 class="modal-title"><i class="fa fa-newspaper-o"></i> Agregar nuevo certificado </h4>
-							</div>
-							<div class="modal-body">
-
-								<input type="hidden" name="idcertificadoH" id="idcertificadoH">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label for="titulo" class="control-label">Nombre</label>
-											<input name="titulo" id="titulo" type="text" class="form-control" required>
-										</div>
-
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<label for="descripcion" class="control-label">Descripcion</label>
-											<textarea name="descripcion" id="descripcion" type="text" class="form-control" required></textarea>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<label for="foto">Imagen del certificado</label>
-										<img onerror="this.src='recursos/img/img_defecto.png';" src="recursos/img/img_defecto.png" class="img-thumbnail" id="foto_i" style="cursor: pointer;height: 230px">
-										<input style="display:none" type="file" name="foto" id="foto">
-										<input type="hidden" name="foto_actual" id="foto_actual">
-									</div>
-									<div class="col-md-12">
-										<div class="modal-footer">
-											<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Registrar</button>
-											<button type="button" class="btn btn-danger" id="btn_close_carousel"><i class="fa fa-close"></i> Cancelar </button>
-										</div>
+						<h4 class="modal-title"><i class="fa fa-newspaper-o"></i> Agregar nuevo certificado </h4>
+					</div>
+					<div class="modal-body">
+						<form id="formulario_carousel" class="form">
+							<input type="hidden" name="idcertificadoH" id="idcertificadoH">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="titulo" class="control-label">Nombre</label>
+										<input name="titulo" id="titulo" type="text" class="form-control" required>
 									</div>
 
 								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="descripcion" class="control-label">Descripcion</label>
+										<textarea name="descripcion" id="descripcion" type="text" class="form-control" required rows="3"></textarea>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label for="foto">Imagen del certificado</label>
+									<img onerror="this.src='recursos/img/img_defecto.png';" src="recursos/img/img_defecto.png" class="img-thumbnail" id="foto_i" style="cursor: pointer;height: 230px">
+									<input style="display:none" type="file" name="foto" id="foto">
+									<input type="hidden" name="foto_actual" id="foto_actual">
+								</div>
+								<div class="col-md-12">
+									<div class="modal-footer">
+										<button type="button" class="btn btn-danger" id="btn_close_carousel">
+											<i class="fa fa-close"></i> Cancelar
+										</button>
+										<button type="submit" class="btn btn-success">
+											<i class="fa fa-check"></i> Guardar
+										</button>
+									</div>
+								</div>
+							</div>
 						</form>
 					</div>
+				</div>
 
 			</div>
+		</div>
+		<!--  =================== ...::: FIN MODAL CERTIFICADOS DE HABILIDAD :::... ============== -->
 
-			</form>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-		</div>
-		<!-- /**
-		*================================
-			FIN Modal registrar CERTIFICADOS DE HABILIDAD
-		*======================
-		*/-->
-		<!--
-		*======================
-			FIN Modal registrar CERTIFICADOS DE HABILIDAD
-		*======================
-		-->
+		<!--========================= ..:: MODAL TABLA LISTAR COSTOS ::.. =========================-->
 		<div class="modal fade" id="ver_costo" data-backdrop="static" data-keyboard="false">
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-lg">
 
-				<div class="modal-content">
-					<form action="">
-						<div class="modal-header">
+				<div class="modal-content"  style="border-radius: 10px;">
+					<form  >
+						<div class="modal-header" >
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title"><i class="fa fa-newspaper-o"></i> Agregar nuevo certificado </h4>
+							<h4 class="modal-title"><i class="fa fa-newspaper-o"></i> Lista de Costos </h4>
 						</div>
 						<div class="modal-body">
 							<div class="box-body">
@@ -178,8 +162,9 @@ if (!isset($_SESSION["usuario"])) {
 										<thead>
 											<tr>
 												<th width="15px">N°</th>
-												<th>decripcion del costo</th>
+												<th>Descripción del costo</th>
 												<th>Monto</th>
+												<th>Estado</th>
 												<th>
 													<center>Acción</center>
 												</th>
@@ -188,25 +173,79 @@ if (!isset($_SESSION["usuario"])) {
 										<tbody>
 										</tbody>
 									</table>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+			<!-- /.modal-dialog -->
+		</div>
 
+		<!-- ======================== ...:::MODAL AGREGAR Y EDITAR  COSTO :::... ==================== -->
+
+		<div class="modal fade" id="add_edit_costo_modal" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog">
+
+				<div class="modal-content" style="border-radius: 10px;">
+
+					<div class="modal-header">
+
+						<h4 class="modal-title"><i class="fa fa-newspaper-o"></i> Costos </h4>
+					</div>
+					<div class="modal-body">
+						<form id="formulario_costo" class="form">
+							<input type="hidden" name="idmontos" id="idmontos">
+							<input type="hidden" name="idCertifhabilidad" id="idCertifhabilidad">
+							<div class="row">
+
+								<!-- =================== NOMBRE DEL DOCUMENTO ==================== -->
+								<div class="col-md-6" style="padding-bottom: 8px;">
+								    <label for="profesion" class="control-label">Descripción del costo</label>
+								    <div class="input-group">
+								        <span class="input-group-addon" id="basic-addon1">
+								            <i class="fa fa-align-left" style="font-size: 20px;"></i>
+
+								        </span>
+								        <input required="" type="text" class="form-control" placeholder="Descripcion del costo" minlength="4" name="cost_por_obra" id="cost_por_obra" />
+								    </div>
 								</div>
 
-							</div>
+								<!-- =================== NOMBRE DEL DOCUMENTO ==================== -->
+								<div class="col-md-6" style="padding-bottom: 8px;">
+								    <label for="profesion" class="control-label">Monto</label>
+								    <div class="input-group">
+								        <span class="input-group-addon" id="basic-addon1">
+								            <i class="fa fa-money" style="font-size: 20px;"></i>
+								        </span>
+								        <input required="" type="number" class="form-control" placeholder="Monto" min="1"  name="monto" id="monto" />
+								    </div>
+								</div>
 
-					</form>
+								<div class="col-md-12">
+									<div class="modal-footer">
+										<button type="button" class="btn btn-danger" onclick="cerrar_form_costo();" >
+											<i class="fa fa-close"></i> Cancelar
+										</button>
+										<button type="submit" class="btn btn-success">
+											<i class="fa fa-check"></i> Guardar
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 
 			</div>
-
-
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
-		</div>
+		<!--  =================== ...::: FIN MODAL CERTIFICADOS DE COSTO :::... ============== -->
 
-		<?php require 'includes/scripts.php' ?>
+		<?php require 'includes/scripts.php'?>
 
 		<script src="scripts/certihabilidad.js"></script>
+		<script src="scripts/auxiliar.js"></script>
 
 	</body>
 

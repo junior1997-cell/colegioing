@@ -102,15 +102,11 @@ function mostrar_empresa() {
   $.post("../ajax/CEmpresa.php?op=mostrar", {
   }, function(data, status) {
     data = JSON.parse(data);
-    console.log(data);
     $("#nombre").val(decodeHtml(data.nombre));
-    $("#lema").val(decodeHtml(data.lema));
     $('#descripcion').val(decodeHtml(data.descripcion));
     $('#mision').val(decodeHtml(data.mision));
     $('#vision').val(decodeHtml(data.vision));
     $('#valores').val(decodeHtml(data.valores));
-    $('#politica').val(decodeHtml(data.politica));
-    $('#servicios').val(decodeHtml(data.servicios));
   })
 }
 

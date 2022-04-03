@@ -1,4 +1,15 @@
 var tabla;
+var tabla_departamental;
+var historial_tabla_departamental;
+var tabla_agronomo;
+var historial_tabla_agronomo;
+var tabla_ambiental;
+var historial_tabla_ambiental;
+var tabla_industrial;
+var historial_tabla_industrial;
+var tabla_civil;
+var historial_tabla_civil;
+
 
 function init() {
     // formulario decanos
@@ -19,7 +30,18 @@ function init() {
         actualizar_empresa(e);
     });
     
-    listar_directiva(); 
+    listar_directiva_departamental();
+    listar_directiva_agronomo()
+    listar_directiva_ambiental();
+    listar_directiva_industrial();
+    listar_directiva_civiles();
+
+    // histirial
+    historial_directiva_departamental();
+    historial_directiva_agronomo();
+    historial_directiva_ambiental();
+    historial_listar_directiva_industrial();
+    historial_listar_directiva_civiles();
 }
 
 // tabla Directivas
@@ -54,7 +76,11 @@ function guardaryeditarDirectiva(e) {
                  
             }
             console.log(datos);
-            tabla.ajax.reload();
+            tabla_departamental.ajax.reload();
+            tabla_agronomo.ajax.reload();
+            tabla_ambiental.ajax.reload();
+            tabla_industrial.ajax.reload();
+            tabla_civil.ajax.reload();
         }
     });
         $("#agregar_usuario").modal("hide");
@@ -71,8 +97,8 @@ function limpiarDirectiva(){
   $("#id_directiva").val("");
 }
 // ================================ LISTAR CONSEJO DEPARTAMENTAL =============================
-function listar_directiva() {
-    tabla = $('#ListarDirectiva').dataTable({
+function listar_directiva_departamental() {
+    tabla_departamental = $('#ListarDirectivaDepartamental').dataTable({
         "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
         "language": {
             responsive: true,
@@ -80,7 +106,223 @@ function listar_directiva() {
         },
         "ajax":
                 {
-                    url: '../ajax/CDirectiva.php?op=listarDirectiva',
+                    url: '../ajax/CDirectiva.php?op=ListarDirectivaDepartamental',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR CONSEJO DEPARTAMENTAL =============================------------------
+function historial_directiva_departamental() {
+    historial_tabla_departamental = $('#historial_directiva_departmental').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=Historial_DirectivaDepartamental',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA AGRONOMO =============================
+function listar_directiva_agronomo() {
+    tabla_agronomo = $('#ListarDirectivaAgronomo').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=listarDirectivaAgronomos',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA AGRONOMO =============================-----------------
+function historial_directiva_agronomo() {
+    historial_tabla_agronomo = $('#historial_directiva_agronomo').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=Historial_listarDirectivaAgronomos',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA AMBIENTAL =============================
+function listar_directiva_ambiental() {
+    tabla_ambiental = $('#ListarDirectivaAmbiental').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=listarDirectivaAmbiental',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA AMBIENTAL =============================-------------
+function historial_directiva_ambiental() {
+    historial_tabla_ambiental = $('#historial_directiva_ambiental').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=Historial_listarDirectivaAmbiental',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA INDUSTRIAL =============================
+function listar_directiva_industrial() {
+    tabla_industrial = $('#ListarDirectivaIndustrial').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=listarDirectivaIndustrial',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA INDUSTRIAL =============================
+function historial_listar_directiva_industrial() {
+    historial_tabla_industrial = $('#historial_directiva_industrial').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=Historial_listarDirectivaIndustrial',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA CIVIL =============================
+function listar_directiva_civiles() {
+    tabla_civil = $('#listarDirectivaCivil').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=listarDirectivaCivil',
+                    type: "get",
+                    dataType: "json",
+                    error: function (e) {
+                        console.log(e.responseText);
+                    }
+                },
+        "bDestroy": true,
+        responsive: true,
+        "iDisplayLength": 10, //Paginación
+        "order": [[0, "asc"]]
+    }).DataTable();
+}
+
+// ================================ LISTAR DIRECTIVA CIVIL =============================
+function historial_listar_directiva_civiles() {
+    historial_tabla_civil = $('#historial_directiva_civil').dataTable({
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todo"]],
+        "language": {
+            responsive: true,
+            url: 'recursos/js/idioma.json'
+        },
+        "ajax":
+                {
+                    url: '../ajax/CDirectiva.php?op=Historial_listarDirectivaCivil',
                     type: "get",
                     dataType: "json",
                     error: function (e) {
@@ -100,7 +342,7 @@ function mostrarDirectiva(iddirectiva){
     iddirectiva: iddirectiva
   }, function (data){
       data = JSON.parse(data);
-      // console.log(data);
+      console.log(data);
       $('#agregar_usuario').modal('show');
       $("#id_directiva").val(data[0].id_directiva);
       $("#cip_directiva").val(data[0].cip_directiva);
@@ -163,7 +405,7 @@ function decodeHtml(str) {
 function desactivar_directiva(id_directiva) {
     console.log(id_directiva);
     swal({
-        title: "¿Deseas DESACTIVAR este Miembro?",
+        title: "¿Deseas enviar a HISTORIAL este Miembro?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -176,12 +418,21 @@ function desactivar_directiva(id_directiva) {
                 $.post("../ajax/CDirectiva.php?op=desactivar_directiva", {id_directiva: id_directiva}, function (e) {
                     if (e) {
                         swal({
-                            title: "Se Desactivó con éxito.",
+                            title: "Se Envió con éxito.",
                             type: "success",
                             timer: 1500,
                             showConfirmButton: false
                         });
-                        tabla.ajax.reload();
+                        tabla_departamental.ajax.reload();
+                        historial_tabla_departamental.ajax.reload();
+                        tabla_agronomo.ajax.reload();
+                        historial_tabla_agronomo.ajax.reload();
+                        tabla_ambiental.ajax.reload();
+                        historial_tabla_ambiental.ajax.reload();
+                        tabla_industrial.ajax.reload();
+                        historial_tabla_industrial.ajax.reload();
+                        tabla_civil.ajax.reload();
+                        historial_tabla_civil.ajax.reload();
                     }
                 });
             } else {
@@ -191,7 +442,16 @@ function desactivar_directiva(id_directiva) {
                     timer: 1500,
                     showConfirmButton: false
                 });
-                tabla.ajax.reload();
+                tabla_departamental.ajax.reload();
+                historial_tabla_departamental.ajax.reload();
+                tabla_agronomo.ajax.reload();
+                tabla_ambiental.ajax.reload();
+                historial_tabla_ambiental.ajax.reload();
+                tabla_industrial.ajax.reload();
+                historial_tabla_industrial.ajax.reload();
+                tabla_civil.ajax.reload();
+                historial_tabla_civil.ajax.reload();
+
             }
         }
     );
@@ -201,7 +461,7 @@ function desactivar_directiva(id_directiva) {
 function activar_directiva(id_directiva) {
     console.log(id_directiva);
     swal({
-        title: "¿Deseas ACTIVAR este Decano?",
+        title: "¿Deseas RECUPERAR este Miembro?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#26a25b",
@@ -213,12 +473,22 @@ function activar_directiva(id_directiva) {
             if (isConfirm) {
                 $.post("../ajax/CDirectiva.php?op=activar_directiva", {id_directiva: id_directiva}, function (e) {
                     swal({
-                        title: "Se activó con éxito.",
+                        title: "Se Recupero con éxito.",
                         type: "success",
                         timer: 1500,
                         showConfirmButton: false
                     });
-                    tabla.ajax.reload();
+                    tabla_departamental.ajax.reload();
+                    historial_tabla_departamental.ajax.reload();
+                    tabla_agronomo.ajax.reload();
+                    historial_tabla_agronomo.ajax.reload();
+                    tabla_ambiental.ajax.reload();
+                    historial_tabla_ambiental.ajax.reload();
+                    tabla_industrial.ajax.reload();
+                    historial_tabla_industrial.ajax.reload();
+                    tabla_civil.ajax.reload();
+                    historial_tabla_civil.ajax.reload();
+
                 });
 
                 }
@@ -229,9 +499,20 @@ function activar_directiva(id_directiva) {
                     timer: 1500,
                     showConfirmButton: false
                 });
-                tabla.ajax.reload();
+                tabla_departamental.ajax.reload();
+                historial_tabla_departamental.ajax.reload();
+                tabla_agronomo.ajax.reload();
+                historial_tabla_agronomo.ajax.reload();
+                tabla_ambiental.ajax.reload();
+                historial_tabla_ambiental.ajax.reload();
+                tabla_industrial.ajax.reload();
+                historial_tabla_industrial.ajax.reload();
+                tabla_civil.ajax.reload();
+                historial_tabla_civil.ajax.reload();
+                 
             }
         }
     );
 }
+ 
 init();

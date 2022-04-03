@@ -11,7 +11,7 @@ function innit() {
       limpiar();
   });
 
-  $("#formulario_carousel").on("submit", function (e) {
+  $("#formulario_evento").on("submit", function (e) {
         guardaryeditar(e);
     });
 
@@ -31,7 +31,7 @@ function limpiar(){
   $("#ideventos").val("");
   $("#titulo").val("");
   $("#descripcion").val("");
-
+  $("#tipopublicacion").selectpicker('refresh');
   $("#foto_i").attr("src", "recursos/img/img_defecto.png");
   $("#foto").val("");
   $("#foto_actual").val("");
@@ -40,7 +40,7 @@ function limpiar(){
 
 function guardaryeditar(e) {
   e.preventDefault();
-  var formData = new FormData($("#formulario_carousel")[0]);
+  var formData = new FormData($("#formulario_evento")[0]);
   $.ajax({
     url: "../ajax/CEventos.php?op=guardaryeditar",
     type: "POST",
@@ -132,6 +132,13 @@ function mostrar(ideventos) {
     $("#titulo").val(data.titulo);
     $("#descripcion").val(data.descripcion);
     $("#foto_actual").val(data.foto);
+    if (data.tipopublicacion == "") {
+      $("#tipopublicacion_new").html('no definido');
+    } else {
+      $("#tipopublicacion").val(data.tipopublicacion);
+      $("#tipopublicacion").selectpicker('refresh');
+    }
+    
 
     if (data.foto == "") {
       $("#foto_i").attr("src", "recursos/img/img_defecto.png");
@@ -269,5 +276,14 @@ function eliminar(ideventos) {
 		});
 }
 
+//funcion fecha
+
+var todayDate = new Date();
+var getTodayDate = todayDate.getDate();
+var getTodayMonth = todayDate.getMonth() + 1;
+var getTodayFullYear = todayDate.getFullYear();
+var getCurrentDateTime = getTodayFullYear + '-' + getTodayMonth + '-' + getTodayDate;
+//document.getElementsByTagName(getCurrentDateTime);
+$("#fechaActual").val(getCurrentDateTime);
 
 innit();

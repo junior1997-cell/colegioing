@@ -9,15 +9,17 @@ class Mbeneficio_cole
 
     }
 
-    public function insertarDoc($titulo,$documento)
+    public function insertarDoc($nombre_doc, $documento)
     {
-        $sql = "INSERT INTO doc_benficio_cole (titulo,documento) VALUES ('$titulo','$documento')";
+        $sql = "INSERT INTO doc_benficio_cole (nombre_doc,documento) VALUES ('$nombre_doc','$documento')";
         return ejecutarConsulta($sql);
     }
 
-    public function editarDoc($idbeneficio,$titulo,$documento)
+    public function editarDoc($idbeneficio, $nombre_doc, $documento)
     {
-       $sql = "UPDATE doc_benficio_cole SET titulo='$titulo', documento='$documento' WHERE idbeneficio='$idbeneficio'";
+        $sql = "UPDATE doc_benficio_cole
+        SET nombre_doc='$nombre_doc', documento='$documento'
+        WHERE idbeneficio='$idbeneficio'";
         return ejecutarConsulta($sql);
     }
 
@@ -50,22 +52,22 @@ class Mbeneficio_cole
         return ejecutarConsultaSimpleFila($sql);
     }
 
-    public function editarserv_sociales($servicios_sociales,$iss_cip,$derechobenef,$actualidad,$important)
+    public function editarserv_sociales($servicios_sociales, $integran_iss_cip, $derechos_iss_cip, $serv_act, $importantes)
     {
         $sql = "UPDATE info_beneficio_cole
-        		SET	servicios_sociales='$servicios_sociales',
-        		integran_iss_cip='$iss_cip',
-        		derechos_iss_cip='$derechobenef',
-        		serv_act='$actualidad',
-        		inportantes='$important',
-        		WHERE idInfobc='1'";
+                SET servicios_sociales='$servicios_sociales',
+                    integran_iss_cip='$integran_iss_cip',
+                    derechos_iss_cip='$derechos_iss_cip',
+                    serv_act='$serv_act',
+                    importantes='$importantes'
+                WHERE idInfobc='1'";
         return ejecutarConsulta($sql);
     }
 
-    /**
-    * ==========================
-    * FIN LISTAR INSTITUTO DE SERVICIOS SOCIALES
-    * ==========================
-    */
+    public function editar($coordenadas, $direccion, $email, $telefono)
+    {
+        $sql = "UPDATE info_beneficio_cole SET    coordenadas='$coordenadas',direccion='$direccion', email='$email', telefono='$telefono'  WHERE idcontactanos='1'";
+        return ejecutarConsulta($sql);
+    }
 
 }

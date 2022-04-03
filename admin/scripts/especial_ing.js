@@ -2,11 +2,11 @@ var tabla;
 function init(){
 
   $("#btn_editar_m").click(function() {
-    editar_contactanos();
+    editar_especial();
   });
 
   $("#btn_actualizar_m").click(function(e) {
-    actualizar_contactanos(e);
+    actualizar_especial(e);
   });
 
   $("#btn_editar_e").click(function() {
@@ -17,14 +17,14 @@ function init(){
     actualizar_empresa(e);
   });
 
-  contactanos(true);
+  especial(true);
   empresa(true);
-  mostrar_contactanos();
+  mostrar_especial();
   mostrar_empresa();
 }
 
 
-function contactanos(a){
+function especial(a){
   $("#peritaje").prop('disabled', a);
   $("#arbitraje").prop('disabled', a);
   $('#btn_actualizar_m').prop("disabled", a);
@@ -32,12 +32,12 @@ function contactanos(a){
   $('#asuntos_municipales').prop("disabled", a);
 }
 
-function editar_contactanos(){
-   contactanos(false);
+function editar_especial(){
+   especial(false);
    $('#btn_editar_m').prop("disabled", true);
 }
 
-function mostrar_contactanos() {
+function mostrar_especial() {
   $.post("../ajax/Cespecial_ing.php?op=mostrar", {
   }, function(data, status) {
     data = JSON.parse(data);
@@ -48,9 +48,15 @@ function mostrar_contactanos() {
   })
 }
 
-function actualizar_contactanos(e) {
+function actualizar_especial(e) {  
+  $("#cargando_cuerpo").html(''+
+    '<center>'+
+      '<i style="color: white;" class="fa fa-refresh fa-spin fa-5x fa-fw"></i>'+
+    '</center>'
+  );
+  $("#cargando_modal").modal("show");
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	var formData = new FormData($("#formulario_contactanos")[0]);
+	var formData = new FormData($("#formulario_especial")[0]);
 	$.ajax({
 		url: "../ajax/Cespecial_ing.php?op=actualizar",
 		type: "POST",
@@ -58,6 +64,8 @@ function actualizar_contactanos(e) {
 		contentType: false,
 		processData: false,
 		success: function (datos) {
+      $("#cargando_modal").modal("hide");
+      $("#cargando_cuerpo").html('');
       if (datos == 1) {
         swal({
           title: "😃 Exitó 😀",
@@ -74,14 +82,17 @@ function actualizar_contactanos(e) {
       }
 		}
 	});
-  mostrar_contactanos();
-	contactanos(true);
+  // mostrar_especial();
+	especial(true);
+  mostrar_especial();
+  mostrar_especial();
   $('#btn_editar_m').prop("disabled", false);
 }
 
 /****/
 
 function empresa(a){
+  // mostrar_especial();
   $("#nombre").prop('disabled', a);
   $("#lema").prop('disabled', a);
   $('#descripcion').prop("disabled", a);
@@ -98,53 +109,9 @@ function editar_empresa(){
    $('#btn_editar_e').prop("disabled", true);
 }
 
-function mostrar_empresa() {
-  $.post("../ajax/CEmpresa.php?op=mostrar", {
-  }, function(data, status) {
-    data = JSON.parse(data);
-    console.log(data);
-    $("#nombre").val(decodeHtml(data.nombre));
-    $("#lema").val(decodeHtml(data.lema));
-    $('#descripcion').val(decodeHtml(data.descripcion));
-    $('#mision').val(decodeHtml(data.mision));
-    $('#vision').val(decodeHtml(data.vision));
-    $('#valores').val(decodeHtml(data.valores));
-    $('#politica').val(decodeHtml(data.politica));
-    $('#servicios').val(decodeHtml(data.servicios));
-  })
-}
+ 
 
-function actualizar_empresa(e) {
-	e.preventDefault(); //No se activará la acción predeterminada del evento
-	var formData = new FormData($("#formulario_empresa")[0]);
-	$.ajax({
-		url: "../ajax/CEmpresa.php?op=actualizar",
-		type: "POST",
-		data: formData,
-		contentType: false,
-		processData: false,
-		success: function (datos) {
-      if (datos == 1) {
-        swal({
-          title: "😃 Exitó 😀",
-          timer: 2000,
-          type: "success"
-        });
-        /*alertify.success('😃 Agregado con exitó 😀');*/
-      } else {
-        swal({
-          title: "😓 Error 😔",
-          timer: 2000,
-          type: "error"
-        });
-      }
-		}
-	});
-  mostrar_empresa();
-	empresa(true);
-  $('#btn_editar_e').prop("disabled", false);
-}
-
+ 
 function decodeHtml(str){
     var map =
     {

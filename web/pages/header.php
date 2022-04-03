@@ -27,17 +27,13 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
-    <link rel="stylesheet" href="../css/zoom.css">
+     <link rel="stylesheet" href="../css/zoom.css">
      <link rel="stylesheet" href="../css/eventos.css">
      <link rel="stylesheet" href="../css/fondo.css">
+     <link rel="stylesheet" href="../css/nosotros.css">
      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -74,7 +70,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="../images/logo-default.png" width="250" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="../images/cip_moyo.svg" width="250" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation TRÁMITES-->
 
@@ -85,43 +81,42 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">INSTITUCIÓN</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.php">NOSOTROS</a></li>
-                                <li><a href="shop-detail.php">HISTORIA</a></li>
-                                <li><a href="cart.php">DIRECTIVA</a></li>
-                                <li><a href="checkout.php">DOCUMENTOS</a></li>
+                                <li><a href="nosotros.php">NOSOTROS</a></li>
+                                <li><a href="historia.php">HISTORIA</a></li>
+                                <li><a href="directiva.php">DIRECTIVA</a></li>
+                                <li><a href="documentos.php">DOCUMENTOS</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">TRÁMITES</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.php">COLEGIATURA</a></li>
-                                <li><a href="shop-detail.php">REQUISITOS PARA COLEGIATURA</a></li>
-                                <li><a href="cart.php">CERTIFICADO DE HABILIDAD</a></li>
-                                <li><a href="checkout.php">OTROS</a></li>
-                                <li><a href="my-account.php">TARIFARIO</a></li>
+                                <li><a href="colegiatura.php">COLEGIATURA</a></li>
+                                <li><a href="requisitos.php">REQUISITOS PARA COLEGIATURA</a></li>
+                                <li><a href="certficadohabil.php">CERTIFICADO DE HABILIDAD</a></li>
+                                <li><a href="tarifario.php">TARIFARIO</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">CAPÍTULOS</a>
+                        <li>
+                            <a href="capitulos.php" class="nav-link">CAPÍTULOS</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SERVICIOS</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.php">DE BENEFICIO AL COLEGIADO</a></li>
-                                <li><a href="shop-detail.php">DE ESPECIALIZACIÓN DE INGENIERÍA</a></li>
-                                <li><a href="cart.php">CAPACITACIONES</a></li>
-                                <li><a href="checkout.php">ALQUILER</a></li>
+                                <li><a href="beneficCole.php">DE BENEFICIO AL COLEGIADO</a></li>
+                                <li><a href="especializacioning.php">DE ESPECIALIZACIÓN DE INGENIERÍA</a></li>
+                                <li><a href="capacitaciones.php">CAPACITACIONES</a></li>
+                                <li><a href="alquiler.php">ALQUILER</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">PUBLICACIONES</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.php">COMUNICADOS</a></li>
-                                <li><a href="shop-detail.php">EVENTOS</a></li>
-                                <li><a href="cart.php">NOTICIAS</a></li>
-                                <li><a href="checkout.php">CEREMONIAS DE COLEGIATURA</a></li>
-                                <li><a href="my-account.php">ACTIVIDADES</a></li>
-                                <li><a href="wishlist.php">CONVENIOS</a></li>
+                                <li><a href="comunicados.php">COMUNICADOS</a></li>
+                                <!--<li><a href="shop-detail.php">EVENTOS</a></li>-->
+                                <li><a href="noticias.php">NOTICIAS Y EVENTOS</a></li>
+                               <!-- <li><a href="checkout.php">CEREMONIAS DE COLEGIATURA</a></li>
+                                <li><a href="my-account.php">ACTIVIDADES</a></li>-->
+                                <li><a href="convenios.php">CONVENIOS</a></li>
                                 <li><a href="galeria.php">GALERÍA</a></li>
                             </ul>
                         </li>
@@ -129,34 +124,6 @@
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
-            <!-- Start Side Menu -->
-            <div class="side">
-                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                <li class="cart-box">
-                    <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
-                    </ul>
-                </li>
-            </div>
-            <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>

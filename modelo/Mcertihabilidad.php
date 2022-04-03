@@ -32,17 +32,50 @@ class McertificadoH
         $sql = "SELECT * FROM certifhabilidad ORDER BY idcertifhabilidad";
         return ejecutarConsulta($sql);
     }
-    public function listarcosto($id){
-        $sql = "SELECT * FROM montoscertif  ORDER BY idmontos WHERE idCertifhabilidad='$id'";
+    // LISTAR TABLA COSTO
+    public function listarcosto($id)
+    {
+        $sql = "SELECT * FROM montoscertif mc
+                WHERE mc.idCertifhabilidad = '$id'
+                ORDER BY idmontos DESC";
         return ejecutarConsulta($sql);
 
-     }
+    }
 
-    /*public function listar_web(){
-    $sql="SELECT * FROM certifhabilidad WHERE estado = '0' ORDER BY idcertifhabilidad";
-    return ejecutarConsulta($sql);
-    }*/
+    public function insertar_monto($idCertifhabilidad, $cost_por_obra, $monto)
+    {
+        $sql = "INSERT INTO montoscertif (idCertifhabilidad,cost_por_obra,monto)
+                VALUES ('$idCertifhabilidad','$cost_por_obra','$monto')";
+        return ejecutarConsulta($sql);
+    }
 
+    public function mostrar_edit_costo($idmontos)
+    {
+        $sql = "SELECT * FROM montoscertif WHERE idmontos='$idmontos'";
+        return ejecutarConsultaSimpleFila($sql);
+    }
+
+    public function editar_monto($idmontos, $idCertifhabilidad, $cost_por_obra, $monto)
+    {
+        $sql = "UPDATE montoscertif
+        SET idCertifhabilidad='$idCertifhabilidad',cost_por_obra='$cost_por_obra', monto='$monto'
+        WHERE idmontos='$idmontos'";
+        return ejecutarConsulta($sql);
+    }
+    // .................... ::::::::::: ACTIVAR COSTO ::::::::::::: ....................
+    public function activar_costo($idmontos)
+    {
+        $sql = "UPDATE montoscertif SET estado='0' WHERE idmontos = '$idmontos'";
+        return ejecutarConsulta($sql);
+    }
+    // ...................... ::::::: DESACTIVAR COSTO :::::::::::.................
+    public function desactivar_costo($idmontos)
+    {
+        $sql = "UPDATE montoscertif SET estado='1' WHERE idmontos = '$idmontos'";
+        return ejecutarConsulta($sql);
+    }
+
+    // ..................................................................................
     public function eliminar($idcertifhabilidad)
     {
         $sql = "DELETE FROM certifhabilidad WHERE idcertifhabilidad = '$idcertifhabilidad'";
@@ -69,7 +102,5 @@ class McertificadoH
     /**
      * costo
      */
-
-
 
 }

@@ -5,13 +5,13 @@ Class MEmpresa{
 
   public function __construct(){}
 
-  public function insertar($nombre,$lema,$descripcion,$mision,$vision,$valores,$politica,$servicios){
-    $sql="INSERT INTO empresa (nombre,lema,descripcion,mision,vision,valores,politica,servicios) VALUES ('$nombre','$lema','$descripcion','$mision','$vision','$valores','$politica','$servicios')";
+  public function insertar($nombre,$descripcion,$mision,$vision,$valores){
+    $sql="INSERT INTO empresa (nombre,descripcion,mision,vision,valores) VALUES ('$nombre','$descripcion','$mision','$vision','$valores')";
     return ejecutarConsulta($sql);
   }
 
-  public function editar($nombre,$lema,$descripcion,$mision,$vision,$valores,$politica,$servicios){
-    $sql="UPDATE empresa SET	nombre='$nombre',lema='$lema', descripcion='$descripcion', mision='$mision', vision='$vision', valores='$valores', politica='$politica', servicios='$servicios'  WHERE idempresa='1'";
+  public function editar($nombre,$descripcion,$mision,$vision,$valores){
+    $sql="UPDATE empresa SET	nombre='$nombre', descripcion='$descripcion', mision='$mision', vision='$vision', valores='$valores'  WHERE idempresa='1'";
     return ejecutarConsulta($sql);
   }
 

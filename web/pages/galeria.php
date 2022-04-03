@@ -6,6 +6,7 @@ $sql = "SELECT * FROM galeria WHERE estado = '0' ORDER BY idgaleria";
 $galeria = ejecutarConsulta($sql);
 ?>
 
+<link id="changeable-colors" rel="stylesheet" href="web/css/colors/vivid-yellow.css" />
 
 <!-- Start Top Search -->
 <div class="top-search">
@@ -24,7 +25,11 @@ $galeria = ejecutarConsulta($sql);
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Galeria Institucional</h2>
+                <h2>Galeria</h2>
+                <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+                        <li class="breadcrumb-item active">GALERÍA</li>
+                    </ul>
             </div>
         </div>
     </div>
@@ -32,141 +37,67 @@ $galeria = ejecutarConsulta($sql);
 <!-- End All Title Box -->
 
 <!-- Start Wishlist  -->
-<div class="wishlist-box-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="table-main table-responsive">
-                    <center>
-                        <h1>Imágenes del Consejo Departamental de Cajamarca</h1>
-                        <hr style="background-color: red;" />
-                    </center>
-
+<div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Nuestra Galería</h1>
+                        
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <ul class="galeria">
-            <?php while ($row = $galeria->fetch_assoc()) { ?>
-                <li><a href="#aaa"><img src="../../multimedia/galeria/<?php echo $row['foto']; ?>"></a></li>
-            <?php } ?> 
-            </ul>
-           
-            <div class="modal" id="aaa">
-            
-                <h3>hola</h3>
+
+            <div class="row special-list">
+                
                 <?php while ($row = $galeria->fetch_assoc()) { ?>
-                <div class="imagen">
-                    <a href="#img4">&#60;</a>
-                    <a href="#img2"><img src="../../multimedia/galeria/<?php echo $row['foto']; ?>"></a>
-                    <a href="#img2">></a>
-                    <?php } ?> 
+                <div class="col-lg-3 col-md-6 special-grid bulbs">
+                    
+                    <div class="products-single fix">
+
+                         <div class="shop-cat-box">
+                             
+                         <div class="special-box">
+                           
+                        <div id="owl-demo">
+                        
+                        <div class="item item-type-zoom">
+                                <a href="#" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            <strong class="strong"><?php echo $row['titulo'];?></strong>
+                                            <div class="line"></div>
+                                            <div class="dit-line"><?php echo $row['descripcion'];?></div>
+                                        </div>
+                                    </div>
+                                </a>
+                        <div class="box-img-hover">
+                            <img src="../../multimedia/galeria/<?php echo $row['foto']; ?>" class="img-fluid" alt="Image" style="width: 400px; height: 250px;">                            
+                        </div>    
+                        </div>
+                        
+                        </div>
+                        
+                        </div> 
+
+                        </div>  
+                                    
+                    </div>
+
+                </div>
+                <?php } ?>  
                 </div>
 
-                <a class="cerrar" href="">X</a>
+                  
+                
             </div>
-            
-
         </div>
-    </div>
 </div>
 
 <?php
 require 'footer.php';
 ?>
 <style>
-    /*Estilos de la galeria*/
-
-    .galeria {
-        width: 100%;
-        margin: auto;
-        list-style: none;
-        padding: 20px;
-        box-sizing: border-box;
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .galeria li {
-        margin: 5px;
-    }
-
-    .galeria img {
-        width: 250px;
-        height: 200px;
-    }
-
-    /*Estilos del modal*/
-
-    .modal {
-        display: none;
-    }
-
-    .modal:target {
-
-        display: block;
-        position: fixed;
-        background: rgba(0, 0, 0, 0.8);
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .modal h3 {
-        color: #fff;
-        font-size: 30px;
-        text-align: center;
-        margin: 15px 0;
-    }
-
-    .imagen {
-        width: 100%;
-        height: 50%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .imagen a {
-        color: #fff;
-        font-size: 40px;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-
-    .imagen a:nth-child(2) {
-        margin: 0;
-        height: 100%;
-        flex-shrink: 2;
-    }
-
-    .imagen img {
-        width: 500px;
-        height: 100%;
-        max-width: 100%;
-        border: 7px solid #fff;
-        box-sizing: border-box;
-    }
-
-    .cerrar {
-        display: block;
-        background: #fff;
-        width: 25px;
-        height: 25px;
-        margin: 15px auto;
-        text-align: center;
-        text-decoration: none;
-        font-size: 25px;
-        color: #000;
-        padding: 5px;
-        border-radius: 50%;
-        line-height: 25px;
-    }
-
     /**------------------------- */
     .all-title-boxx {
         background: url("../images/historia.jpg") no-repeat center center;
@@ -182,7 +113,6 @@ require 'footer.php';
     }
 
     .all-title-boxx::before {
-        background: rgba(0, 0, 0, 0.6);
         content: "";
         position: absolute;
         z-index: 0;
@@ -222,6 +152,94 @@ require 'footer.php';
     .all-title-boxx .breadcrumb-item+.breadcrumb-item::before {
         color: #000000;
     }
+    .item-type-zoom .item-info .headline {
+    font-size: 18px;
+    width: 75%;
+    margin: 0 auto;
+    border: 4px solid #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    }
+
+.item-type-zoom .item-info {
+    z-index: 10;
+    color: #ffffff;
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    z-index: 5;
+    -webkit-transform: scale(0,0);
+    -moz-transform: scale(0,0);
+    -ms-transform: scale(0,0);
+    transform: scale(0,0);
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    bottom:0px;
+}
+.item-type-zoom .item-info .headline {
+    font-size: 18px;
+    width: 75%;
+    margin: 0 auto;
+    border: 4px solid #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.item-type-zoom .item-info .line {
+    height: 1px;
+    width: 20%;
+    margin: 15px auto 10px auto;
+    background-color: #ffffff;
+}
+
+.item-type-zoom .item-info .dit-line {
+    font-size: 14px;
+    font-style: italic;
+    color: red;
+}
+.item-type-zoom .item-hover:hover .item-info {
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    transform: scale(1,1);
+}
+.item-type-zoom .item-hover {
+    z-index: 5;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    text-align: center;   
+}
+.item-hover, .item-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+}
+.item-type-zoom .item-hover:hover {
+    opacity: 7; 
+}
+
+
+
+.item-type-zoom .item-hover:hover .item-info {
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    transform: scale(1,1);
+}
+.strong{
+    color: black;
+}
+
 
     /**------------------------------------------- */
 </style>

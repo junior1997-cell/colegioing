@@ -2,34 +2,55 @@ var tabla;
 
 function init() {
     // formulario decanos
-    $("#formulario_historia").on("submit", function (e) {
+    $("#formulario_decano").on("submit", function (e) {
         guardaryeditarDecano(e);
     });
 
-    $("#btn_editar_m").click(function() {
-        editar_contactanos();
-    });
-    $("#btn_actualizar_m").click(function(e) {
-        actualizar_contactanos(e);
-    });
+ 
     $("#btn_editar_e").click(function() {
-        editar_empresa();
+        editar_historia();
     });
     $("#btn_actualizar_e").click(function(e) {
-        actualizar_empresa(e);
+        actualizar_historia(e);
     });
-    contactanos(true);
-    empresa(true);
-    mostrar_contactanos();
-    mostrar_empresa();
+
+    historia(true);
+    mostrar_historia();
     
     listar_decano();
+    
+     
+    $('#reseña_historia').summernote({
+        placeholder: 'Escriba su descripción aquí.',
+        tabsize: 1,
+        height: 80,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'help']]
+        ],
+    });
+
+    $('#himno').summernote({
+        placeholder: 'Escriba su descripción aquí.',
+        tabsize: 1,
+        height: 80,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'help']]
+        ],
+    });     
 }
 
 // tabla decanos
 function guardaryeditarDecano(e) {
     e.preventDefault();
-    var formData = new FormData($("#formulario_historia")[0]);
+    var formData = new FormData($("#formulario_decano")[0]);
     console.log(formData);
     $.ajax({
         url: "../ajax/CHistoria.php?op=guardaryeditar",
@@ -108,81 +129,57 @@ function mostrarDecano(iddecano){
   });
 }
 
-function contactanos(a) {
-    $("#reseña_historia").prop('disabled', a);
-    $('#himno').prop("disabled", a);
-}
 
-function editar_contactanos() {
-    contactanos(false);
-    $('#btn_editar_m').prop("disabled", true);
-}
 
-function mostrar_contactanos() {
+function mostrar_historia() {
     $.post("../ajax/CHistoria.php?op=mostrar", {}, function(data, status) {
         data = JSON.parse(data);
         // console.log(data);
         // console
-        $("#reseña_historia").val(data.reseña_historia);
-        $("#himno").val(data.himno);
+        var histo = data.reseña_historia;
+        // $("#reseña_historia").val(data.reseña_historia);
+        $("#reseña_historia").summernote('code', histo);
+        // $("#himno").val(data.himno);
+        $("#himno").summernote('code', data.himno);
     })
 }
 
-function actualizar_contactanos(e) {
-    e.preventDefault(); //No se activará la acción predeterminada del evento
-    var formData = new FormData($("#formulario_contactanos")[0]);
-    $.ajax({
-        url: "../ajax/CHistoria.php?op=actualizar",
-        type: "POST",
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(datos) {
-            if (datos == 1) {
-                swal({
-                    title: "😃😃 Exitó 😀😀",
-                    timer: 2000,
-                    type: "success"
-                });
-                /*alertify.success('😃 Agregado con exitó 😀');*/
-            } else {
-                swal({
-                    title: "😓 Error 😔",
-                    timer: 2000,
-                    type: "error"
-                });
-            }
-        }
-    });
-    mostrar_contactanos();
-    contactanos(true);
-    $('#btn_editar_m').prop("disabled", false);
-}
-/****/
-function empresa(a) {
-    $('#reseña_historia').prop("disabled", a);
-    $('#himno').prop("disabled", a);
+function historia(a) {
+    if (a) {
+        $("#reseña_historia").summernote('disable');
+         
+    } else {
+        $("#reseña_historia").summernote('enable');
+    }
+    
+    if (a) {
+        $("#himno").summernote('disable');
+         
+    } else {
+        $("#himno").summernote('enable');
+    }
     $('#btn_actualizar_e').prop("disabled", a);
 }
 
-function editar_empresa() {
-    empresa(false);
+function editar_historia() {
+    historia(false);
     $('#btn_editar_e').prop("disabled", true);
 }
 
-function mostrar_empresa() {
-    $.post("../ajax/CHistoria.php?op=mostrar", {}, function(data, status) {
-        data = JSON.parse(data);
-        // console.log(data);
+// function mostrar_historia() {
+//     $.post("../ajax/CHistoria.php?op=mostrar", {}, function(data, status) {
+//         data = JSON.parse(data);
+//         // console.log(data);
         
-        $('#reseña_historia').val(decodeHtml(data.reseña_historia));
-        $('#himno').val(decodeHtml(data.himno));
-    })
-}
+//         $('#reseña_historia').val(decodeHtml(data.reseña_historia));
+//         $("#reseña_historia").summernote('code', data.reseña_historia);
+//         $('#himno').val(decodeHtml(data.himno));
+//     })
+// }
 
-function actualizar_empresa(e) {
+function actualizar_historia(e) {
     e.preventDefault(); //No se activará la acción predeterminada del evento
-    var formData = new FormData($("#formulario_empresa")[0]);
+    var formData = new FormData($("#formulario_historia")[0]);
     $.ajax({
         url: "../ajax/CHistoria.php?op=actualizar",
         type: "POST",
@@ -206,8 +203,8 @@ function actualizar_empresa(e) {
             }
         }
     });
-    mostrar_empresa();
-    empresa(true);
+    mostrar_historia();
+    historia(true);
     $('#btn_editar_e').prop("disabled", false);
 }
 

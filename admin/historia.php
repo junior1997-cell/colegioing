@@ -45,7 +45,7 @@ if (!isset($_SESSION["usuario"])) {
 
               <div class="box-body">
 
-                <form class="form" id="formulario_empresa">
+                <form class="form" id="formulario_historia">
                   <div class="box-body">
 
                     <div class="form-group col-md-12">
@@ -53,7 +53,7 @@ if (!isset($_SESSION["usuario"])) {
                         <i class="fa fa-telegram" style="font-size: 20px; "></i>
                         RESEÑA HISTORICA
                       </label>
-                      <textarea class="form-control" name="reseña_historia" id="reseña_historia" rows="8"></textarea>
+                      <textarea class="form-control" name="reseña_historia" id="reseña_historia" rows="4"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
@@ -61,7 +61,7 @@ if (!isset($_SESSION["usuario"])) {
                         <i class="fa fa-telegram" style="font-size: 20px; "></i>
                         HIMNO
                       </label>
-                      <textarea class="form-control" name="himno" id="himno" rows="8"></textarea>
+                      <textarea class="form-control" name="himno" id="himno" rows="4"></textarea>
                     </div>
 
                   </div>
@@ -143,7 +143,7 @@ if (!isset($_SESSION["usuario"])) {
               <div class="modal fade" id="agregar_usuario">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <form id="formulario_historia">
+                    <form id="formulario_decano">
 
                       <input type="hidden" id="id_decano" name="id_decano">
 

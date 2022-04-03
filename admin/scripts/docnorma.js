@@ -3,7 +3,7 @@ var tabla;
 function init() {
     // formulario decanos
     $("#formulario_docnorma").on("submit", function (e) {
-        guardaryeditarDirectiva(e);
+        guardaryeditarDoc(e);
     });
 
     $("#btn_editar_m").click(function() {
@@ -23,10 +23,10 @@ function init() {
 }
 
 // tabla Directivas
-function guardaryeditarDirectiva(e) {
+function guardaryeditarDoc(e) {
     e.preventDefault();
     var formData = new FormData($("#formulario_docnorma")[0]);
-    console.log(formData);
+    // console.log(formData);
     $.ajax({
         url: "../ajax/CDocnorma.php?op=guardaryeditar",
         type: "POST",
@@ -36,7 +36,7 @@ function guardaryeditarDirectiva(e) {
         success: function (datos) {
             if (datos == 1) {
                 swal({
-                    title: "Miembro Directivo Registrado.",
+                    title: "DOCUMENTO Registrado !!",
                     type: "success",
                     text: "Exito.",
                     timer: 1500,
@@ -45,7 +45,7 @@ function guardaryeditarDirectiva(e) {
                  
             } else {
                 swal({
-                    title: "¡No se Pudo Registrar Miembro!",
+                    title: "¡No se Pudo Registrar DOCUMENTO!",
                     type: "error",
                     text: "Error.",
                     timer: 1500,
@@ -53,7 +53,7 @@ function guardaryeditarDirectiva(e) {
                 });
                  
             }
-            console.log(datos);
+            // console.log(datos);
             tabla.ajax.reload();
         }
     });
@@ -62,13 +62,23 @@ function guardaryeditarDirectiva(e) {
 }
 
 function limpiarDocnorma(){
-  $("#cip_directiva").val("");
-  $("#cargo_directiva").val("");
+  $("#id_docnorma").val("");
+  $("#nombre_doc").val("");
   $("#miembro_directiva").val("");
   $("#correo_directiva").val("");
-  $("#id_tipo_directiva").html("Seleccione");
-  $("#id_tipo_directiva2").val("");
-  $("#id_docnorma").val("");
+  $("#nombre_tipo_doc").html("Seleccione");
+  $("#tipo_doc_actual").val("");
+  $("#docActual").val("");
+  $(".docpdf").val("");
+  $("#viewer").val("");
+  $("#ver_pdf").html(''+
+     
+        '<div class="alert alert-info alert-dismissible">'+
+            '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+
+            '<h4><i class="icon fa fa-info"></i> Alerta!</h4>'+
+            'Seleciona un documento y luego PULSE el boton AMARILLO.'+
+        '</div>'
+     );
 }
 // ================================ LISTAR CONSEJO DEPARTAMENTAL =============================
 function listar_docnorma() {
@@ -95,22 +105,32 @@ function listar_docnorma() {
 }
 
 // mostrar decano
-function mostrar_docnorma(id_docnorma){
-  $.post("../ajax/CDocnorma.php?op=mostrar_docnorma", {
-    id_docnorma: id_docnorma
-  }, function (data){
-      data = JSON.parse(data);
-      console.log(data);
-      $('#agregar_usuario').modal('show');
-      $("#id_docnorma").val(data[0].id_docnorma);
-      $("#doc2").val(data[0].doc_doc);
-      $("#nombre_doc").val(data[0].nombre_doc);
-      $("#nombre_tipo_doc").html(data[0].nombre_tipo_doc);
-      $("#tipo_doc_actual").val(data[0].idtipodoc);
-      $("#doc").val(data[0].nombre_doc);
-  });
-  PreviewImage();
+function mostrar_docnorma(id_docnorma) {
+    $("#ver_pdf").html('<center> <i class="fa fa-refresh fa-spin fa-5x fa-fw"></i> </center>');
+    $.post(
+        "../ajax/CDocnorma.php?op=mostrar_docnorma",
+        {
+            id_docnorma: id_docnorma,
+        },
+        function (data,status) {
+            data = JSON.parse(data);
+            console.log(data);
+
+            $("#agregar_usuario").modal("show");
+            $("#id_docnorma").val(data[0].id_docnorma);
+            $("#docActual").val(data[0].doc_doc);
+            $("#nombre_doc").val(data[0].nombre_doc);
+            $("#nombre_tipo_doc").html(data[0].nombre_tipo_doc);
+            $("#tipo_doc_actual").val(data[0].idtipodoc);
+            // $("#doc").val(data[0].nombre_doc);
+            $("#ver_pdf").html('<iframe src="'+data[0].doc_doc+'" frameborder="0" scrolling="no" width="100%" height="210"></iframe>');
+            // $(".docpdf").val(data[0].doc_doc);
+            
+        }
+    );
+    // PreviewImage();
 }
+
 
 
 
@@ -173,7 +193,7 @@ function desactivar_docnorma(id_docnorma) {
         closeOnCancel: false},
         function (isConfirm) {
             if (isConfirm) {
-                $.post("../ajax/CDocnorma.php?op=desactivar_directiva", {id_docnorma: id_docnorma}, function (e) {
+                $.post("../ajax/CDocnorma.php?op=desactivar_docnorma", {id_docnorma: id_docnorma}, function (e) {
                     if (e) {
                         swal({
                             title: "Se Desactivó con éxito.",
@@ -211,7 +231,7 @@ function activar_docnorma(id_docnorma) {
         closeOnCancel: false},
         function (isConfirm) {
             if (isConfirm) {
-                $.post("../ajax/CDocnorma.php?op=activar_directiva", {id_docnorma: id_docnorma}, function (e) {
+                $.post("../ajax/CDocnorma.php?op=activar_docnorma", {id_docnorma: id_docnorma}, function (e) {
                     swal({
                         title: "Se activó con éxito.",
                         type: "success",
@@ -241,11 +261,13 @@ $(".tablas").on("click", ".btnMostrarPlanClasePDF", function(){
   var a = $(this).attr("a");
 
   console.log("pdf", pdf);
+console.log("pdf:", a);
    
   var pdf = document.getElementById('pdf');
+	var dow= document.getElementById('dow');
 
-    pdf.innerHTML = '<a href=""'+a+'"" target="blank"> Doc Tarjet Blank</a> <embed  src="'+a+'" width="100%" height="50%" ></embed>';
-     
+    pdf.innerHTML = '<a href=""'+a+'"" target="blank"> Doc Tarjet Blank</a> <br/> <embed  src="'+a+'" width="100%" height="50%" ></embed>';
+    dow.innerHTML = '<a href="'+a+'" target="_blank" style="color: #fdfdfd !important;"><i class="fa fa-download "> </i> PDF</a>' ; 
 
 
 })

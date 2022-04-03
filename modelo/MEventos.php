@@ -9,15 +9,15 @@ class Meventos
 
     }
 
-    public function insertar($titulo, $descripcion, $foto)
+    public function insertar($titulo, $descripcion, $foto, $tipopublicacion,$fecha)
     {
-        $sql = "INSERT INTO eventos (titulo,descripcion,foto) VALUES ('$titulo','$descripcion','$foto')";
+        $sql = "INSERT INTO eventos (titulo,descripcion,foto,tipopublicacion,fecha) VALUES ('$titulo','$descripcion','$foto','$tipopublicacion','$fecha')";
         return ejecutarConsulta($sql);
     }
 
-    public function editar($ideventos, $titulo, $descripcion, $foto)
+    public function editar($ideventos, $titulo, $descripcion, $foto,$tipopublicacion,$fecha)
     {
-        $sql = "UPDATE eventos SET titulo='$titulo',foto='$foto', descripcion='$descripcion' WHERE idevento='$ideventos'";
+        $sql = "UPDATE eventos SET titulo='$titulo',foto='$foto', descripcion='$descripcion', tipopublicacion='$tipopublicacion' , fecha='$fecha' WHERE idevento='$ideventos'";
         return ejecutarConsulta($sql);
     }
 

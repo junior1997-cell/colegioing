@@ -7,8 +7,7 @@ require_once '../modelo/MHistoria.php';
 
 $historia = new MHistoria();
 
-$reseña_historia = isset($_POST["reseña_historia"]) ? limpiarCadena($_POST["reseña_historia"]) : "";
-$himno = isset($_POST["himno"]) ? limpiarCadena($_POST["himno"]) : "";
+
 // datos del DECANO
 $id_decano = isset($_POST["id_decano"]) ? limpiarCadena($_POST["id_decano"]) : "";
 $decano_periodo = isset($_POST["decano_periodo"]) ? limpiarCadena($_POST["decano_periodo"]) : "";
@@ -19,7 +18,11 @@ $decano_cip = isset($_POST["decano_cip"]) ? limpiarCadena($_POST["decano_cip"]) 
 $op = $_GET["op"];
 switch ($op) {
     case 'actualizar':
+		$reseña_historia = $_POST["reseña_historia"];
+		$himno = $_POST["himno"];
         $rspta = $historia->editar($reseña_historia, $himno);
+		// $tsa = ['histori'=>$reseña_historia, 'hino'=>$himno];
+		// echo json_encode( $tsa );
         echo $rspta;
         break;
 

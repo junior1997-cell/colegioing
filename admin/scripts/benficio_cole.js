@@ -1,46 +1,49 @@
 var tabla;
 
 function init() {
-    // formulario decanos
+    // formulario benefico
     $("#formulario_documentos").on("submit", function (e) {
-      guardaryeditarDoc(e);
+      Guardar_Editar_DOC_Beneficio(e);
     });
 
     $("#btn_editar_m").click(function() {
         editar_contactanos();
     });
     $("#btn_actualizar_e").click(function(e) {
-        actualizar_contactanos(e);
+        actualizar_beneficio(e);
     });
 
-    contactanos(true);
+    input_beneficio(true);
     //empresa(true);
     mostrar_serv_soc();
    // mostrar_empresa();
     
     listar_documnt();
+    $('#btn_actualizar_e').prop("disabled", true);
 }
 
-/**
- * ============================================
- * Documento
- *=============================================
- */
-
 // tabla documentos
-function guardaryeditarDoc(e) {
+function Guardar_Editar_DOC_Beneficio(e) {
+    $("#cargando_cuerpo").html(''+
+        '<center>'+
+          '<i style="color: white;" class="fa fa-refresh fa-spin fa-5x fa-fw"></i>'+
+        '</center>'
+      );
+    $("#cargando_modal").modal("show");
     e.preventDefault();
     var formData = new FormData($("#formulario_documentos")[0]);
-        $.ajax({
+    $.ajax({
         url: "../ajax/Cbeneficio_cole.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
         success: function (datos) {
-         if (datos == 1) {
+            $("#cargando_modal").modal("hide");
+            $("#cargando_cuerpo").html('');
+            if (datos == 1) {
                 swal({
-                    title: "Decano Registrado.",
+                    title: "Documento Registrado.",
                     type: "success",
                     text: "Exito.",
                     timer: 1500,
@@ -48,25 +51,27 @@ function guardaryeditarDoc(e) {
                 });
             } else {
                 swal({
-                    title: "¡No se Pudo Registrar Decano!",
+                    title: "😓 ¡No se Pudo Registrar Documento! 😓",
                     type: "error",
                     text: "Error.",
                     timer: 1500,
                     showConfirmButton: false
                 });
             }
-        tabla.ajax.reload();
+            tabla.ajax.reload();
         }
     });
-        $("#agregar_documento").modal("hide");
-        limpiar();
+    $("#agregar_documento").modal("hide");
+    limpiar();
 }
 
 function limpiar(){
-  $("#titulo").val("");
-  $("#documento").val("");
+  $("#idbeneficio ").val("");
+  $("#nombre_doc").val("");
   $("#documento_actual").val("");
-  $("#idbeneficio").val("");
+  $("#documento").val("");
+  $("#ver_pdf").html('');
+  $("iframe").remove();
 }
 // Listar documento
 function listar_documnt() {
@@ -92,21 +97,26 @@ function listar_documnt() {
 
 // mostrar documento
 function mostrarDoc(idbeneficio){
-  $.post("../ajax/Cbeneficio_cole.php?op=mostrardoc", {
-    idbeneficio: idbeneficio
-  }, function (data, status){
-      data = JSON.parse(data);
-      $('#agregar_documento').modal('show');
-      $("#idbeneficio").val(data.idbeneficio);
-      $("#titulo").val(data.titulo);
-      $("#documento_actual").val(data.documento);
+    $("#ver_pdf").html('<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>');
+    $('#agregar_documento').modal('show');
+    $.post("../ajax/Cbeneficio_cole.php?op=mostrardoc", {
+        idbeneficio: idbeneficio }, 
+        function (data, status){
+            data = JSON.parse(data);
+            // console.log(data);
+          
+          $("#idbeneficio").val(data.idbeneficio);
+          $("#nombre_doc").val(data.nombre_doc);
+          $("#documento_actual").val(data.documento);
+          $("#ver_pdf").html('<iframe src="'+data.documento+'" frameborder="0" scrolling="no" width="100%" height="210"></iframe>');
 
-  });
+        }
+    );
 }
 /**-----------------------------------------------------------
  * ----------------------------------------------
  */
-function contactanos(a) {
+function input_beneficio(a) {
     $("#servicios_sociales").prop('disabled', a);
     $('#iss_cip').prop("disabled", a);
     $("#derechobenef").prop('disabled', a);
@@ -115,8 +125,9 @@ function contactanos(a) {
 }
 
 function editar_contactanos() {
-    contactanos(false);
+    input_beneficio(false);
     $('#btn_editar_m').prop("disabled", true);
+    $('#btn_actualizar_e').prop("disabled", false);
 }
 
 function mostrar_serv_soc() {
@@ -132,9 +143,10 @@ function mostrar_serv_soc() {
     })
 }
 
-function actualizar_contactanos(e) {
+function actualizar_beneficio(e) {
     e.preventDefault(); //No se activará la acción predeterminada del evento
-    var formData = new FormData($("#formulario_contactanos")[0]);
+    var formData = new FormData($("#formulario_beneficio")[0]);
+    // console.log('formulario: '+formData);
     $.ajax({
         url: "../ajax/Cbeneficio_cole.php?op=actualizarserv",
         type: "POST",
@@ -142,6 +154,7 @@ function actualizar_contactanos(e) {
         contentType: false,
         processData: false,
         success: function(datos) {
+            console.log(datos);
             if (datos == 1) {
                 swal({
                     title: "😃😃 Exitó 😀😀",
@@ -151,7 +164,7 @@ function actualizar_contactanos(e) {
                 /*alertify.success('😃 Agregado con exitó 😀');*/
             } else {
                 swal({
-                    title: "😓 Error 😔",
+                    title: "😓 Error al Actualizar 😔",
                     timer: 2000,
                     type: "error"
                 });
@@ -159,8 +172,9 @@ function actualizar_contactanos(e) {
         }
     });
     mostrar_serv_soc();
-    contactanos(true);
+    input_beneficio(true);
     $('#btn_editar_m').prop("disabled", false);
+    $('#btn_actualizar_e').prop("disabled", true);
 }
 /**Editar**/
 
@@ -176,5 +190,23 @@ function decodeHtml(str) {
         return map[m];
     });
 }
+
+$(".tablas").on("click", ".btnMostrarPlanClasePDF", function(){
+
+  var pdf = $(this).attr("pdf");
+  var nombrePdf = $(this).attr("c");
+  var a = $(this).attr("a");
+
+  console.log("pdf", pdf);
+console.log("pdf:", a);
+   
+  var pdf = document.getElementById('pdf');
+    var dow= document.getElementById('dow');
+
+    pdf.innerHTML = '<a href=""'+a+'"" target="blank"> Doc Tarjet Blank</a> <br/> <embed  src="'+a+'" width="100%" height="50%" ></embed>';
+    dow.innerHTML = '<a href="'+a+'" download="'+nombrePdf+'" target="_blank" style="color: #fdfdfd !important;"><i class="fa fa-download "> </i> PDF</a>' ; 
+
+
+})
 
 init();

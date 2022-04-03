@@ -35,7 +35,7 @@ $(document).ready(function() {
             // SI INGRESA
             alerta_obj.html("<div class='alert alert-block alert-success fade in'><center><strong>😃 ¡En buena hora!</strong> 😃  </center></div>");
             quitar_vibrar();
-            $(location).attr("href", "contactanos.php");
+            $(location).attr("href", "inicio.php");
           } else {
             alerta_obj.html(alerta_conten("de que tus credenciales sean válidas."));
             // alertify.error('😓 Asegurate! de que tus credenciales sean válidas.');

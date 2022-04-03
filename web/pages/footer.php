@@ -19,7 +19,7 @@
 
     <!-- Start Instagram Feed  -->
     
-    <div class="instagram-box">
+    <div class="instagram-box" style="padding: 30px 0px!important;">
     
         <div class="main-instagram owl-carousel owl-theme">
         <?php while ($row = $galeria->fetch_assoc()) { ?>
@@ -38,18 +38,19 @@
     
     <!-- End Instagram Feed style="background:#5f5e5c8c!important;" -->
     <footer>
-        <div class="footer-main">
+        <div class="footer-main"  style="padding: 0px 0px!important;">
             <div class="container">
                 <hr>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
 
                         <a class="navbar-brand" href="index.php"><img src="../images/logo-default.png" width="250" class="logo" alt=""></a>
+			<br><br><br><br>
                         <div class="footer-widget">
                             <?php while ($row = $objetivo->fetch_assoc()) { ?>
                                 <p><?php echo $row['valores']; ?></p>
                             <?php } ?>
-                            <a href="../../admin/index.html" style="color:aliceblue;" target="_blank"> Ingresar</a>
+                           
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -71,29 +72,44 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4> <i fas fa-calendar-week text-color-light></i> HORARIO DE ATENCIÓN</h4>
-                            <ul class="list list-icons list-icons-lg text-left">
-                                <li class="mb-1 pl-0">
-                                    <p class="text-color-light" style="font-size: 18px; color:white; padding-bottom: 1px;">Lunes a Viernes </p>
-                                </li>
-                                <li class="mb-1 ">
-                                    <p class="m-0 text-color-light" style="padding-bottom: 1px;"><i class="fas fa-clock text-color-light"> </i> 8:00am a 1:00pm</p>
-                                </li>
-                                <li class="mb-1 ">
-                                    <p class="m-0 text-color-light" style="padding-bottom: 1px;"><i class="fas fa-clock text-color-light"> </i> 3:00pm a 6:00pm</p>
-                                </li>
-                            </ul>
-                            
-                            <ul class="list list-icons list-icons-lg text-left">
-                                <li class="mb-1 pl-0">
-                                    <p class="text-color-light" style="font-size: 18px; color:white; padding-bottom: 1px;">Sábados </p>
-                                </li>
-                                <li class="mb-1 ">
-                                    <p class="m-0 text-color-light"><i class="fas fa-clock text-color-light"> </i> 9:00am a 12:00pm</p>
-                                </li>
-                            </ul>
+                                                <div class="row">
+                            <div class="col-lg-6 col-md-16 col-sm-12">
+                                <div class="footer-widget">
+                                    <h4> <i fas fa-calendar-week text-color-light></i>  ATENCIÓN</h4>
+                                    <ul class="list list-icons list-icons-lg text-left">
+                                        <li class="mb-1 pl-0">
+                                            <p class="text-color-light" style="font-size: 18px; color:white; padding-bottom: 1px;">Lunes a Viernes </p>
+                                        </li>
+                                        <li class="mb-1 ">
+                                            <p class="m-0 text-color-light" style="padding-bottom: 1px;"><i class="fas fa-clock text-color-light"> </i> 8:00am a 1:00pm</p>
+                                        </li>
+                                        <li class="mb-1 ">
+                                            <p class="m-0 text-color-light" style="padding-bottom: 1px;"><i class="fas fa-clock text-color-light"> </i> 3:00pm a 6:00pm</p>
+                                        </li>
+                                    </ul>
 
+                                    <ul class="list list-icons list-icons-lg text-left">
+                                        <li class="mb-1 pl-0">
+                                            <p class="text-color-light" style="font-size: 18px; color:white; padding-bottom: 1px;">Sábados </p>
+                                        </li>
+                                        <li class="mb-1 ">
+                                            <p class="m-0 text-color-light"><i class="fas fa-clock text-color-light"> </i> 9:00am a 12:00pm</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-16 col-sm-12">
+                                <div class="footer-widget" style="margin-bottom: 0px!important;">
+                                    <h4> <i fas fa-calendar-week text-color-light></i> INTRANET</h4>
+                                    <ul class="list list-icons list-icons-lg text-left">
+                                        <li class="mb-1 pl-0">
+                                            <a href="../../admin/index.html" style="color:aliceblue;" target="_blank">
+                                            <i class="fa fa-user" aria-hidden="true"></i> Web Master</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>

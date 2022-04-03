@@ -15,20 +15,14 @@ function innit() {
     guardaryeditar(e);
   });
 
-  $("#foto1_i").click(function() {
-    $('#foto1').trigger('click');
+  
+
+  $("#foto_i").click(function() {
+    $('#foto').trigger('click');
   });
 
-  $("#foto2_i").click(function() {
-    $('#foto2').trigger('click');
-  });
-
-  $("#foto1").change(function(e) {
-    addImage(e, $("#foto1").attr("id"));
-  });
-
-  $("#foto2").change(function(e) {
-    addImage(e, $("#foto2").attr("id"))
+  $("#foto").change(function(e) {
+    addImage(e, $("#foto").attr("id"))
   });
   //funcion fecha
 
@@ -49,13 +43,9 @@ function limpiar() {
   $("#titulo").val("");
   $("#descripcion").val("");
 
-  $("#foto1_i").attr("src", "recursos/img/img_defecto.png");
-  $("#foto1").val("");
-  $("#foto1_actual").val("");
-  $("#foto2_i").attr("src", "recursos/img/img_defecto.png");
-  $("#foto2").val("");
-  $("#foto2_actual").val("");
-
+  $("#foto_i").attr("src", "recursos/img/img_defecto.png");
+  $("#foto").val("");
+  $("#foto_actual").val("");
 }
 
 function guardaryeditar(e) {
@@ -164,22 +154,35 @@ function listar() {
     ] //Ordenar (columna,orden)
   }).DataTable();
 }
+$("#comunicados_cargando").click(function() {
+  $("#comunicados_cargando").modal("hide");
+});
 
 /*MOSTAR UNA NOTICIA/COMENTARIO*/
 function mostrar(idcomunicado) {
+  $("#add_comunicados").modal("show");
+  
   $.post("../ajax/Ccomunicados.php?op=mostrar", {
     idcomunicado: idcomunicado
   }, function(data, status) {
     data = JSON.parse(data);
-    $("#add_comunicados").modal("show");
+     
+     
     $("#idcomunicado").val(data.idcomunicado);
     $("#titulo").val(data.titulo);
 
     $("#descripcion").val(decodeHtml(data.descripcion));
 
+    if (data.foto == "") {
+      $("#foto_i").attr("src", "recursos/img/img_defecto.png");
+    } else {
+      $("#foto_i").attr("src", "../multimedia/comunicados/" + data.foto);
+      $("#foto_actual").val(data.foto);
+    }
     //$("#fechaActual").val(data.fecha);
 
-  })
+  })  
+  
 }
 
 function desactivar(idcomunicado) {
